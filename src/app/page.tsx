@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import { Button } from "@mui/material";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
         </ol>
 
         <div className={styles.ctas}>
+          <Button variant="contained">Hello world</Button>;
           <a
             className={styles.primary}
             href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
