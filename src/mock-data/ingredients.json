@@ -1,0 +1,37 @@
+[
+  {
+    "id": "ing-1",
+    "name": "Spaghetti",
+    "unit": "gram",
+    "category": "pantry",
+    "estimatedCostPerUnit": 0.01
+  },
+  {
+    "id": "ing-2",
+    "name": "Olive Oil",
+    "unit": "spoon",
+    "category": "pantry",
+    "estimatedCostPerUnit": 0.2
+  },
+  {
+    "id": "ing-3",
+    "name": "Garlic",
+    "unit": "clove",
+    "category": "produce",
+    "estimatedCostPerUnit": 0.05
+  },
+  {
+    "id": "ing-4",
+    "name": "Cherry Tomatoes",
+    "unit": "gram",
+    "category": "produce",
+    "estimatedCostPerUnit": 0.015
+  },
+  {
+    "id": "ing-5",
+    "name": "Fresh Basil",
+    "unit": "gram",
+    "category": "produce",
+    "estimatedCostPerUnit": 0.03
+  }
+]

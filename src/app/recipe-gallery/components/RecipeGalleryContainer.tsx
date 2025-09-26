@@ -1,8 +1,17 @@
 "use client";
 import { Container, Typography, Grid } from "@mui/material";
 import { RecipeCard } from "./RecipeCard";
+import { mockFetch } from "@/mockFetch";
+import { useEffect } from "react";
+import recipes from "../../../mock-data/recipes.json";
 
 export default function RecipeGalleryContainer() {
+  useEffect(() => {
+    mockFetch(recipes, 1500).then((data) => {
+      console.log("fetched data", data);
+    });
+  }, []);
+
   return (
     <Container maxWidth="lg">
       <Typography variant="h4" component="h1" sx={{ mb: 2 }}>
