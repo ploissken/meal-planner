@@ -1,30 +1,14 @@
 "use client";
 import { Container, Typography, Grid } from "@mui/material";
 import { RecipeCard } from "./RecipeCard";
-import { mockFetch } from "@/mockFetch";
-import { useEffect, useState } from "react";
-import mockRecipes from "../../../mock-data/recipes.json";
-import { Recipe } from "@/types";
 import RecipeCardSkeleton from "./RecipeCardSkeleton";
+import { useRecipeGalleryContext } from "../context/RecipeGalleryContext";
 
 export default function RecipeGalleryContainer() {
-  // TODO: useContext
-  const [recipes, setRecipes] = useState<Array<Recipe>>([]);
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    setLoading(true);
-    mockFetch<Array<Recipe>>(mockRecipes as Array<Recipe>, 1500).then(
-      (data) => {
-        console.log("fetched data", data);
-        setRecipes(data);
-        setLoading(false);
-      }
-    );
-  }, []);
+  const { loading, recipes } = useRecipeGalleryContext();
 
   return (
-    <Container maxWidth="lg">
+    <Container style={{ marginTop: "100px" }}>
       <Typography variant="h4" component="h1" sx={{ mb: 2 }}>
         Recipe Gallery
       </Typography>
