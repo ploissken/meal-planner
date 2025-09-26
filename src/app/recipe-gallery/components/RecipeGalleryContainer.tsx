@@ -2,13 +2,17 @@
 import { Container, Typography, Grid } from "@mui/material";
 import { RecipeCard } from "./RecipeCard";
 import { mockFetch } from "@/mockFetch";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import recipes from "../../../mock-data/recipes.json";
+import { Recipe } from "@/types";
 
 export default function RecipeGalleryContainer() {
+  // TODO: useContext
+  const [recipes, setRecipes] = useState<Array<Recipe>>([]);
   useEffect(() => {
-    mockFetch(recipes, 1500).then((data) => {
+    mockFetch<Array<Recipe>>(recipes as Array<Recipe>, 1500).then((data) => {
       console.log("fetched data", data);
+      setRecipes(data);
     });
   }, []);
 
@@ -25,16 +29,7 @@ export default function RecipeGalleryContainer() {
       >
         {[...Array(20)].map((_, i) => (
           <Grid key={i} size={{ xs: 4, sm: 4, md: 4, lg: 3 }}>
-            <RecipeCard
-              key={i}
-              image={
-                "https://media.istockphoto.com/id/901354116/photo/traditional-italian-pasta-alla-norma-with-eggplant-tomato-cheese-and-basil.jpg?s=612x612&w=0&k=20&c=SIZvs4HVWT0ICi9-nP8w9TUhj3U8EksujdLyNUVpCY8="
-              }
-              title={"title"}
-              cookingTime={"3min"}
-              difficulty={"Easy"}
-              dietaryTags={["alala", "css"]}
-            />
+            <RecipeCard key={i} recipe={recipes?.[0]} />
           </Grid>
         ))}
       </Grid>

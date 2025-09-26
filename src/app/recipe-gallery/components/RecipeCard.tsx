@@ -19,24 +19,15 @@ import {
   Button,
   Stack,
 } from "@mui/material";
+import { Recipe } from "@/types";
 
 export interface RecipeCardProps {
-  image: string;
-  title: string;
-  cookingTime: string;
-  difficulty: "Easy" | "Medium" | "Hard";
-  dietaryTags: string[];
+  recipe: Recipe;
   onAddToMealPlanner?: () => void;
 }
 
-export const RecipeCard = ({
-  image,
-  title,
-  cookingTime,
-  difficulty,
-  dietaryTags,
-  onAddToMealPlanner,
-}: RecipeCardProps) => {
+export const RecipeCard = ({ recipe, onAddToMealPlanner }: RecipeCardProps) => {
+  const { image, title, cookingTimeInMin, difficulty, dietaryTags } = recipe;
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
@@ -53,7 +44,7 @@ export const RecipeCard = ({
 
         <Box sx={{ display: "flex", gap: 2, mb: 1 }}>
           <Typography variant="body2" color="text.secondary">
-            ⏱ {cookingTime}
+            ⏱ {cookingTimeInMin}
           </Typography>
           <Typography variant="body2" color="text.secondary">
             💪 {difficulty}
