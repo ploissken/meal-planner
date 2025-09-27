@@ -1,3 +1,5 @@
+import MealPlannerContainer from "./components/MealPlannerContainer";
+
 export default function MealPlannerPage() {
-  return <p>todo: meal planner</p>;
+  return <MealPlannerContainer />;
 }
