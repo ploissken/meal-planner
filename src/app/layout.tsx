@@ -2,8 +2,8 @@ import theme from "@/theme";
 import { ThemeProvider } from "@mui/material/styles";
 import type { Metadata } from "next";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
-import TopBar from "./topbar";
 import { RecipeGalleryProvider } from "./recipe-gallery/context/RecipeGalleryContext";
+import TopBar from "./components/TopBar";
 
 export const metadata: Metadata = {
   title: "Recipe Collection & Meal Planner",

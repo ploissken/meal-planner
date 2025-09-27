@@ -8,8 +8,9 @@ import {
   Typography,
   TextField,
 } from "@mui/material";
-import { useRecipeGalleryContext } from "./recipe-gallery/context/RecipeGalleryContext";
+import { useRecipeGalleryContext } from "../recipe-gallery/context/RecipeGalleryContext";
 import { ChangeEvent } from "react";
+import FilterDrawer from "./FilterDrawer";
 
 export default function TopBar() {
   const { applyTextSearch } = useRecipeGalleryContext();
@@ -33,13 +34,7 @@ export default function TopBar() {
             style={{ width: "250px", paddingRight: 8 }}
             onChange={handleOnChange}
           />
-          <IconButton
-            color="inherit"
-            aria-label="account of current user"
-            aria-haspopup="true"
-          >
-            <FilterListAlt />
-          </IconButton>
+          <FilterDrawer />
         </Toolbar>
       </AppBar>
     </Box>
