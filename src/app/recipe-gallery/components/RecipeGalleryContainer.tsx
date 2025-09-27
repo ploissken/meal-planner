@@ -6,7 +6,7 @@ import { useRecipeGalleryContext } from "../context/RecipeGalleryContext";
 
 export default function RecipeGalleryContainer() {
   const { loading, recipes } = useRecipeGalleryContext();
-
+  console.log("recipes", recipes);
   return (
     <Container style={{ marginTop: "100px" }}>
       <Typography variant="h4" component="h1" sx={{ mb: 2 }}>
@@ -25,9 +25,15 @@ export default function RecipeGalleryContainer() {
             </Grid>
           ))}
         {recipes.length > 0 &&
-          [...Array(20)].map((_, i) => (
+          [...Array(10)].map((_, i) => (
             <Grid key={i} size={{ xs: 4, sm: 4, md: 4, lg: 3 }}>
-              <RecipeCard key={i} recipe={recipes?.[0]} />
+              {recipes?.[0] && <RecipeCard key={i} recipe={recipes?.[0]} />}
+            </Grid>
+          ))}
+        {recipes.length > 0 &&
+          [...Array(10)].map((_, i) => (
+            <Grid key={i} size={{ xs: 4, sm: 4, md: 4, lg: 3 }}>
+              {recipes?.[1] && <RecipeCard key={i} recipe={recipes?.[1]} />}
             </Grid>
           ))}
       </Grid>

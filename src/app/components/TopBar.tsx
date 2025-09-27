@@ -1,24 +1,8 @@
-"use client";
-import { FilterListAlt } from "@mui/icons-material";
-import {
-  Box,
-  AppBar,
-  Toolbar,
-  IconButton,
-  Typography,
-  TextField,
-} from "@mui/material";
-import { useRecipeGalleryContext } from "../recipe-gallery/context/RecipeGalleryContext";
-import { ChangeEvent } from "react";
+import { Box, AppBar, Toolbar, Typography, Stack } from "@mui/material";
 import FilterDrawer from "./FilterDrawer";
+import SearchInput from "./SearchInput";
 
 export default function TopBar() {
-  const { applyTextSearch } = useRecipeGalleryContext();
-
-  const handleOnChange = (e: ChangeEvent<HTMLInputElement>) => {
-    applyTextSearch(e.target.value);
-  };
-
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed">
@@ -26,15 +10,10 @@ export default function TopBar() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             🍔 Weekly Meal Planner
           </Typography>
-          <TextField
-            size="small"
-            id="search-ingredient"
-            label="Search by title or ingredient"
-            variant="outlined"
-            style={{ width: "250px", paddingRight: 8 }}
-            onChange={handleOnChange}
-          />
-          <FilterDrawer />
+          <Stack direction="row" sx={{ width: "350px", gap: 2 }}>
+            <SearchInput size="small" />
+            <FilterDrawer />
+          </Stack>
         </Toolbar>
       </AppBar>
     </Box>

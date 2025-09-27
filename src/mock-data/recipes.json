@@ -38,5 +38,45 @@
       "carbs": 65,
       "fat": 8
     }
+  },
+  {
+    "id": "recipe-2",
+    "image": "https://media.istockphoto.com/id/901354116/photo/traditional-italian-pasta-alla-norma-with-eggplant-tomato-cheese-and-basil.jpg?s=612x612&w=0&k=20&c=SIZvs4HVWT0ICi9-nP8w9TUhj3U8EksujdLyNUVpCY8=",
+    "title": "Pudim",
+    "cookingTimeInMin": 40,
+    "difficulty": "Easy",
+    "dietaryTags": ["Gluten Free"],
+    "cuisine": "Braza",
+    "ingredients": [
+      { "id": "ing-1", "name": "Spaghetti", "quantity": 100 },
+      { "id": "ing-2", "name": "Olive Oil", "quantity": 2 },
+      { "id": "ing-3", "name": "Garlic", "quantity": 3 },
+      { "id": "ing-4", "name": "Cherry Tomatoes", "quantity": 150 },
+      { "id": "ing-5", "name": "Fresh Basil", "quantity": 10 }
+    ],
+    "instructions": [
+      {
+        "label": "Boil water and cook spaghetti until al dente",
+        "timeInMinutes": 10
+      },
+      {
+        "label": "Heat olive oil in a pan and sauté garlic",
+        "timeInMinutes": 2
+      },
+      {
+        "label": "Add cherry tomatoes and cook until softened",
+        "timeInMinutes": 5
+      },
+      {
+        "label": "Mix in the cooked spaghetti and toss with basil",
+        "timeInMinutes": 3
+      },
+      { "label": "Serve warm and enjoy" }
+    ],
+    "nutritionalInfo": {
+      "protein": 12,
+      "carbs": 65,
+      "fat": 8
+    }
   }
 ]
