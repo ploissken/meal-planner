@@ -4,6 +4,7 @@
  * give me a react context that keeps its state synced with localStorage
  */
 "use client";
+import { DailyPlan, MealType } from "@/types";
 import React, {
   createContext,
   ReactNode,
@@ -12,16 +13,16 @@ import React, {
   useState,
 } from "react";
 
-type DailyPlan = {
-  breakfast: string | null;
-  lunch: string | null;
-  dinner: string | null;
-};
-
 type MealPlannerContextType = {
   mealPlan: DailyPlan[];
-  setMealPlan: (newSettings: DailyPlan[]) => void;
+  updateMealPlan: (newMealPlan: DailyPlan[]) => void;
   weekdays: string[];
+};
+
+type UpdateMealData = {
+  selectedDayIndex: number;
+  selectedMealIndex: MealType;
+  recipeId: string;
 };
 
 const defaultValue: DailyPlan[] = [...Array(7)].map(() => ({
@@ -44,6 +45,21 @@ export const MealPlannerProvider = ({ children }: { children: ReactNode }) => {
     )
   );
 
+  const updateMealPlan = ({
+    selectedDayIndex,
+    selectedMealIndex,
+    recipeId,
+  }: UpdateMealData) => {
+    const newPlan = mealPlan.map((dayPlan, index) =>
+      index === selectedDayIndex
+        ? { ...dayPlan, [selectedMealIndex]: recipeId }
+        : dayPlan
+    );
+
+    setMealPlan(newPlan);
+    localStorage.setItem(MEAL_PLANNER_KEY, JSON.stringify(newPlan));
+  };
+
   useEffect(() => {
     const saved = localStorage.getItem(MEAL_PLANNER_KEY);
     if (saved) {
@@ -60,7 +76,7 @@ export const MealPlannerProvider = ({ children }: { children: ReactNode }) => {
   }, []);
 
   return (
-    <MealPlannerContext.Provider value={{ mealPlan, setMealPlan, weekdays }}>
+    <MealPlannerContext.Provider value={{ mealPlan, updateMealPlan, weekdays }}>
       {children}
     </MealPlannerContext.Provider>
   );

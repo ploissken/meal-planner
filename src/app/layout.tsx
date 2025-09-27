@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 import { RecipeGalleryProvider } from "./recipe-gallery/context/RecipeGalleryContext";
 import TopBar from "./components/TopBar";
+import { MealPlannerProvider } from "./meal-planner/context/MealPlannerContext";
 
 export const metadata: Metadata = {
   title: "Recipe Collection & Meal Planner",
@@ -21,8 +22,10 @@ export default function RootLayout({
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
             <RecipeGalleryProvider>
-              <TopBar />
-              {children}
+              <MealPlannerProvider>
+                <TopBar />
+                {children}
+              </MealPlannerProvider>
             </RecipeGalleryProvider>
           </ThemeProvider>
         </AppRouterCacheProvider>

@@ -19,6 +19,7 @@ import {
   Stack,
 } from "@mui/material";
 import { Recipe } from "@/types";
+import AddRecipeToPlannerModal from "./AddRecipeToPlannerModal";
 
 export interface RecipeCardProps {
   recipe: Recipe;
@@ -56,14 +57,7 @@ export const RecipeCard = ({ recipe, onAddToMealPlanner }: RecipeCardProps) => {
           ))}
         </Stack>
 
-        <Button
-          variant="contained"
-          color="primary"
-          fullWidth
-          onClick={onAddToMealPlanner}
-        >
-          Add to Meal Planner
-        </Button>
+        <AddRecipeToPlannerModal recipe={recipe} />
       </CardContent>
     </Card>
   );

@@ -37,3 +37,11 @@ export interface Recipe {
   instructions: InstructionStep[];
   nutritionalInfo: NutritionalInfo;
 }
+
+export type DailyPlan = {
+  breakfast: string | null;
+  lunch: string | null;
+  dinner: string | null;
+};
+
+export type MealType = "breakfast" | "lunch" | "dinner";

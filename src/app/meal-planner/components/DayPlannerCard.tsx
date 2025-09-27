@@ -1,7 +1,7 @@
 "use client";
 import { useRecipeGalleryContext } from "@/app/recipe-gallery/context/RecipeGalleryContext";
+import { MealType } from "@/types";
 import { Card, CardContent, Chip, Grid, Typography } from "@mui/material";
-type MealType = "breakfast" | "lunch" | "dinner";
 
 export default function DayPlannerCard({
   weekday,
