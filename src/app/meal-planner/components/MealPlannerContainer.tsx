@@ -1,12 +1,10 @@
+"use client";
 import { Container, Grid, Typography } from "@mui/material";
 import DayPlannerCard from "./DayPlannerCard";
+import { useMealPlannerContext } from "../context/MealPlannerContext";
 
 export default function MealPlannerContainer() {
-  const weekdays = [...Array(7).keys()].map((day) =>
-    new Intl.DateTimeFormat("en-US", { weekday: "long" }).format(
-      new Date(Date.UTC(2021, 0, day + 4)) // ensures Sunday = 0
-    )
-  );
+  const { mealPlan, weekdays } = useMealPlannerContext();
 
   return (
     <Container style={{ marginTop: "100px" }}>
@@ -15,9 +13,9 @@ export default function MealPlannerContainer() {
       </Typography>
 
       <Grid container spacing={2} columns={{ xs: 1, sm: 1, md: 7 }}>
-        {weekdays.map((weekday) => (
+        {weekdays.map((weekday, index) => (
           <Grid key={weekday} sx={{ borderRadius: 2 }} size={1}>
-            <DayPlannerCard weekday={weekday} />
+            <DayPlannerCard weekday={weekday} plan={mealPlan[index]} />
           </Grid>
         ))}
       </Grid>

@@ -1,8 +1,42 @@
 "use client";
+import { useRecipeGalleryContext } from "@/app/recipe-gallery/context/RecipeGalleryContext";
 import { Card, CardContent, Chip, Grid, Typography } from "@mui/material";
+type MealType = "breakfast" | "lunch" | "dinner";
 
-export default function DayPlannerCard({ weekday }: { weekday: string }) {
-  const mealLabels = ["Breakfast", "Lunch", "Dinner"];
+export default function DayPlannerCard({
+  weekday,
+  plan,
+}: {
+  weekday: string;
+  plan: Record<MealType, string | null>;
+}) {
+  const mealLabels: MealType[] = ["breakfast", "lunch", "dinner"];
+  const { recipes } = useRecipeGalleryContext();
+
+  const getRecipeChip = (meal: MealType) => {
+    const recipeId = plan[meal];
+    if (!recipeId) return null;
+
+    const recipe = recipes.find((r) => r.id === `${recipeId}`);
+    if (!recipe) return null;
+
+    return (
+      <Chip
+        label={recipe.title}
+        color="primary"
+        variant="outlined"
+        onClick={() => {}}
+        sx={{
+          height: "auto",
+          "& .MuiChip-label": {
+            display: "block",
+            whiteSpace: "normal",
+          },
+        }}
+      />
+    );
+  };
+
   return (
     <Card sx={{ borderRadius: "inherit" }}>
       <CardContent>
@@ -18,19 +52,7 @@ export default function DayPlannerCard({ weekday }: { weekday: string }) {
                 <Typography gutterBottom sx={{ fontSize: 14 }}>
                   {mealLabel}
                 </Typography>
-                <Chip
-                  label="Garlic Spaghetti with Brocoll"
-                  color="primary"
-                  variant="outlined"
-                  onClick={() => {}}
-                  sx={{
-                    height: "auto",
-                    "& .MuiChip-label": {
-                      display: "block",
-                      whiteSpace: "normal",
-                    },
-                  }}
-                />
+                {getRecipeChip(mealLabel)}
               </Grid>
             ))}
           </Grid>
