@@ -41,7 +41,7 @@ export default function Multiselect<T extends string | number>({
   options,
 }: MultiselectProps<T>) {
   return (
-    <FormControl sx={{ m: 1, width: 300 }}>
+    <FormControl sx={{ width: 300 }}>
       <InputLabel id={`${id}-label`}>{label}</InputLabel>
       <Select
         multiple
