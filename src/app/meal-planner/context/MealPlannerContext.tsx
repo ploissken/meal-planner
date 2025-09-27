@@ -15,7 +15,7 @@ import React, {
 
 type MealPlannerContextType = {
   mealPlan: DailyPlan[];
-  updateMealPlan: (newMealPlan: DailyPlan[]) => void;
+  updateMealPlan: (data: UpdateMealData) => void;
   weekdays: string[];
 };
 

@@ -1,5 +1,5 @@
 import { useMealPlannerContext } from "@/app/meal-planner/context/MealPlannerContext";
-import { Recipe } from "@/types";
+import { MealType, Recipe } from "@/types";
 import {
   Box,
   Button,
@@ -23,21 +23,19 @@ export default function AddRecipeToPlannerModal({
   const [open, setOpen] = useState(false);
   const [selectedDayIndex, setSelectedDayIndex] = useState<number | null>();
   const [selectedMealIndex, setSelectedMealIndex] =
-    useState<string>("breakfast");
+    useState<MealType>("breakfast");
 
-  const { weekdays, mealPlan, updateMealPlan } = useMealPlannerContext();
+  const { weekdays, updateMealPlan } = useMealPlannerContext();
 
   const handleSaveToPlan = () => {
-    if (!selectedDayIndex) return;
     // todo: form validation
-    console.log(
-      `setting ${selectedDayIndex}: { [${selectedMealIndex}]: ${recipe.id}}`
-    );
-    let newPlan = {
-      ...mealPlan,
-    };
-    newPlan[selectedDayIndex][selectedMealIndex] = recipe.id;
-    updateMealPlan(newPlan);
+    if (!selectedDayIndex) return;
+
+    updateMealPlan({
+      selectedDayIndex,
+      selectedMealIndex,
+      recipeId: recipe.id,
+    });
   };
 
   return (
