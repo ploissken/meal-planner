@@ -2,10 +2,12 @@
 import { Box, AppBar, Toolbar, Typography, Tabs, Tab } from "@mui/material";
 import FilterDrawer from "./FilterDrawer";
 import { SyntheticEvent, useState } from "react";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 export default function TopBar() {
-  const [selectedTab, setSelectedTab] = useState("recipe-gallery");
+  const pathname = usePathname();
+  const cleaned = pathname.replace(/^\/+/, "") || "recipe-gallery";
+  const [selectedTab, setSelectedTab] = useState(cleaned);
   const router = useRouter();
 
   const handleTabChange = (event: SyntheticEvent, value: string) => {
