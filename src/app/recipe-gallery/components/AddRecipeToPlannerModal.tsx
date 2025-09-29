@@ -37,6 +37,7 @@ export default function AddRecipeToPlannerModal({
       selectedMealIndex,
       recipeId: recipe.id,
     });
+    setOpen(false);
   };
 
   return (
