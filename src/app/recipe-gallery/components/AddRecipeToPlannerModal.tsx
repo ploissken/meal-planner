@@ -1,14 +1,15 @@
 import { useMealPlannerContext } from "@/app/meal-planner/context/MealPlannerContext";
 import { MealType, Recipe } from "@/types";
 import {
-  Box,
   Button,
   ButtonGroup,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
   FormControl,
   FormControlLabel,
   FormLabel,
-  Grid,
-  Modal,
   Radio,
   RadioGroup,
   Typography,
@@ -43,61 +44,55 @@ export default function AddRecipeToPlannerModal({
       <Button
         variant="contained"
         color="primary"
-        fullWidth
         onClick={() => setOpen(true)}
+        sx={{ width: "100%" }}
       >
-        Add to Meal Planner
+        Add to Plan
       </Button>
-      <Modal
+      <Dialog
         open={open}
         onClose={() => setOpen(false)}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Grid
-          sx={{
-            // todo: fix this
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            width: 400,
-            bgcolor: "background.paper",
-            border: "2px solid #000",
-            boxShadow: 24,
-            p: 4,
-            gap: 8,
-          }}
-        >
-          <Typography variant="h6" component="h2">
-            {`Add "${recipe.title}" to your week plan:`}
-          </Typography>
-          <Typography sx={{ mt: 2 }}>Select a day:</Typography>
-          <ButtonGroup variant="outlined" aria-label="weekday button group">
-            {weekdays.map((day, index) => (
-              <Button
-                key={day}
-                onClick={() => setSelectedDayIndex(index)}
-                color={selectedDayIndex === index ? "primary" : "secondary"}
-              >
-                {day[0]}
-              </Button>
-            ))}
-          </ButtonGroup>
-          <Typography sx={{ mt: 2 }}>And the meal slot:</Typography>
+        <DialogTitle>{`Add "${recipe.title}" to your week plan:`}</DialogTitle>
+        <DialogContent>
+          <FormControl sx={{ width: "100%" }}>
+            <FormLabel id="weekday-radio-group">
+              <Typography sx={{ my: 2 }}>Select a day:</Typography>
+            </FormLabel>
+            <ButtonGroup
+              variant="outlined"
+              aria-label="weekday button group"
+              sx={{ width: "100%" }}
+            >
+              {weekdays.map((day, index) => (
+                <Button
+                  sx={{ width: "100%" }}
+                  key={day}
+                  onClick={() => setSelectedDayIndex(index)}
+                  color={selectedDayIndex === index ? "primary" : "secondary"}
+                >
+                  {day[0]}
+                </Button>
+              ))}
+            </ButtonGroup>
+          </FormControl>
+
           <FormControl>
-            <FormLabel id="demo-controlled-radio-buttons-group">
-              Gender
+            <FormLabel id="meal-radio-group">
+              <Typography sx={{ mt: 2 }}>Select meal slot:</Typography>
             </FormLabel>
             <RadioGroup
               row
-              aria-labelledby="demo-row-radio-buttons-group-label"
-              name="row-radio-buttons-group"
+              aria-labelledby="meal-radio-group"
+              name="meal-radio-group"
               value={selectedMealIndex}
               onChange={(_, value) => {
-                setSelectedMealIndex(value);
+                setSelectedMealIndex(value as MealType);
               }}
             >
+              {/* todo: leverage type */}
               {["breakfast", "lunch", "dinner"].map((meal) => (
                 <FormControlLabel
                   key={meal}
@@ -108,11 +103,13 @@ export default function AddRecipeToPlannerModal({
               ))}
             </RadioGroup>
           </FormControl>
-          <Button fullWidth variant="contained" onClick={handleSaveToPlan}>
+        </DialogContent>
+        <DialogActions>
+          <Button variant="contained" onClick={handleSaveToPlan}>
             Save
           </Button>
-        </Grid>
-      </Modal>
+        </DialogActions>
+      </Dialog>
     </>
   );
 }

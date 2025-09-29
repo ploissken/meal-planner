@@ -17,16 +17,19 @@ import {
   Chip,
   Button,
   Stack,
+  Grid,
+  CardActions,
+  CardActionArea,
 } from "@mui/material";
 import { Recipe } from "@/types";
 import AddRecipeToPlannerModal from "./AddRecipeToPlannerModal";
+import RecipeDetailModal from "./RecipeDetailModal";
 
 export interface RecipeCardProps {
   recipe: Recipe;
-  onAddToMealPlanner?: () => void;
 }
 
-export const RecipeCard = ({ recipe, onAddToMealPlanner }: RecipeCardProps) => {
+export const RecipeCard = ({ recipe }: RecipeCardProps) => {
   const { image, title, cookingTimeInMin, difficulty, dietaryTags } = recipe;
   return (
     <Card sx={{ maxWidth: 345 }}>
@@ -56,9 +59,12 @@ export const RecipeCard = ({ recipe, onAddToMealPlanner }: RecipeCardProps) => {
             <Chip key={index} label={tag} size="small" />
           ))}
         </Stack>
-
-        <AddRecipeToPlannerModal recipe={recipe} />
       </CardContent>
+
+      <CardActions>
+        <AddRecipeToPlannerModal recipe={recipe} />
+        <RecipeDetailModal recipe={recipe} />
+      </CardActions>
     </Card>
   );
 };
