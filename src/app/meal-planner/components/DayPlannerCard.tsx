@@ -2,6 +2,7 @@
 import { useRecipeGalleryContext } from "@/app/recipe-gallery/context/RecipeGalleryContext";
 import { MealType } from "@/types";
 import { Card, CardContent, Chip, Grid, Typography } from "@mui/material";
+import DayNutritionalBalance from "./DayNutritionalBalance";
 
 export default function DayPlannerCard({
   weekday,
@@ -11,13 +12,10 @@ export default function DayPlannerCard({
   plan: Record<MealType, string | null>;
 }) {
   const mealLabels: MealType[] = ["breakfast", "lunch", "dinner"];
-  const { recipes } = useRecipeGalleryContext();
+  const { getRecipeById } = useRecipeGalleryContext();
 
   const getRecipeChip = (meal: MealType) => {
-    const recipeId = plan[meal];
-    if (!recipeId) return null;
-
-    const recipe = recipes.find((r) => r.id === `${recipeId}`);
+    const recipe = getRecipeById(plan[meal]);
     if (!recipe) return null;
 
     return (
@@ -45,6 +43,7 @@ export default function DayPlannerCard({
             <Typography sx={{ color: "text.secondary", fontSize: 14 }}>
               {weekday}
             </Typography>
+            <DayNutritionalBalance weekday={weekday} plan={plan} />
           </Grid>
           <Grid size={{ xs: 6, md: 12 }}>
             {mealLabels.map((mealLabel) => (

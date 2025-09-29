@@ -27,6 +27,7 @@ type RecipeGalleryContextType = {
   searchInput: string;
   setSearchInput: Dispatch<SetStateAction<string>>;
   resetFilters: () => void;
+  getRecipeById: (id: string | null) => Recipe | undefined;
 };
 
 const RecipeGalleryContext = createContext<
@@ -88,6 +89,10 @@ export function RecipeGalleryProvider({ children }: { children: ReactNode }) {
 
     setFilteredRecipes(newRecipesSet);
   };
+  const getRecipeById = (id: string | null) => {
+    if (!id) return;
+    return recipes.find((r) => r.id === id);
+  };
 
   const resetFilters = () => {
     setMaxCookingTime(0);
@@ -133,6 +138,7 @@ export function RecipeGalleryProvider({ children }: { children: ReactNode }) {
         setSelectedRestrictions,
         resetFilters,
         searchInput,
+        getRecipeById,
       }}
     >
       {children}
