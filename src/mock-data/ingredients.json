@@ -1,37 +1,282 @@
 [
   {
     "id": "ing-1",
-    "name": "Spaghetti",
+    "name": "Flour",
     "unit": "gram",
     "category": "pantry",
-    "estimatedCostPerUnit": 0.01
+    "estimatedCostPerUnit": 0.005
   },
   {
     "id": "ing-2",
+    "name": "Sugar",
+    "unit": "gram",
+    "category": "pantry",
+    "estimatedCostPerUnit": 0.003
+  },
+  {
+    "id": "ing-3",
+    "name": "Egg",
+    "unit": "piece",
+    "category": "dairy",
+    "estimatedCostPerUnit": 0.2
+  },
+  {
+    "id": "ing-4",
+    "name": "Milk",
+    "unit": "milliliter",
+    "category": "dairy",
+    "estimatedCostPerUnit": 0.001
+  },
+  {
+    "id": "ing-5",
+    "name": "Butter",
+    "unit": "gram",
+    "category": "dairy",
+    "estimatedCostPerUnit": 0.01
+  },
+  {
+    "id": "ing-6",
+    "name": "Tomato",
+    "unit": "gram",
+    "category": "produce",
+    "estimatedCostPerUnit": 0.004
+  },
+  {
+    "id": "ing-7",
+    "name": "Onion",
+    "unit": "gram",
+    "category": "produce",
+    "estimatedCostPerUnit": 0.002
+  },
+  {
+    "id": "ing-8",
+    "name": "Olive Oil",
+    "unit": "milliliter",
+    "category": "pantry",
+    "estimatedCostPerUnit": 0.02
+  },
+  {
+    "id": "ing-9",
+    "name": "Garlic",
+    "unit": "gram",
+    "category": "produce",
+    "estimatedCostPerUnit": 0.01
+  },
+  {
+    "id": "ing-10",
+    "name": "Rice",
+    "unit": "gram",
+    "category": "pantry",
+    "estimatedCostPerUnit": 0.002
+  },
+  {
+    "id": "ing-11",
+    "name": "Chicken Breast",
+    "unit": "gram",
+    "category": "produce",
+    "estimatedCostPerUnit": 0.01
+  },
+  {
+    "id": "ing-12",
     "name": "Olive Oil",
     "unit": "spoon",
     "category": "pantry",
     "estimatedCostPerUnit": 0.2
   },
   {
-    "id": "ing-3",
+    "id": "ing-13",
     "name": "Garlic",
     "unit": "clove",
     "category": "produce",
     "estimatedCostPerUnit": 0.05
   },
   {
-    "id": "ing-4",
-    "name": "Cherry Tomatoes",
+    "id": "ing-14",
+    "name": "Pasta",
     "unit": "gram",
-    "category": "produce",
+    "category": "pantry",
+    "estimatedCostPerUnit": 0.005
+  },
+  {
+    "id": "ing-15",
+    "name": "Parmesan Cheese",
+    "unit": "gram",
+    "category": "dairy",
     "estimatedCostPerUnit": 0.015
   },
   {
-    "id": "ing-5",
-    "name": "Fresh Basil",
+    "id": "ing-16",
+    "name": "Tomato Sauce",
+    "unit": "gram",
+    "category": "pantry",
+    "estimatedCostPerUnit": 0.008
+  },
+  {
+    "id": "ing-17",
+    "name": "Basil",
+    "unit": "leaf",
+    "category": "produce",
+    "estimatedCostPerUnit": 0.02
+  },
+  {
+    "id": "ing-18",
+    "name": "Tofu",
     "unit": "gram",
     "category": "produce",
-    "estimatedCostPerUnit": 0.03
+    "estimatedCostPerUnit": 0.012
+  },
+  {
+    "id": "ing-19",
+    "name": "Soy Sauce",
+    "unit": "spoon",
+    "category": "pantry",
+    "estimatedCostPerUnit": 0.1
+  },
+  {
+    "id": "ing-20",
+    "name": "Rice",
+    "unit": "gram",
+    "category": "pantry",
+    "estimatedCostPerUnit": 0.004
+  },
+  {
+    "id": "ing-21",
+    "name": "Broccoli",
+    "unit": "gram",
+    "category": "produce",
+    "estimatedCostPerUnit": 0.007
+  },
+  {
+    "id": "ing-22",
+    "name": "Coconut Milk",
+    "unit": "ml",
+    "category": "pantry",
+    "estimatedCostPerUnit": 0.01
+  },
+  {
+    "id": "ing-23",
+    "name": "Red Curry Paste",
+    "unit": "spoon",
+    "category": "pantry",
+    "estimatedCostPerUnit": 0.25
+  },
+  {
+    "id": "ing-24",
+    "name": "Chickpeas",
+    "unit": "gram",
+    "category": "pantry",
+    "estimatedCostPerUnit": 0.006
+  },
+  {
+    "id": "ing-25",
+    "name": "Spinach",
+    "unit": "gram",
+    "category": "produce",
+    "estimatedCostPerUnit": 0.01
+  },
+  {
+    "id": "ing-26",
+    "name": "Eggs",
+    "unit": "unit",
+    "category": "dairy",
+    "estimatedCostPerUnit": 0.3
+  },
+  {
+    "id": "ing-27",
+    "name": "Milk",
+    "unit": "ml",
+    "category": "dairy",
+    "estimatedCostPerUnit": 0.007
+  },
+  {
+    "id": "ing-28",
+    "name": "Butter",
+    "unit": "gram",
+    "category": "dairy",
+    "estimatedCostPerUnit": 0.01
+  },
+  {
+    "id": "ing-29",
+    "name": "Oats",
+    "unit": "gram",
+    "category": "pantry",
+    "estimatedCostPerUnit": 0.004
+  },
+  {
+    "id": "ing-30",
+    "name": "Banana",
+    "unit": "unit",
+    "category": "produce",
+    "estimatedCostPerUnit": 0.5
+  },
+  {
+    "id": "ing-31",
+    "name": "Maple Syrup",
+    "unit": "spoon",
+    "category": "pantry",
+    "estimatedCostPerUnit": 0.3
+  },
+  {
+    "id": "ing-32",
+    "name": "Whole Wheat Bread",
+    "unit": "slice",
+    "category": "pantry",
+    "estimatedCostPerUnit": 0.2
+  },
+  {
+    "id": "ing-33",
+    "name": "Avocado",
+    "unit": "unit",
+    "category": "produce",
+    "estimatedCostPerUnit": 1.2
+  },
+  {
+    "id": "ing-34",
+    "name": "Blueberries",
+    "unit": "gram",
+    "category": "produce",
+    "estimatedCostPerUnit": 0.01
+  },
+  {
+    "id": "ing-35",
+    "name": "Chia Seeds",
+    "unit": "spoon",
+    "category": "pantry",
+    "estimatedCostPerUnit": 0.15
+  },
+  {
+    "id": "ing-36",
+    "name": "Almond Milk",
+    "unit": "ml",
+    "category": "pantry",
+    "estimatedCostPerUnit": 0.01
+  },
+  {
+    "id": "ing-37",
+    "name": "Strawberry",
+    "unit": "gram",
+    "category": "produce",
+    "estimatedCostPerUnit": 0.01
+  },
+  {
+    "id": "ing-38",
+    "name": "Mango",
+    "unit": "gram",
+    "category": "produce",
+    "estimatedCostPerUnit": 0.1
+  },
+  {
+    "id": "ing-39",
+    "name": "Yogurt",
+    "unit": "ml",
+    "category": "diary",
+    "estimatedCostPerUnit": 0.1
+  },
+  {
+    "id": "ing-40",
+    "name": "Toast",
+    "unit": "slice",
+    "category": "pantry",
+    "estimatedCostPerUnit": 0.2
   }
 ]

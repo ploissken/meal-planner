@@ -22,7 +22,7 @@ export default function AddRecipeToPlannerModal({
   recipe: Recipe;
 }) {
   const [open, setOpen] = useState(false);
-  const [selectedDayIndex, setSelectedDayIndex] = useState<number | null>();
+  const [selectedDayIndex, setSelectedDayIndex] = useState<number | null>(null);
   const [selectedMealIndex, setSelectedMealIndex] =
     useState<MealType>("breakfast");
 
@@ -30,7 +30,7 @@ export default function AddRecipeToPlannerModal({
 
   const handleSaveToPlan = () => {
     // todo: form validation
-    if (!selectedDayIndex) return;
+    if (selectedDayIndex === null) return;
 
     updateMealPlan({
       selectedDayIndex,

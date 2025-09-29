@@ -105,7 +105,11 @@ export function RecipeGalleryProvider({ children }: { children: ReactNode }) {
     setLoading(true);
     mockFetch<Array<Recipe>>(mockRecipes as Array<Recipe>, 1500).then(
       (data) => {
-        setRecipes(data);
+        setRecipes(
+          data.sort((a, b) =>
+            a.title.localeCompare(b.title, undefined, { sensitivity: "base" })
+          )
+        );
         setFilteredRecipes(data);
         setLoading(false);
       }

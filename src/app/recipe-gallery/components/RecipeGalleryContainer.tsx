@@ -24,18 +24,11 @@ export default function RecipeGalleryContainer() {
               <RecipeCardSkeleton />
             </Grid>
           ))}
-        {recipes.length > 0 &&
-          [...Array(10)].map((_, i) => (
-            <Grid key={i} size={{ xs: 4, sm: 4, md: 4, lg: 3 }}>
-              {recipes?.[0] && <RecipeCard key={i} recipe={recipes?.[0]} />}
-            </Grid>
-          ))}
-        {recipes.length > 0 &&
-          [...Array(10)].map((_, i) => (
-            <Grid key={i} size={{ xs: 4, sm: 4, md: 4, lg: 3 }}>
-              {recipes?.[1] && <RecipeCard key={i} recipe={recipes?.[1]} />}
-            </Grid>
-          ))}
+        {recipes.map((recipe) => (
+          <Grid key={recipe.id} size={{ xs: 4, sm: 4, md: 4, lg: 3 }}>
+            <RecipeCard recipe={recipe} />
+          </Grid>
+        ))}
       </Grid>
     </Container>
   );

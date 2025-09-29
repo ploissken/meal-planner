@@ -1,81 +1,868 @@
 [
   {
-    "id": "recipe-1",
-    "image": "https://media.istockphoto.com/id/901354116/photo/traditional-italian-pasta-alla-norma-with-eggplant-tomato-cheese-and-basil.jpg?s=612x612&w=0&k=20&c=SIZvs4HVWT0ICi9-nP8w9TUhj3U8EksujdLyNUVpCY8=",
-    "title": "Garlic Tomato Basil Spaghetti",
-    "cookingTimeInMin": 25,
+    "id": "rec-1",
+    "image": "https://lifehacker.com/imagery/articles/01HF2HJ7VQKASS17P1STG64AY5/hero-image.fill.size_1248x702.v1699833810.jpg",
+    "title": "Classic Pancakes",
+    "cookingTimeInMin": 20,
     "difficulty": "Easy",
-    "dietaryTags": ["Vegan", "Diary Free"],
-    "cuisine": "Italian",
+    "dietaryTags": ["Vegetarian"],
+    "cuisine": "American",
     "ingredients": [
-      { "id": "ing-1", "name": "Spaghetti", "quantity": 100 },
-      { "id": "ing-2", "name": "Olive Oil", "quantity": 2 },
-      { "id": "ing-3", "name": "Garlic", "quantity": 3 },
-      { "id": "ing-4", "name": "Cherry Tomatoes", "quantity": 150 },
-      { "id": "ing-5", "name": "Fresh Basil", "quantity": 10 }
+      { "id": "ing-1", "name": "Flour", "quantity": 200 },
+      { "id": "ing-2", "name": "Sugar", "quantity": 50 },
+      { "id": "ing-3", "name": "Egg", "quantity": 2 },
+      { "id": "ing-4", "name": "Milk", "quantity": 250 },
+      { "id": "ing-5", "name": "Butter", "quantity": 20 }
     ],
     "instructions": [
-      {
-        "label": "Boil water and cook spaghetti until al dente",
-        "timeInMinutes": 10
-      },
-      {
-        "label": "Heat olive oil in a pan and sauté garlic",
-        "timeInMinutes": 2
-      },
-      {
-        "label": "Add cherry tomatoes and cook until softened",
-        "timeInMinutes": 5
-      },
-      {
-        "label": "Mix in the cooked spaghetti and toss with basil",
-        "timeInMinutes": 3
-      },
-      { "label": "Serve warm and enjoy" }
+      { "label": "Mix dry ingredients", "timeInMinutes": 5 },
+      { "label": "Add eggs and milk, whisk", "timeInMinutes": 5 },
+      { "label": "Heat pan and melt butter", "timeInMinutes": 2 },
+      { "label": "Cook pancakes on both sides", "timeInMinutes": 8 }
     ],
     "nutritionalInfo": {
-      "protein": 12,
-      "carbs": 65,
+      "protein": 8,
+      "carbs": 45,
+      "fat": 12
+    }
+  },
+  {
+    "id": "rec-2",
+    "image": "https://lifehacker.com/imagery/articles/01HF2HJ7VQKASS17P1STG64AY5/hero-image.fill.size_1248x702.v1699833810.jpg",
+    "title": "Tomato & Onion Omelette",
+    "cookingTimeInMin": 15,
+    "difficulty": "Easy",
+    "dietaryTags": ["Gluten Free"],
+    "cuisine": "French",
+    "ingredients": [
+      { "id": "ing-3", "name": "Egg", "quantity": 3 },
+      { "id": "ing-6", "name": "Tomato", "quantity": 100 },
+      { "id": "ing-7", "name": "Onion", "quantity": 50 },
+      { "id": "ing-8", "name": "Olive Oil", "quantity": 10 }
+    ],
+    "instructions": [
+      { "label": "Chop tomato and onion", "timeInMinutes": 3 },
+      { "label": "Beat eggs", "timeInMinutes": 2 },
+      { "label": "Saute vegetables", "timeInMinutes": 3 },
+      { "label": "Add eggs and cook", "timeInMinutes": 7 }
+    ],
+    "nutritionalInfo": {
+      "protein": 18,
+      "carbs": 6,
+      "fat": 15
+    }
+  },
+  {
+    "id": "rec-3",
+    "image": "https://s01.video.glbimg.com/x720/13055720.jpg",
+    "title": "Mushroom Risotto",
+    "cookingTimeInMin": 45,
+    "difficulty": "Medium",
+    "dietaryTags": ["Vegetarian", "Dairy Free"],
+    "cuisine": "Italian",
+    "ingredients": [
+      { "id": "ing-10", "name": "Rice", "quantity": 200 },
+      { "id": "ing-7", "name": "Onion", "quantity": 60 },
+      { "id": "ing-8", "name": "Olive Oil", "quantity": 15 },
+      { "id": "ing-9", "name": "Garlic", "quantity": 10 }
+    ],
+    "instructions": [
+      { "label": "Chop onion & garlic", "timeInMinutes": 5 },
+      { "label": "Saute onion & garlic", "timeInMinutes": 5 },
+      { "label": "Add rice and stir", "timeInMinutes": 2 },
+      { "label": "Gradually add water and stir", "timeInMinutes": 33 }
+    ],
+    "nutritionalInfo": {
+      "protein": 6,
+      "carbs": 60,
+      "fat": 10
+    }
+  },
+  {
+    "id": "rec-4",
+    "image": "https://glutenfreegoddessrecipes.com/wp-content/uploads/2024/11/stir-fried-vegetables-recipe-1732694128.jpg",
+    "title": "Vegetable Stir Fry",
+    "cookingTimeInMin": 25,
+    "difficulty": "Easy",
+    "dietaryTags": ["Vegan", "Gluten Free", "Dairy Free"],
+    "cuisine": "Thai",
+    "ingredients": [
+      { "id": "ing-6", "name": "Tomato", "quantity": 80 },
+      { "id": "ing-7", "name": "Onion", "quantity": 50 },
+      { "id": "ing-9", "name": "Garlic", "quantity": 10 },
+      { "id": "ing-8", "name": "Olive Oil", "quantity": 10 }
+    ],
+    "instructions": [
+      { "label": "Chop vegetables", "timeInMinutes": 5 },
+      { "label": "Heat oil", "timeInMinutes": 2 },
+      { "label": "Stir fry vegetables", "timeInMinutes": 18 }
+    ],
+    "nutritionalInfo": {
+      "protein": 4,
+      "carbs": 12,
       "fat": 8
     }
   },
   {
-    "id": "recipe-2",
-    "image": "https://media.istockphoto.com/id/901354116/photo/traditional-italian-pasta-alla-norma-with-eggplant-tomato-cheese-and-basil.jpg?s=612x612&w=0&k=20&c=SIZvs4HVWT0ICi9-nP8w9TUhj3U8EksujdLyNUVpCY8=",
-    "title": "Pudim",
-    "cookingTimeInMin": 40,
+    "id": "rec-5",
+    "image": "https://www.allrecipes.com/thmb/QiGptPjQB5mqSXGVxE4sLPMJs_4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/AR-269500-creamy-garlic-pasta-Beauties-2x1-bcd9cb83138849e4b17104a1cd51d063.jpg",
+    "title": "Tomato Pasta",
+    "cookingTimeInMin": 30,
+    "difficulty": "Medium",
+    "dietaryTags": ["Vegetarian"],
+    "cuisine": "Italian",
+    "ingredients": [
+      { "id": "ing-1", "name": "Flour", "quantity": 100 },
+      { "id": "ing-6", "name": "Tomato", "quantity": 120 },
+      { "id": "ing-7", "name": "Onion", "quantity": 40 }
+    ],
+    "instructions": [
+      { "label": "Prepare dough / pasta", "timeInMinutes": 10 },
+      { "label": "Make sauce", "timeInMinutes": 10 },
+      { "label": "Combine and cook", "timeInMinutes": 10 }
+    ],
+    "nutritionalInfo": {
+      "protein": 7,
+      "carbs": 50,
+      "fat": 5
+    }
+  },
+  {
+    "id": "rec-6",
+    "image": "https://www.allrecipes.com/thmb/QiGptPjQB5mqSXGVxE4sLPMJs_4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/AR-269500-creamy-garlic-pasta-Beauties-2x1-bcd9cb83138849e4b17104a1cd51d063.jpg",
+    "title": "Grilled Chicken Pasta",
+    "cookingTimeInMin": 30,
+    "difficulty": "Medium",
+    "dietaryTags": ["Gluten Free"],
+    "cuisine": "Italian",
+    "ingredients": [
+      { "id": "ing-11", "name": "Chicken Breast", "quantity": 200 },
+      { "id": "ing-12", "name": "Olive Oil", "quantity": 2 },
+      { "id": "ing-14", "name": "Pasta", "quantity": 100 },
+      { "id": "ing-15", "name": "Parmesan Cheese", "quantity": 30 },
+      { "id": "ing-16", "name": "Tomato Sauce", "quantity": 100 },
+      { "id": "ing-17", "name": "Basil", "quantity": 4 }
+    ],
+    "instructions": [
+      { "label": "Boil pasta until al dente", "timeInMinutes": 10 },
+      { "label": "Grill chicken with olive oil", "timeInMinutes": 15 },
+      { "label": "Mix pasta, sauce, and grilled chicken" },
+      { "label": "Top with cheese and basil" }
+    ],
+    "nutritionalInfo": {
+      "protein": 35,
+      "carbs": 40,
+      "fat": 20
+    }
+  },
+  {
+    "id": "rec-7",
+    "image": "https://glutenfreegoddessrecipes.com/wp-content/uploads/2024/11/stir-fried-vegetables-recipe-1732694128.jpg",
+    "title": "Tofu Stir Fry",
+    "cookingTimeInMin": 20,
+    "difficulty": "Easy",
+    "dietaryTags": ["Vegan", "Gluten Free", "Diary Free"],
+    "cuisine": "Asian",
+    "ingredients": [
+      { "id": "ing-18", "name": "Tofu", "quantity": 150 },
+      { "id": "ing-19", "name": "Soy Sauce", "quantity": 2 },
+      { "id": "ing-21", "name": "Broccoli", "quantity": 100 },
+      { "id": "ing-12", "name": "Olive Oil", "quantity": 1 },
+      { "id": "ing-20", "name": "Rice", "quantity": 100 }
+    ],
+    "instructions": [
+      { "label": "Cook rice", "timeInMinutes": 10 },
+      {
+        "label": "Stir fry tofu and broccoli with soy sauce",
+        "timeInMinutes": 10
+      },
+      { "label": "Serve over rice" }
+    ],
+    "nutritionalInfo": {
+      "protein": 20,
+      "carbs": 50,
+      "fat": 12
+    }
+  },
+  {
+    "id": "rec-8",
+    "image": "https://assets.epicurious.com/photos/59d3b24f94c5526f0b92b04f/1:1/w_2560%2Cc_limit/indian-butter-chicken-curry-recipe-100317.jpg",
+    "title": "Vegan Chickpea Curry",
+    "cookingTimeInMin": 35,
+    "difficulty": "Medium",
+    "dietaryTags": ["Vegan", "Gluten Free", "Diary Free"],
+    "cuisine": "Indian",
+    "ingredients": [
+      { "id": "ing-24", "name": "Chickpeas", "quantity": 200 },
+      { "id": "ing-22", "name": "Coconut Milk", "quantity": 200 },
+      { "id": "ing-23", "name": "Red Curry Paste", "quantity": 2 },
+      { "id": "ing-25", "name": "Spinach", "quantity": 50 },
+      { "id": "ing-12", "name": "Olive Oil", "quantity": 1 }
+    ],
+    "instructions": [
+      { "label": "Heat oil and curry paste", "timeInMinutes": 5 },
+      { "label": "Add chickpeas and coconut milk", "timeInMinutes": 15 },
+      { "label": "Add spinach and simmer", "timeInMinutes": 10 },
+      { "label": "Serve hot" }
+    ],
+    "nutritionalInfo": {
+      "protein": 18,
+      "carbs": 40,
+      "fat": 22
+    }
+  },
+  {
+    "id": "rec-9",
+    "image": "https://s01.video.glbimg.com/x720/13055720.jpg",
+    "title": "Broccoli Chicken Rice Bowl",
+    "cookingTimeInMin": 25,
     "difficulty": "Easy",
     "dietaryTags": ["Gluten Free"],
-    "cuisine": "Braza",
+    "cuisine": "American",
     "ingredients": [
-      { "id": "ing-1", "name": "Spaghetti", "quantity": 100 },
-      { "id": "ing-2", "name": "Olive Oil", "quantity": 2 },
-      { "id": "ing-3", "name": "Garlic", "quantity": 3 },
-      { "id": "ing-4", "name": "Cherry Tomatoes", "quantity": 150 },
-      { "id": "ing-5", "name": "Fresh Basil", "quantity": 10 }
+      { "id": "ing-11", "name": "Chicken Breast", "quantity": 200 },
+      { "id": "ing-21", "name": "Broccoli", "quantity": 150 },
+      { "id": "ing-20", "name": "Rice", "quantity": 100 },
+      { "id": "ing-12", "name": "Olive Oil", "quantity": 1 },
+      { "id": "ing-13", "name": "Garlic", "quantity": 2 }
+    ],
+    "instructions": [
+      { "label": "Cook rice", "timeInMinutes": 10 },
+      { "label": "Stir fry chicken and garlic", "timeInMinutes": 10 },
+      { "label": "Add broccoli and cook until tender", "timeInMinutes": 5 },
+      { "label": "Combine with rice and serve" }
+    ],
+    "nutritionalInfo": {
+      "protein": 38,
+      "carbs": 45,
+      "fat": 15
+    }
+  },
+  {
+    "id": "rec-10",
+    "image": "https://assets.epicurious.com/photos/59d3b24f94c5526f0b92b04f/1:1/w_2560%2Cc_limit/indian-butter-chicken-curry-recipe-100317.jpg",
+    "title": "Thai Red Curry with Tofu",
+    "cookingTimeInMin": 30,
+    "difficulty": "Medium",
+    "dietaryTags": ["Vegan", "Diary Free"],
+    "cuisine": "Thai",
+    "ingredients": [
+      { "id": "ing-18", "name": "Tofu", "quantity": 200 },
+      { "id": "ing-22", "name": "Coconut Milk", "quantity": 250 },
+      { "id": "ing-23", "name": "Red Curry Paste", "quantity": 2 },
+      { "id": "ing-21", "name": "Broccoli", "quantity": 100 },
+      { "id": "ing-20", "name": "Rice", "quantity": 100 }
+    ],
+    "instructions": [
+      { "label": "Cook rice", "timeInMinutes": 10 },
+      { "label": "Sauté curry paste in pan", "timeInMinutes": 5 },
+      { "label": "Add tofu and broccoli", "timeInMinutes": 10 },
+      { "label": "Add coconut milk and simmer", "timeInMinutes": 5 },
+      { "label": "Serve with rice" }
+    ],
+    "nutritionalInfo": {
+      "protein": 22,
+      "carbs": 50,
+      "fat": 24
+    }
+  },
+  {
+    "id": "rec-11",
+    "image": "https://www.onceuponachef.com/images/2023/08/Beef-Tacos.jpg",
+    "title": "Beef Tacos",
+    "cookingTimeInMin": 25,
+    "difficulty": "Easy",
+    "dietaryTags": [],
+    "cuisine": "Mexican",
+    "ingredients": [
+      { "id": "ing1", "name": "Chicken Breast", "quantity": 200 },
+      { "id": "ing3", "name": "Garlic", "quantity": 2 },
+      { "id": "ing2", "name": "Olive Oil", "quantity": 1 },
+      { "id": "ing6", "name": "Tomato Sauce", "quantity": 50 },
+      { "id": "ing7", "name": "Basil", "quantity": 3 }
     ],
     "instructions": [
       {
-        "label": "Boil water and cook spaghetti until al dente",
+        "label": "Cook minced meat with garlic and olive oil",
         "timeInMinutes": 10
       },
+      { "label": "Add tomato sauce and simmer", "timeInMinutes": 5 },
+      { "label": "Warm tortillas and assemble tacos" }
+    ],
+    "nutritionalInfo": {
+      "protein": 30,
+      "carbs": 35,
+      "fat": 18
+    }
+  },
+  {
+    "id": "rec-12",
+    "image": "https://s01.video.glbimg.com/x720/13055720.jpg",
+    "title": "Creamy Mushroom Risotto",
+    "cookingTimeInMin": 40,
+    "difficulty": "Complex",
+    "dietaryTags": ["Gluten Free"],
+    "cuisine": "Italian",
+    "ingredients": [
+      { "id": "ing5", "name": "Parmesan Cheese", "quantity": 50 },
+      { "id": "ing2", "name": "Olive Oil", "quantity": 2 },
+      { "id": "ing3", "name": "Garlic", "quantity": 1 },
+      { "id": "ing10", "name": "Rice", "quantity": 150 }
+    ],
+    "instructions": [
+      { "label": "Sauté garlic in olive oil", "timeInMinutes": 5 },
+      { "label": "Add rice and stir", "timeInMinutes": 5 },
       {
-        "label": "Heat olive oil in a pan and sauté garlic",
-        "timeInMinutes": 2
+        "label": "Gradually add broth and cook until creamy",
+        "timeInMinutes": 25
       },
-      {
-        "label": "Add cherry tomatoes and cook until softened",
-        "timeInMinutes": 5
-      },
-      {
-        "label": "Mix in the cooked spaghetti and toss with basil",
-        "timeInMinutes": 3
-      },
-      { "label": "Serve warm and enjoy" }
+      { "label": "Stir in cheese and serve" }
+    ],
+    "nutritionalInfo": {
+      "protein": 15,
+      "carbs": 60,
+      "fat": 14
+    }
+  },
+  {
+    "id": "rec-13",
+    "image": "https://static01.nyt.com/images/2019/01/15/dining/mrs-chickpeas-with-baby-spinach/merlin_148333146_7dc41b22-3671-43a5-a168-9f78701be99e-videoSixteenByNineJumbo1600.jpg",
+    "title": "Spinach Chickpea Salad",
+    "cookingTimeInMin": 10,
+    "difficulty": "Easy",
+    "dietaryTags": ["Vegan", "Gluten Free", "Diary Free"],
+    "cuisine": "Mediterranean",
+    "ingredients": [
+      { "id": "ing14", "name": "Chickpeas", "quantity": 100 },
+      { "id": "ing15", "name": "Spinach", "quantity": 100 },
+      { "id": "ing2", "name": "Olive Oil", "quantity": 1 },
+      { "id": "ing7", "name": "Basil", "quantity": 2 }
+    ],
+    "instructions": [
+      { "label": "Rinse chickpeas and spinach" },
+      { "label": "Toss all ingredients with olive oil and herbs" }
     ],
     "nutritionalInfo": {
       "protein": 12,
-      "carbs": 65,
+      "carbs": 25,
+      "fat": 10
+    }
+  },
+  {
+    "id": "rec-14",
+    "image": "https://glutenfreegoddessrecipes.com/wp-content/uploads/2024/11/stir-fried-vegetables-recipe-1732694128.jpg",
+    "title": "Thai Basil Tofu",
+    "cookingTimeInMin": 20,
+    "difficulty": "Medium",
+    "dietaryTags": ["Vegan", "Diary Free"],
+    "cuisine": "Thai",
+    "ingredients": [
+      { "id": "ing8", "name": "Tofu", "quantity": 200 },
+      { "id": "ing9", "name": "Soy Sauce", "quantity": 2 },
+      { "id": "ing7", "name": "Basil", "quantity": 6 },
+      { "id": "ing11", "name": "Broccoli", "quantity": 80 }
+    ],
+    "instructions": [
+      { "label": "Sauté tofu until golden", "timeInMinutes": 10 },
+      { "label": "Add soy sauce and broccoli", "timeInMinutes": 5 },
+      { "label": "Stir in fresh basil and cook briefly" }
+    ],
+    "nutritionalInfo": {
+      "protein": 20,
+      "carbs": 15,
+      "fat": 14
+    }
+  },
+  {
+    "id": "rec-15",
+    "image": "https://www.allrecipes.com/thmb/QiGptPjQB5mqSXGVxE4sLPMJs_4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/AR-269500-creamy-garlic-pasta-Beauties-2x1-bcd9cb83138849e4b17104a1cd51d063.jpg",
+    "title": "Creamy Spinach Pasta",
+    "cookingTimeInMin": 25,
+    "difficulty": "Medium",
+    "dietaryTags": [],
+    "cuisine": "Italian",
+    "ingredients": [
+      { "id": "ing4", "name": "Pasta", "quantity": 120 },
+      { "id": "ing15", "name": "Spinach", "quantity": 100 },
+      { "id": "ing5", "name": "Parmesan Cheese", "quantity": 40 },
+      { "id": "ing2", "name": "Olive Oil", "quantity": 1 },
+      { "id": "ing3", "name": "Garlic", "quantity": 1 }
+    ],
+    "instructions": [
+      { "label": "Cook pasta", "timeInMinutes": 10 },
+      { "label": "Sauté garlic in olive oil", "timeInMinutes": 3 },
+      { "label": "Add spinach and cook down", "timeInMinutes": 5 },
+      { "label": "Combine with pasta and cheese" }
+    ],
+    "nutritionalInfo": {
+      "protein": 18,
+      "carbs": 55,
+      "fat": 17
+    }
+  },
+  {
+    "id": "rec-16",
+    "image": "https://s01.video.glbimg.com/x720/13055720.jpg",
+    "title": "Garlic Butter Salmon",
+    "cookingTimeInMin": 20,
+    "difficulty": "Easy",
+    "dietaryTags": ["Gluten Free"],
+    "cuisine": "American",
+    "ingredients": [
+      { "id": "ing1", "name": "Chicken Breast", "quantity": 200 },
+      { "id": "ing3", "name": "Garlic", "quantity": 3 },
+      { "id": "ing2", "name": "Olive Oil", "quantity": 2 },
+      { "id": "ing11", "name": "Broccoli", "quantity": 100 },
+      { "id": "ing10", "name": "Rice", "quantity": 100 }
+    ],
+    "instructions": [
+      { "label": "Sear salmon in garlic and oil", "timeInMinutes": 10 },
+      { "label": "Steam broccoli", "timeInMinutes": 5 },
+      { "label": "Serve salmon over rice with broccoli" }
+    ],
+    "nutritionalInfo": {
+      "protein": 34,
+      "carbs": 30,
+      "fat": 16
+    }
+  },
+  {
+    "id": "rec-17",
+    "image": "https://static01.nyt.com/images/2019/01/15/dining/mrs-chickpeas-with-baby-spinach/merlin_148333146_7dc41b22-3671-43a5-a168-9f78701be99e-videoSixteenByNineJumbo1600.jpg",
+    "title": "Chickpea Spinach Wrap",
+    "cookingTimeInMin": 15,
+    "difficulty": "Easy",
+    "dietaryTags": ["Vegan", "Diary Free"],
+    "cuisine": "Mediterranean",
+    "ingredients": [
+      { "id": "ing14", "name": "Chickpeas", "quantity": 100 },
+      { "id": "ing15", "name": "Spinach", "quantity": 80 },
+      { "id": "ing2", "name": "Olive Oil", "quantity": 1 },
+      { "id": "ing7", "name": "Basil", "quantity": 3 }
+    ],
+    "instructions": [
+      { "label": "Mash chickpeas and mix with spinach and herbs" },
+      { "label": "Drizzle olive oil" },
+      { "label": "Wrap in flatbread or lettuce" }
+    ],
+    "nutritionalInfo": {
+      "protein": 14,
+      "carbs": 28,
+      "fat": 8
+    }
+  },
+  {
+    "id": "rec-18",
+    "image": "https://assets.epicurious.com/photos/59d3b24f94c5526f0b92b04f/1:1/w_2560%2Cc_limit/indian-butter-chicken-curry-recipe-100317.jpg",
+    "title": "Creamy Tofu Coconut Curry",
+    "cookingTimeInMin": 30,
+    "difficulty": "Medium",
+    "dietaryTags": ["Vegan", "Gluten Free", "Diary Free"],
+    "cuisine": "Indian",
+    "ingredients": [
+      { "id": "ing8", "name": "Tofu", "quantity": 200 },
+      { "id": "ing12", "name": "Coconut Milk", "quantity": 200 },
+      { "id": "ing13", "name": "Red Curry Paste", "quantity": 2 },
+      { "id": "ing15", "name": "Spinach", "quantity": 50 }
+    ],
+    "instructions": [
+      { "label": "Fry tofu until golden", "timeInMinutes": 10 },
+      { "label": "Add curry paste and stir", "timeInMinutes": 3 },
+      { "label": "Pour in coconut milk and simmer", "timeInMinutes": 10 },
+      { "label": "Add spinach and cook 2–3 more minutes" }
+    ],
+    "nutritionalInfo": {
+      "protein": 20,
+      "carbs": 18,
+      "fat": 22
+    }
+  },
+  {
+    "id": "rec-19",
+    "image": "https://www.allrecipes.com/thmb/QiGptPjQB5mqSXGVxE4sLPMJs_4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/AR-269500-creamy-garlic-pasta-Beauties-2x1-bcd9cb83138849e4b17104a1cd51d063.jpg",
+    "title": "Lemon Herb Pasta",
+    "cookingTimeInMin": 20,
+    "difficulty": "Easy",
+    "dietaryTags": ["Diary Free"],
+    "cuisine": "Italian",
+    "ingredients": [
+      { "id": "ing4", "name": "Pasta", "quantity": 120 },
+      { "id": "ing2", "name": "Olive Oil", "quantity": 2 },
+      { "id": "ing7", "name": "Basil", "quantity": 4 },
+      { "id": "ing3", "name": "Garlic", "quantity": 1 }
+    ],
+    "instructions": [
+      { "label": "Cook pasta", "timeInMinutes": 10 },
+      { "label": "Sauté garlic in olive oil", "timeInMinutes": 3 },
+      { "label": "Add lemon zest and herbs, mix with pasta" }
+    ],
+    "nutritionalInfo": {
+      "protein": 10,
+      "carbs": 60,
+      "fat": 12
+    }
+  },
+  {
+    "id": "rec-20",
+    "image": "https://s01.video.glbimg.com/x720/13055720.jpg",
+    "title": "Vegan Fried Rice",
+    "cookingTimeInMin": 25,
+    "difficulty": "Medium",
+    "dietaryTags": ["Vegan", "Diary Free"],
+    "cuisine": "Asian",
+    "ingredients": [
+      { "id": "ing10", "name": "Rice", "quantity": 150 },
+      { "id": "ing11", "name": "Broccoli", "quantity": 100 },
+      { "id": "ing8", "name": "Tofu", "quantity": 100 },
+      { "id": "ing9", "name": "Soy Sauce", "quantity": 2 },
+      { "id": "ing2", "name": "Olive Oil", "quantity": 1 }
+    ],
+    "instructions": [
+      { "label": "Cook rice or use pre-cooked leftover rice" },
+      { "label": "Stir fry tofu and broccoli", "timeInMinutes": 10 },
+      { "label": "Add rice and soy sauce", "timeInMinutes": 5 }
+    ],
+    "nutritionalInfo": {
+      "protein": 18,
+      "carbs": 55,
+      "fat": 10
+    }
+  },
+  {
+    "id": "rec-21",
+    "image": "https://img.freepik.com/fotos-gratis/mesa-plana-cheia-de-deliciosa-composicao-de-comida_23-2149141362.jpg?semt=ais_incoming&w=740&q=80",
+    "title": "Scrambled Eggs with Toast",
+    "cookingTimeInMin": 10,
+    "difficulty": "Easy",
+    "dietaryTags": ["Gluten Free"],
+    "cuisine": "American",
+    "ingredients": [
+      { "id": "ing16", "name": "Eggs", "quantity": 2 },
+      { "id": "ing18", "name": "Butter", "quantity": 10 },
+      { "id": "ing22", "name": "Whole Wheat Bread", "quantity": 2 }
+    ],
+    "instructions": [
+      { "label": "Whisk eggs and cook in butter", "timeInMinutes": 5 },
+      { "label": "Toast bread slices", "timeInMinutes": 3 },
+      { "label": "Serve together" }
+    ],
+    "nutritionalInfo": {
+      "protein": 14,
+      "carbs": 20,
+      "fat": 18
+    }
+  },
+  {
+    "id": "rec-22",
+    "image": "https://img.freepik.com/fotos-gratis/mesa-plana-cheia-de-deliciosa-composicao-de-comida_23-2149141362.jpg?semt=ais_incoming&w=740&q=80",
+    "title": "Banana Oatmeal Bowl",
+    "cookingTimeInMin": 10,
+    "difficulty": "Easy",
+    "dietaryTags": ["Vegan", "Diary Free"],
+    "cuisine": "American",
+    "ingredients": [
+      { "id": "ing19", "name": "Oats", "quantity": 50 },
+      { "id": "ing17", "name": "Milk", "quantity": 200 },
+      { "id": "ing20", "name": "Banana", "quantity": 1 },
+      { "id": "ing21", "name": "Maple Syrup", "quantity": 1 }
+    ],
+    "instructions": [
+      { "label": "Boil oats in milk", "timeInMinutes": 5 },
+      { "label": "Top with sliced banana and syrup" }
+    ],
+    "nutritionalInfo": {
+      "protein": 8,
+      "carbs": 45,
+      "fat": 5
+    }
+  },
+  {
+    "id": "rec-23",
+    "image": "https://img.freepik.com/fotos-gratis/mesa-plana-cheia-de-deliciosa-composicao-de-comida_23-2149141362.jpg?semt=ais_incoming&w=740&q=80",
+    "title": "Avocado Toast",
+    "cookingTimeInMin": 5,
+    "difficulty": "Easy",
+    "dietaryTags": ["Vegan", "Diary Free"],
+    "cuisine": "Californian",
+    "ingredients": [
+      { "id": "ing23", "name": "Avocado", "quantity": 1 },
+      { "id": "ing22", "name": "Whole Wheat Bread", "quantity": 2 },
+      { "id": "ing2", "name": "Olive Oil", "quantity": 1 }
+    ],
+    "instructions": [
+      { "label": "Toast bread" },
+      { "label": "Mash avocado and spread on toast" },
+      { "label": "Drizzle with olive oil" }
+    ],
+    "nutritionalInfo": {
+      "protein": 6,
+      "carbs": 24,
+      "fat": 15
+    }
+  },
+  {
+    "id": "rec-24",
+    "image": "https://img.freepik.com/fotos-gratis/mesa-plana-cheia-de-deliciosa-composicao-de-comida_23-2149141362.jpg?semt=ais_incoming&w=740&q=80",
+    "title": "Classic Scrambled Eggs on Toast",
+    "cookingTimeInMin": 10,
+    "difficulty": "Easy",
+    "dietaryTags": [],
+    "cuisine": "American",
+    "ingredients": [
+      { "id": "ing-26", "name": "Eggs", "quantity": 2 },
+      { "id": "ing-27", "name": "Milk", "quantity": 30 },
+      { "id": "ing-28", "name": "Butter", "quantity": 10 },
+      { "id": "ing-32", "name": "Whole Wheat Bread", "quantity": 2 }
+    ],
+    "instructions": [
+      { "label": "Whisk eggs with milk in a bowl.", "timeInMinutes": 2 },
+      {
+        "label": "Melt butter in a pan and cook eggs until fluffy.",
+        "timeInMinutes": 5
+      },
+      {
+        "label": "Toast bread slices and serve eggs on top.",
+        "timeInMinutes": 3
+      }
+    ],
+    "nutritionalInfo": {
+      "protein": 18,
+      "carbs": 22,
+      "fat": 15
+    }
+  },
+  {
+    "id": "rec-25",
+    "image": "https://www.shutterstock.com/image-photo/breakfast-served-coffee-orange-juice-600nw-2606264367.jpg",
+    "title": "Banana Oatmeal Bowl",
+    "cookingTimeInMin": 8,
+    "difficulty": "Easy",
+    "dietaryTags": ["Vegan", "Dairy Free"],
+    "cuisine": "American",
+    "ingredients": [
+      { "id": "ing-29", "name": "Oats", "quantity": 50 },
+      { "id": "ing-36", "name": "Almond Milk", "quantity": 150 },
+      { "id": "ing-30", "name": "Banana", "quantity": 1 },
+      { "id": "ing-31", "name": "Maple Syrup", "quantity": 1 }
+    ],
+    "instructions": [
+      {
+        "label": "Simmer oats in almond milk until creamy.",
+        "timeInMinutes": 5
+      },
+      { "label": "Slice banana and place on top.", "timeInMinutes": 1 },
+      { "label": "Drizzle with maple syrup and serve.", "timeInMinutes": 2 }
+    ],
+    "nutritionalInfo": {
+      "protein": 6,
+      "carbs": 40,
+      "fat": 4
+    }
+  },
+  {
+    "id": "rec-26",
+    "image": "https://www.shutterstock.com/image-photo/breakfast-served-coffee-orange-juice-600nw-2606264367.jpg",
+    "title": "Avocado Toast with Egg",
+    "cookingTimeInMin": 12,
+    "difficulty": "Medium",
+    "dietaryTags": [],
+    "cuisine": "Californian",
+    "ingredients": [
+      { "id": "ing-33", "name": "Avocado", "quantity": 1 },
+      { "id": "ing-26", "name": "Eggs", "quantity": 1 },
+      { "id": "ing-32", "name": "Whole Wheat Bread", "quantity": 2 },
+      { "id": "ing-28", "name": "Butter", "quantity": 5 }
+    ],
+    "instructions": [
+      { "label": "Toast the bread slices.", "timeInMinutes": 3 },
+      { "label": "Mash avocado and spread on toast.", "timeInMinutes": 2 },
+      { "label": "Fry or poach the egg.", "timeInMinutes": 5 },
+      { "label": "Place egg on toast and serve.", "timeInMinutes": 2 }
+    ],
+    "nutritionalInfo": {
+      "protein": 12,
+      "carbs": 26,
+      "fat": 22
+    }
+  },
+  {
+    "id": "rec-27",
+    "image": "https://www.shutterstock.com/image-photo/breakfast-served-coffee-orange-juice-600nw-2606264367.jpg",
+    "title": "Chia Blueberry Overnight Oats",
+    "cookingTimeInMin": 5,
+    "difficulty": "Easy",
+    "dietaryTags": ["Vegan", "Gluten Free", "Dairy Free"],
+    "cuisine": "Modern",
+    "ingredients": [
+      { "id": "ing-29", "name": "Oats", "quantity": 40 },
+      { "id": "ing-36", "name": "Almond Milk", "quantity": 150 },
+      { "id": "ing-35", "name": "Chia Seeds", "quantity": 1 },
+      { "id": "ing-34", "name": "Blueberries", "quantity": 30 },
+      { "id": "ing-31", "name": "Maple Syrup", "quantity": 1 }
+    ],
+    "instructions": [
+      {
+        "label": "Combine oats, almond milk, chia seeds, and maple syrup.",
+        "timeInMinutes": 2
+      },
+      { "label": "Refrigerate overnight.", "timeInMinutes": 0 },
+      { "label": "Top with blueberries and serve cold.", "timeInMinutes": 3 }
+    ],
+    "nutritionalInfo": {
+      "protein": 7,
+      "carbs": 30,
+      "fat": 6
+    }
+  },
+  {
+    "id": "rec-28",
+    "image": "https://www.shutterstock.com/image-photo/breakfast-served-coffee-orange-juice-600nw-2606264367.jpg",
+    "title": "Fruit & Yogurt Parfait",
+    "cookingTimeInMin": 5,
+    "difficulty": "Easy",
+    "dietaryTags": ["Gluten Free"],
+    "cuisine": "French",
+    "ingredients": [
+      { "id": "ing-39", "name": "Yogurt", "quantity": 150 },
+      { "id": "ing-34", "name": "Blueberries", "quantity": 20 },
+      { "id": "ing-37", "name": "Strawberry", "quantity": 30 },
+      { "id": "ing-38", "name": "Mango", "quantity": 30 },
+      { "id": "ing-35", "name": "Chia Seeds", "quantity": 1 }
+    ],
+    "instructions": [
+      {
+        "label": "Layer yogurt and fruits in a glass or bowl.",
+        "timeInMinutes": 3
+      },
+      { "label": "Sprinkle chia seeds on top.", "timeInMinutes": 1 },
+      { "label": "Serve immediately or chilled.", "timeInMinutes": 1 }
+    ],
+    "nutritionalInfo": {
+      "protein": 9,
+      "carbs": 28,
+      "fat": 5
+    }
+  },
+  {
+    "id": "rec-29",
+    "image": "https://images.contentstack.io/v3/assets/bltcedd8dbd5891265b/bltff83a08b0ab08cb4/664cbe0dece86b22ce53e9bc/breakfast-meat-spread.jpg",
+    "title": "Strawberry Mango Yogurt Smoothie",
+    "cookingTimeInMin": 5,
+    "difficulty": "Easy",
+    "dietaryTags": ["Gluten Free"],
+    "cuisine": "Tropical",
+    "ingredients": [
+      { "id": "ing-37", "name": "Strawberry", "quantity": 50 },
+      { "id": "ing-38", "name": "Mango", "quantity": 50 },
+      { "id": "ing-39", "name": "Yogurt", "quantity": 100 },
+      { "id": "ing-36", "name": "Almond Milk", "quantity": 100 },
+      { "id": "ing-31", "name": "Maple Syrup", "quantity": 1 }
+    ],
+    "instructions": [
+      { "label": "Combine all ingredients in a blender.", "timeInMinutes": 1 },
+      { "label": "Blend until smooth.", "timeInMinutes": 2 },
+      { "label": "Serve cold in a glass.", "timeInMinutes": 2 }
+    ],
+    "nutritionalInfo": {
+      "protein": 6,
+      "carbs": 32,
+      "fat": 4
+    }
+  },
+  {
+    "id": "rec-30",
+    "image": "https://images.contentstack.io/v3/assets/bltcedd8dbd5891265b/bltff83a08b0ab08cb4/664cbe0dece86b22ce53e9bc/breakfast-meat-spread.jpg",
+    "title": "Banana Butter Toast",
+    "cookingTimeInMin": 5,
+    "difficulty": "Easy",
+    "dietaryTags": [],
+    "cuisine": "American",
+    "ingredients": [
+      { "id": "ing-32", "name": "Whole Wheat Bread", "quantity": 2 },
+      { "id": "ing-30", "name": "Banana", "quantity": 1 },
+      { "id": "ing-28", "name": "Butter", "quantity": 10 },
+      { "id": "ing-31", "name": "Maple Syrup", "quantity": 1 }
+    ],
+    "instructions": [
+      { "label": "Toast the bread slices.", "timeInMinutes": 2 },
+      { "label": "Spread butter on warm toast.", "timeInMinutes": 1 },
+      { "label": "Slice banana and layer on toast.", "timeInMinutes": 1 },
+      { "label": "Drizzle with maple syrup and serve.", "timeInMinutes": 1 }
+    ],
+    "nutritionalInfo": {
+      "protein": 5,
+      "carbs": 30,
+      "fat": 10
+    }
+  },
+  {
+    "id": "rec-31",
+    "image": "https://images.contentstack.io/v3/assets/bltcedd8dbd5891265b/bltff83a08b0ab08cb4/664cbe0dece86b22ce53e9bc/breakfast-meat-spread.jpg",
+    "title": "French Toast with Maple Syrup",
+    "cookingTimeInMin": 10,
+    "difficulty": "Medium",
+    "dietaryTags": [],
+    "cuisine": "French",
+    "ingredients": [
+      { "id": "ing-32", "name": "Whole Wheat Bread", "quantity": 2 },
+      { "id": "ing-26", "name": "Eggs", "quantity": 1 },
+      { "id": "ing-27", "name": "Milk", "quantity": 50 },
+      { "id": "ing-28", "name": "Butter", "quantity": 5 },
+      { "id": "ing-31", "name": "Maple Syrup", "quantity": 1 }
+    ],
+    "instructions": [
+      {
+        "label": "Whisk egg and milk together in a shallow bowl.",
+        "timeInMinutes": 2
+      },
+      {
+        "label": "Dip each bread slice into the mixture, coating both sides.",
+        "timeInMinutes": 2
+      },
+      {
+        "label": "Heat butter in a pan and fry bread until golden on both sides.",
+        "timeInMinutes": 4
+      },
+      { "label": "Drizzle with maple syrup and serve.", "timeInMinutes": 2 }
+    ],
+    "nutritionalInfo": {
+      "protein": 10,
+      "carbs": 28,
+      "fat": 11
+    }
+  },
+  {
+    "id": "rec-32",
+    "image": "https://images.contentstack.io/v3/assets/bltcedd8dbd5891265b/bltff83a08b0ab08cb4/664cbe0dece86b22ce53e9bc/breakfast-meat-spread.jpg",
+    "title": "Mango & Blueberry Chia Pudding",
+    "cookingTimeInMin": 5,
+    "difficulty": "Easy",
+    "dietaryTags": ["Vegan", "Gluten Free", "Dairy Free"],
+    "cuisine": "Fusion",
+    "ingredients": [
+      { "id": "ing-36", "name": "Almond Milk", "quantity": 150 },
+      { "id": "ing-35", "name": "Chia Seeds", "quantity": 2 },
+      { "id": "ing-38", "name": "Mango", "quantity": 50 },
+      { "id": "ing-34", "name": "Blueberries", "quantity": 30 },
+      { "id": "ing-31", "name": "Maple Syrup", "quantity": 1 }
+    ],
+    "instructions": [
+      {
+        "label": "Mix chia seeds with almond milk and maple syrup.",
+        "timeInMinutes": 2
+      },
+      {
+        "label": "Refrigerate for at least 2 hours or overnight.",
+        "timeInMinutes": 0
+      },
+      {
+        "label": "Top with diced mango and blueberries before serving.",
+        "timeInMinutes": 3
+      }
+    ],
+    "nutritionalInfo": {
+      "protein": 6,
+      "carbs": 22,
       "fat": 8
     }
   }
