@@ -4,7 +4,13 @@
  * give me a react context that keeps its state synced with localStorage
  */
 "use client";
-import { DailyPlan, MealType } from "@/types";
+import {
+  DailyPlan,
+  FullRecipeIngredient,
+  Ingredient,
+  MealType,
+  Recipe,
+} from "@/types";
 import React, {
   createContext,
   ReactNode,
@@ -12,11 +18,16 @@ import React, {
   useEffect,
   useState,
 } from "react";
+import mockIngredients from "../../../mock-data/ingredients.json";
+import { useRecipeGalleryContext } from "@/app/recipe-gallery/context/RecipeGalleryContext";
 
 type MealPlannerContextType = {
   mealPlan: DailyPlan[];
   updateMealPlan: (data: UpdateMealData) => void;
   weekdays: string[];
+  getIngredientCategories: () => string[];
+  shoplist: FullRecipeIngredient[];
+  ingredients: Ingredient[];
 };
 
 type UpdateMealData = {
@@ -36,14 +47,57 @@ const MealPlannerContext = createContext<MealPlannerContextType | undefined>(
 );
 
 const MEAL_PLANNER_KEY = "meal_planner";
+const SHOPPING_LIST_KEY = "shopping_list";
 
 export const MealPlannerProvider = ({ children }: { children: ReactNode }) => {
   const [mealPlan, setMealPlan] = useState<DailyPlan[]>(defaultValue);
+  const [shoplist, setShoplist] = useState<FullRecipeIngredient[]>([]);
+  const { recipes } = useRecipeGalleryContext();
   const weekdays = [...Array(7).keys()].map((day) =>
     new Intl.DateTimeFormat("en-US", { weekday: "long" }).format(
       new Date(Date.UTC(2021, 0, day + 4)) // ensures Sunday = 0
     )
   );
+
+  // todo: fix type
+  const getRequiredIngredientsForPlan = (
+    newDailyPlan?: DailyPlan[]
+  ): FullRecipeIngredient[] => {
+    const weekMeals: Recipe[] = [];
+    const plan = newDailyPlan || mealPlan;
+    plan.forEach((weekDay) => {
+      const breakfast = recipes.find((r) => r.id === weekDay.breakfast);
+      const lunch = recipes.find((r) => r.id === weekDay.lunch);
+      const dinner = recipes.find((r) => r.id === weekDay.dinner);
+      if (breakfast) {
+        weekMeals.push(breakfast);
+      }
+      if (lunch) {
+        weekMeals.push(lunch);
+      }
+      if (dinner) {
+        weekMeals.push(dinner);
+      }
+    });
+
+    return weekMeals.flatMap((meal) => {
+      return meal.ingredients.map((recipeIngredient) => {
+        const ingredient = mockIngredients.find(
+          (ing) => ing.id === recipeIngredient.id
+        );
+        if (!ingredient) {
+          throw new Error("ingredient not found" + recipeIngredient.id);
+        }
+        return { ...recipeIngredient, ...ingredient, recipeName: meal.title };
+      });
+    });
+  };
+
+  const getIngredientCategories = () => {
+    return [
+      ...new Set(mockIngredients.map((ingredient) => ingredient.category)),
+    ];
+  };
 
   const updateMealPlan = ({
     selectedDayIndex,
@@ -58,25 +112,51 @@ export const MealPlannerProvider = ({ children }: { children: ReactNode }) => {
 
     setMealPlan(newPlan);
     localStorage.setItem(MEAL_PLANNER_KEY, JSON.stringify(newPlan));
+
+    const newShoppingList = getRequiredIngredientsForPlan(newPlan);
+    localStorage.setItem(SHOPPING_LIST_KEY, JSON.stringify(newShoppingList));
+    setShoplist(newShoppingList);
   };
 
   useEffect(() => {
-    const saved = localStorage.getItem(MEAL_PLANNER_KEY);
-    if (saved) {
+    const savedWeekPlan = localStorage.getItem(MEAL_PLANNER_KEY);
+    const savedShoppingList = localStorage.getItem(SHOPPING_LIST_KEY);
+    if (savedWeekPlan) {
       // if value exists, load from localStorage to context
       try {
-        setMealPlan(JSON.parse(saved));
+        setMealPlan(JSON.parse(savedWeekPlan));
       } catch (e) {
-        console.warn("Failed to parse localStorage settings", e);
+        console.warn("Failed to parse MEAL_PLANNER_KEY localStorage", e);
       }
     } else {
       // if not, set default value
       localStorage.setItem(MEAL_PLANNER_KEY, JSON.stringify(mealPlan));
     }
+
+    if (savedShoppingList) {
+      // if value exists, load from localStorage to context
+      try {
+        setShoplist(JSON.parse(savedShoppingList));
+      } catch (e) {
+        console.warn("Failed to parse SHOPPING_LIST_KEY localStorage", e);
+      }
+    } else {
+      // if not, set default value
+      localStorage.setItem(SHOPPING_LIST_KEY, JSON.stringify({}));
+    }
   }, []);
 
   return (
-    <MealPlannerContext.Provider value={{ mealPlan, updateMealPlan, weekdays }}>
+    <MealPlannerContext.Provider
+      value={{
+        mealPlan,
+        updateMealPlan,
+        weekdays,
+        getIngredientCategories,
+        shoplist,
+        ingredients: mockIngredients as Ingredient[],
+      }}
+    >
       {children}
     </MealPlannerContext.Provider>
   );

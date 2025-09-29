@@ -1,3 +1,5 @@
+import ShoppingListContainer from "./components/ShoppingListContainer";
+
 export default function ShoppingListPage() {
-  return <p>todo: shopping list</p>;
+  return <ShoppingListContainer />;
 }

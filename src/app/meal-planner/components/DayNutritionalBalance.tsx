@@ -4,13 +4,11 @@ import { PieChart } from "@mui/x-charts";
 
 export default function DayNutritionalBalance({
   plan,
-  weekday,
 }: {
   plan: Record<MealType, string | null>;
-  weekday: string;
 }) {
   const { getRecipeById } = useRecipeGalleryContext();
-  const dailyNutritionalBalanceTotal = [
+  const dailyBalanceTotal = [
     getRecipeById(plan.breakfast),
     getRecipeById(plan.lunch),
     getRecipeById(plan.dinner),
@@ -28,9 +26,9 @@ export default function DayNutritionalBalance({
     );
 
   const dailyTotal = [
-    { label: "Protein", value: dailyNutritionalBalanceTotal.protein },
-    { label: "Fat", value: dailyNutritionalBalanceTotal.fat },
-    { label: "Carbs", value: dailyNutritionalBalanceTotal.carbs },
+    { label: "Protein", value: dailyBalanceTotal.protein },
+    { label: "Fat", value: dailyBalanceTotal.fat },
+    { label: "Carbs", value: dailyBalanceTotal.carbs },
   ];
 
   const dailyRecomendation = [

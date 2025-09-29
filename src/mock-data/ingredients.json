@@ -189,13 +189,6 @@
     "estimatedCostPerUnit": 0.007
   },
   {
-    "id": "ing-28",
-    "name": "Butter",
-    "unit": "gram",
-    "category": "dairy",
-    "estimatedCostPerUnit": 0.01
-  },
-  {
     "id": "ing-29",
     "name": "Oats",
     "unit": "gram",
@@ -269,7 +262,7 @@
     "id": "ing-39",
     "name": "Yogurt",
     "unit": "ml",
-    "category": "diary",
+    "category": "dairy",
     "estimatedCostPerUnit": 0.1
   },
   {

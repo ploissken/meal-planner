@@ -11,6 +11,16 @@ export interface RecipeIngredient {
   name: string;
   quantity: number;
 }
+// todo: make this type smarter
+export interface FullRecipeIngredient {
+  recipeName: string;
+  id: string;
+  name: string;
+  unit: string;
+  category: string;
+  estimatedCostPerUnit: number;
+  quantity: number;
+}
 
 export interface InstructionStep {
   label: string;

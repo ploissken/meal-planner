@@ -275,11 +275,11 @@
     "dietaryTags": [],
     "cuisine": "Mexican",
     "ingredients": [
-      { "id": "ing1", "name": "Chicken Breast", "quantity": 200 },
-      { "id": "ing3", "name": "Garlic", "quantity": 2 },
-      { "id": "ing2", "name": "Olive Oil", "quantity": 1 },
-      { "id": "ing6", "name": "Tomato Sauce", "quantity": 50 },
-      { "id": "ing7", "name": "Basil", "quantity": 3 }
+      { "id": "ing-11", "name": "Chicken Breast", "quantity": 200 },
+      { "id": "ing-13", "name": "Garlic", "quantity": 2 },
+      { "id": "ing-12", "name": "Olive Oil", "quantity": 1 },
+      { "id": "ing-16", "name": "Tomato Sauce", "quantity": 50 },
+      { "id": "ing-17", "name": "Basil", "quantity": 3 }
     ],
     "instructions": [
       {
@@ -304,10 +304,10 @@
     "dietaryTags": ["Gluten Free"],
     "cuisine": "Italian",
     "ingredients": [
-      { "id": "ing5", "name": "Parmesan Cheese", "quantity": 50 },
-      { "id": "ing2", "name": "Olive Oil", "quantity": 2 },
-      { "id": "ing3", "name": "Garlic", "quantity": 1 },
-      { "id": "ing10", "name": "Rice", "quantity": 150 }
+      { "id": "ing-15", "name": "Parmesan Cheese", "quantity": 50 },
+      { "id": "ing-12", "name": "Olive Oil", "quantity": 2 },
+      { "id": "ing-13", "name": "Garlic", "quantity": 1 },
+      { "id": "ing-20", "name": "Rice", "quantity": 150 }
     ],
     "instructions": [
       { "label": "Sauté garlic in olive oil", "timeInMinutes": 5 },
@@ -333,10 +333,10 @@
     "dietaryTags": ["Vegan", "Gluten Free", "Diary Free"],
     "cuisine": "Mediterranean",
     "ingredients": [
-      { "id": "ing14", "name": "Chickpeas", "quantity": 100 },
-      { "id": "ing15", "name": "Spinach", "quantity": 100 },
-      { "id": "ing2", "name": "Olive Oil", "quantity": 1 },
-      { "id": "ing7", "name": "Basil", "quantity": 2 }
+      { "id": "ing-24", "name": "Chickpeas", "quantity": 100 },
+      { "id": "ing-25", "name": "Spinach", "quantity": 100 },
+      { "id": "ing-12", "name": "Olive Oil", "quantity": 1 },
+      { "id": "ing-17", "name": "Basil", "quantity": 2 }
     ],
     "instructions": [
       { "label": "Rinse chickpeas and spinach" },
@@ -357,10 +357,10 @@
     "dietaryTags": ["Vegan", "Diary Free"],
     "cuisine": "Thai",
     "ingredients": [
-      { "id": "ing8", "name": "Tofu", "quantity": 200 },
-      { "id": "ing9", "name": "Soy Sauce", "quantity": 2 },
-      { "id": "ing7", "name": "Basil", "quantity": 6 },
-      { "id": "ing11", "name": "Broccoli", "quantity": 80 }
+      { "id": "ing-18", "name": "Tofu", "quantity": 200 },
+      { "id": "ing-19", "name": "Soy Sauce", "quantity": 2 },
+      { "id": "ing-17", "name": "Basil", "quantity": 6 },
+      { "id": "ing-21", "name": "Broccoli", "quantity": 80 }
     ],
     "instructions": [
       { "label": "Sauté tofu until golden", "timeInMinutes": 10 },
@@ -382,11 +382,11 @@
     "dietaryTags": [],
     "cuisine": "Italian",
     "ingredients": [
-      { "id": "ing4", "name": "Pasta", "quantity": 120 },
-      { "id": "ing15", "name": "Spinach", "quantity": 100 },
-      { "id": "ing5", "name": "Parmesan Cheese", "quantity": 40 },
-      { "id": "ing2", "name": "Olive Oil", "quantity": 1 },
-      { "id": "ing3", "name": "Garlic", "quantity": 1 }
+      { "id": "ing-14", "name": "Pasta", "quantity": 120 },
+      { "id": "ing-25", "name": "Spinach", "quantity": 100 },
+      { "id": "ing-15", "name": "Parmesan Cheese", "quantity": 40 },
+      { "id": "ing-12", "name": "Olive Oil", "quantity": 1 },
+      { "id": "ing-13", "name": "Garlic", "quantity": 1 }
     ],
     "instructions": [
       { "label": "Cook pasta", "timeInMinutes": 10 },
@@ -409,11 +409,11 @@
     "dietaryTags": ["Gluten Free"],
     "cuisine": "American",
     "ingredients": [
-      { "id": "ing1", "name": "Chicken Breast", "quantity": 200 },
-      { "id": "ing3", "name": "Garlic", "quantity": 3 },
-      { "id": "ing2", "name": "Olive Oil", "quantity": 2 },
-      { "id": "ing11", "name": "Broccoli", "quantity": 100 },
-      { "id": "ing10", "name": "Rice", "quantity": 100 }
+      { "id": "ing-11", "name": "Chicken Breast", "quantity": 200 },
+      { "id": "ing-13", "name": "Garlic", "quantity": 3 },
+      { "id": "ing-12", "name": "Olive Oil", "quantity": 2 },
+      { "id": "ing-21", "name": "Broccoli", "quantity": 100 },
+      { "id": "ing-20", "name": "Rice", "quantity": 100 }
     ],
     "instructions": [
       { "label": "Sear salmon in garlic and oil", "timeInMinutes": 10 },
@@ -435,10 +435,10 @@
     "dietaryTags": ["Vegan", "Diary Free"],
     "cuisine": "Mediterranean",
     "ingredients": [
-      { "id": "ing14", "name": "Chickpeas", "quantity": 100 },
-      { "id": "ing15", "name": "Spinach", "quantity": 80 },
-      { "id": "ing2", "name": "Olive Oil", "quantity": 1 },
-      { "id": "ing7", "name": "Basil", "quantity": 3 }
+      { "id": "ing-24", "name": "Chickpeas", "quantity": 100 },
+      { "id": "ing-25", "name": "Spinach", "quantity": 80 },
+      { "id": "ing-12", "name": "Olive Oil", "quantity": 1 },
+      { "id": "ing-17", "name": "Basil", "quantity": 3 }
     ],
     "instructions": [
       { "label": "Mash chickpeas and mix with spinach and herbs" },
@@ -460,10 +460,10 @@
     "dietaryTags": ["Vegan", "Gluten Free", "Diary Free"],
     "cuisine": "Indian",
     "ingredients": [
-      { "id": "ing8", "name": "Tofu", "quantity": 200 },
-      { "id": "ing12", "name": "Coconut Milk", "quantity": 200 },
-      { "id": "ing13", "name": "Red Curry Paste", "quantity": 2 },
-      { "id": "ing15", "name": "Spinach", "quantity": 50 }
+      { "id": "ing-18", "name": "Tofu", "quantity": 200 },
+      { "id": "ing-22", "name": "Coconut Milk", "quantity": 200 },
+      { "id": "ing-23", "name": "Red Curry Paste", "quantity": 2 },
+      { "id": "ing-25", "name": "Spinach", "quantity": 50 }
     ],
     "instructions": [
       { "label": "Fry tofu until golden", "timeInMinutes": 10 },
@@ -486,10 +486,10 @@
     "dietaryTags": ["Diary Free"],
     "cuisine": "Italian",
     "ingredients": [
-      { "id": "ing4", "name": "Pasta", "quantity": 120 },
-      { "id": "ing2", "name": "Olive Oil", "quantity": 2 },
-      { "id": "ing7", "name": "Basil", "quantity": 4 },
-      { "id": "ing3", "name": "Garlic", "quantity": 1 }
+      { "id": "ing-14", "name": "Pasta", "quantity": 120 },
+      { "id": "ing-12", "name": "Olive Oil", "quantity": 2 },
+      { "id": "ing-17", "name": "Basil", "quantity": 4 },
+      { "id": "ing-13", "name": "Garlic", "quantity": 1 }
     ],
     "instructions": [
       { "label": "Cook pasta", "timeInMinutes": 10 },
@@ -511,11 +511,11 @@
     "dietaryTags": ["Vegan", "Diary Free"],
     "cuisine": "Asian",
     "ingredients": [
-      { "id": "ing10", "name": "Rice", "quantity": 150 },
-      { "id": "ing11", "name": "Broccoli", "quantity": 100 },
-      { "id": "ing8", "name": "Tofu", "quantity": 100 },
-      { "id": "ing9", "name": "Soy Sauce", "quantity": 2 },
-      { "id": "ing2", "name": "Olive Oil", "quantity": 1 }
+      { "id": "ing-20", "name": "Rice", "quantity": 150 },
+      { "id": "ing-21", "name": "Broccoli", "quantity": 100 },
+      { "id": "ing-18", "name": "Tofu", "quantity": 100 },
+      { "id": "ing-19", "name": "Soy Sauce", "quantity": 2 },
+      { "id": "ing-12", "name": "Olive Oil", "quantity": 1 }
     ],
     "instructions": [
       { "label": "Cook rice or use pre-cooked leftover rice" },
@@ -537,9 +537,9 @@
     "dietaryTags": ["Gluten Free"],
     "cuisine": "American",
     "ingredients": [
-      { "id": "ing16", "name": "Eggs", "quantity": 2 },
-      { "id": "ing18", "name": "Butter", "quantity": 10 },
-      { "id": "ing22", "name": "Whole Wheat Bread", "quantity": 2 }
+      { "id": "ing-26", "name": "Eggs", "quantity": 2 },
+      { "id": "ing-28", "name": "Butter", "quantity": 10 },
+      { "id": "ing-32", "name": "Whole Wheat Bread", "quantity": 2 }
     ],
     "instructions": [
       { "label": "Whisk eggs and cook in butter", "timeInMinutes": 5 },
@@ -561,10 +561,10 @@
     "dietaryTags": ["Vegan", "Diary Free"],
     "cuisine": "American",
     "ingredients": [
-      { "id": "ing19", "name": "Oats", "quantity": 50 },
-      { "id": "ing17", "name": "Milk", "quantity": 200 },
-      { "id": "ing20", "name": "Banana", "quantity": 1 },
-      { "id": "ing21", "name": "Maple Syrup", "quantity": 1 }
+      { "id": "ing-29", "name": "Oats", "quantity": 50 },
+      { "id": "ing-27", "name": "Milk", "quantity": 200 },
+      { "id": "ing-30", "name": "Banana", "quantity": 1 },
+      { "id": "ing-31", "name": "Maple Syrup", "quantity": 1 }
     ],
     "instructions": [
       { "label": "Boil oats in milk", "timeInMinutes": 5 },
@@ -585,9 +585,9 @@
     "dietaryTags": ["Vegan", "Diary Free"],
     "cuisine": "Californian",
     "ingredients": [
-      { "id": "ing23", "name": "Avocado", "quantity": 1 },
-      { "id": "ing22", "name": "Whole Wheat Bread", "quantity": 2 },
-      { "id": "ing2", "name": "Olive Oil", "quantity": 1 }
+      { "id": "ing-33", "name": "Avocado", "quantity": 1 },
+      { "id": "ing-32", "name": "Whole Wheat Bread", "quantity": 2 },
+      { "id": "ing-12", "name": "Olive Oil", "quantity": 1 }
     ],
     "instructions": [
       { "label": "Toast bread" },
@@ -611,7 +611,7 @@
     "ingredients": [
       { "id": "ing-26", "name": "Eggs", "quantity": 2 },
       { "id": "ing-27", "name": "Milk", "quantity": 30 },
-      { "id": "ing-28", "name": "Butter", "quantity": 10 },
+      { "id": "ing-5", "name": "Butter", "quantity": 10 },
       { "id": "ing-32", "name": "Whole Wheat Bread", "quantity": 2 }
     ],
     "instructions": [
@@ -671,7 +671,7 @@
       { "id": "ing-33", "name": "Avocado", "quantity": 1 },
       { "id": "ing-26", "name": "Eggs", "quantity": 1 },
       { "id": "ing-32", "name": "Whole Wheat Bread", "quantity": 2 },
-      { "id": "ing-28", "name": "Butter", "quantity": 5 }
+      { "id": "ing-5", "name": "Butter", "quantity": 5 }
     ],
     "instructions": [
       { "label": "Toast the bread slices.", "timeInMinutes": 3 },
@@ -780,7 +780,7 @@
     "ingredients": [
       { "id": "ing-32", "name": "Whole Wheat Bread", "quantity": 2 },
       { "id": "ing-30", "name": "Banana", "quantity": 1 },
-      { "id": "ing-28", "name": "Butter", "quantity": 10 },
+      { "id": "ing-5", "name": "Butter", "quantity": 10 },
       { "id": "ing-31", "name": "Maple Syrup", "quantity": 1 }
     ],
     "instructions": [
@@ -807,7 +807,7 @@
       { "id": "ing-32", "name": "Whole Wheat Bread", "quantity": 2 },
       { "id": "ing-26", "name": "Eggs", "quantity": 1 },
       { "id": "ing-27", "name": "Milk", "quantity": 50 },
-      { "id": "ing-28", "name": "Butter", "quantity": 5 },
+      { "id": "ing-5", "name": "Butter", "quantity": 5 },
       { "id": "ing-31", "name": "Maple Syrup", "quantity": 1 }
     ],
     "instructions": [

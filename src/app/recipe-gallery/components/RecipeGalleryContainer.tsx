@@ -6,7 +6,7 @@ import { useRecipeGalleryContext } from "../context/RecipeGalleryContext";
 
 export default function RecipeGalleryContainer() {
   const { loading, recipes } = useRecipeGalleryContext();
-  console.log("recipes", recipes);
+
   return (
     <Container style={{ marginTop: "100px" }}>
       <Typography variant="h4" component="h1" sx={{ mb: 2 }}>
