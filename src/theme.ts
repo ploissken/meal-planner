@@ -9,7 +9,27 @@ const roboto = Roboto({
 });
 
 const theme = createTheme({
-  colorSchemes: { light: true, dark: true },
+  palette: {
+    mode: "dark",
+    primary: {
+      main: "#e1abff",
+    },
+    secondary: {
+      main: "#8ff378",
+    },
+    error: {
+      main: "#ef8f3a",
+    },
+    warning: {
+      main: "#f9ff23",
+    },
+    info: {
+      main: "#c160f7",
+    },
+    success: {
+      main: "#bf52f3",
+    },
+  },
   cssVariables: {
     colorSchemeSelector: "class",
   },

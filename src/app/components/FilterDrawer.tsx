@@ -1,6 +1,6 @@
 "use client";
 import { FilterListAlt } from "@mui/icons-material";
-import { Drawer, IconButton } from "@mui/material";
+import { Drawer, Fab, IconButton } from "@mui/material";
 import { useState } from "react";
 import FilterForm from "./FilterForm";
 
@@ -13,14 +13,19 @@ export default function FilterDrawer() {
 
   return (
     <>
-      <IconButton
-        color="inherit"
-        aria-label="account of current user"
+      <Fab
+        color="primary"
+        aria-label="filter and search"
         aria-haspopup="true"
         onClick={toggleDrawer(true)}
+        sx={{
+          position: "fixed",
+          bottom: "30px",
+          right: "30px",
+        }}
       >
         <FilterListAlt />
-      </IconButton>
+      </Fab>
       <Drawer open={open} onClose={toggleDrawer(false)} anchor="right">
         <FilterForm />
       </Drawer>

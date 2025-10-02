@@ -17,6 +17,7 @@ import {
   Chip,
   Stack,
   CardActions,
+  Divider,
 } from "@mui/material";
 import { Recipe } from "@/types";
 import AddRecipeToPlannerModal from "./AddRecipeToPlannerModal";
@@ -29,7 +30,7 @@ export interface RecipeCardProps {
 export const RecipeCard = ({ recipe }: RecipeCardProps) => {
   const { image, title, cookingTimeInMin, difficulty, dietaryTags } = recipe;
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ width: "100%", height: "100%" }}>
       <CardMedia
         component="img"
         height="180"
@@ -38,20 +39,32 @@ export const RecipeCard = ({ recipe }: RecipeCardProps) => {
         sx={{ objectFit: "cover" }}
       />
       <CardContent>
-        <Typography gutterBottom variant="h6" component="div">
+        <Typography
+          gutterBottom
+          variant="h6"
+          component="div"
+          sx={{ minHeight: "65px" }}
+        >
           {title}
         </Typography>
+        <Divider sx={{ marginBottom: 2 }} />
 
         <Box sx={{ display: "flex", gap: 2, mb: 1 }}>
           <Typography variant="body2" color="text.secondary">
-            ⏱ {cookingTimeInMin}
+            ⏱ {cookingTimeInMin} min
           </Typography>
           <Typography variant="body2" color="text.secondary">
             💪 {difficulty}
           </Typography>
         </Box>
 
-        <Stack direction="row" spacing={1} flexWrap="wrap" mb={2}>
+        <Stack
+          direction="row"
+          spacing={1}
+          flexWrap="wrap"
+          mb={2}
+          sx={{ minHeight: "50px" }}
+        >
           {dietaryTags.map((tag, index) => (
             <Chip key={index} label={tag} size="small" />
           ))}

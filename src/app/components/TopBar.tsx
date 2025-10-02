@@ -1,20 +1,7 @@
-"use client";
-import { Box, AppBar, Toolbar, Typography, Tabs, Tab } from "@mui/material";
-import FilterDrawer from "./FilterDrawer";
-import { SyntheticEvent, useState } from "react";
-import { usePathname, useRouter } from "next/navigation";
+import { Box, AppBar, Toolbar, Typography } from "@mui/material";
+import ResponsiveMenu from "./ResponsiveMenu";
 
 export default function TopBar() {
-  const pathname = usePathname();
-  const cleaned = pathname.replace(/^\/+/, "") || "recipe-gallery";
-  const [selectedTab, setSelectedTab] = useState(cleaned);
-  const router = useRouter();
-
-  const handleTabChange = (event: SyntheticEvent, value: string) => {
-    setSelectedTab(value);
-    router.push(value);
-  };
-
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed">
@@ -23,20 +10,7 @@ export default function TopBar() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             🍔 Neat & Fit
           </Typography>
-          <Box>
-            <Tabs
-              sx={{ height: "100%" }}
-              value={selectedTab}
-              onChange={handleTabChange}
-              aria-label="basic tabs example"
-            >
-              <Tab value="recipe-gallery" label="Recipe Gallery" />
-              <Tab value="meal-planner" label="Meal Planner" />
-              <Tab value="shopping-list" label="Shopping List" />
-            </Tabs>
-          </Box>
-
-          <FilterDrawer />
+          <ResponsiveMenu />
         </Toolbar>
       </AppBar>
     </Box>

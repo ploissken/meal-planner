@@ -3,6 +3,7 @@ import { Container, Typography, Grid } from "@mui/material";
 import { RecipeCard } from "./RecipeCard";
 import RecipeCardSkeleton from "./RecipeCardSkeleton";
 import { useRecipeGalleryContext } from "../context/RecipeGalleryContext";
+import FilterDrawer from "@/app/components/FilterDrawer";
 
 export default function RecipeGalleryContainer() {
   const { loading, recipes } = useRecipeGalleryContext();
@@ -25,11 +26,16 @@ export default function RecipeGalleryContainer() {
             </Grid>
           ))}
         {recipes.map((recipe) => (
-          <Grid key={recipe.id} size={{ xs: 4, sm: 4, md: 4, lg: 3 }}>
+          <Grid
+            key={recipe.id}
+            size={{ xs: 4, sm: 4, md: 4, lg: 3 }}
+            sx={{ justifyContent: "center", alignItems: "stretch" }}
+          >
             <RecipeCard recipe={recipe} />
           </Grid>
         ))}
       </Grid>
+      <FilterDrawer />
     </Container>
   );
 }
