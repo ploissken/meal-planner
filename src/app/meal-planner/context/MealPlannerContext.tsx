@@ -28,7 +28,7 @@ type MealPlannerContextType = {
   weekdays: string[];
   getIngredientCategories: () => string[];
   shoplist: FullRecipeIngredient[];
-  setShoplist: Dispatch<React.SetStateAction<FullRecipeIngredient[]>>;
+  updateShopList: (data: FullRecipeIngredient[]) => void;
   ingredients: Ingredient[];
 };
 
@@ -120,6 +120,11 @@ export const MealPlannerProvider = ({ children }: { children: ReactNode }) => {
     setShoplist(newShoppingList);
   };
 
+  const updateShopList = (newList: FullRecipeIngredient[]) => {
+    setShoplist(newList);
+    localStorage.setItem(SHOPPING_LIST_KEY, JSON.stringify(newList));
+  };
+
   useEffect(() => {
     const savedWeekPlan = localStorage.getItem(MEAL_PLANNER_KEY);
     const savedShoppingList = localStorage.getItem(SHOPPING_LIST_KEY);
@@ -156,7 +161,7 @@ export const MealPlannerProvider = ({ children }: { children: ReactNode }) => {
         weekdays,
         getIngredientCategories,
         shoplist,
-        setShoplist,
+        updateShopList,
         ingredients: mockIngredients as Ingredient[],
       }}
     >

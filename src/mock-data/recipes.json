@@ -11,7 +11,7 @@
       { "id": "ing-1", "name": "Flour", "quantity": 200 },
       { "id": "ing-2", "name": "Sugar", "quantity": 50 },
       { "id": "ing-3", "name": "Egg", "quantity": 2 },
-      { "id": "ing-4", "name": "Milk", "quantity": 250 },
+      { "id": "ing-27", "name": "Milk", "quantity": 250 },
       { "id": "ing-5", "name": "Butter", "quantity": 20 }
     ],
     "instructions": [
@@ -38,7 +38,7 @@
       { "id": "ing-3", "name": "Egg", "quantity": 3 },
       { "id": "ing-6", "name": "Tomato", "quantity": 100 },
       { "id": "ing-7", "name": "Onion", "quantity": 50 },
-      { "id": "ing-8", "name": "Olive Oil", "quantity": 10 }
+      { "id": "ing-12", "name": "Olive Oil", "quantity": 10 }
     ],
     "instructions": [
       { "label": "Chop tomato and onion", "timeInMinutes": 3 },
@@ -63,8 +63,8 @@
     "ingredients": [
       { "id": "ing-10", "name": "Rice", "quantity": 200 },
       { "id": "ing-7", "name": "Onion", "quantity": 60 },
-      { "id": "ing-8", "name": "Olive Oil", "quantity": 15 },
-      { "id": "ing-9", "name": "Garlic", "quantity": 10 }
+      { "id": "ing-12", "name": "Olive Oil", "quantity": 15 },
+      { "id": "ing-13", "name": "Garlic", "quantity": 3 }
     ],
     "instructions": [
       { "label": "Chop onion & garlic", "timeInMinutes": 5 },
@@ -89,8 +89,8 @@
     "ingredients": [
       { "id": "ing-6", "name": "Tomato", "quantity": 80 },
       { "id": "ing-7", "name": "Onion", "quantity": 50 },
-      { "id": "ing-9", "name": "Garlic", "quantity": 10 },
-      { "id": "ing-8", "name": "Olive Oil", "quantity": 10 }
+      { "id": "ing-13", "name": "Garlic", "quantity": 10 },
+      { "id": "ing-12", "name": "Olive Oil", "quantity": 10 }
     ],
     "instructions": [
       { "label": "Chop vegetables", "timeInMinutes": 5 },
@@ -168,7 +168,7 @@
       { "id": "ing-19", "name": "Soy Sauce", "quantity": 2 },
       { "id": "ing-21", "name": "Broccoli", "quantity": 100 },
       { "id": "ing-12", "name": "Olive Oil", "quantity": 1 },
-      { "id": "ing-20", "name": "Rice", "quantity": 100 }
+      { "id": "ing-10", "name": "Rice", "quantity": 100 }
     ],
     "instructions": [
       { "label": "Cook rice", "timeInMinutes": 10 },
@@ -222,7 +222,7 @@
     "ingredients": [
       { "id": "ing-11", "name": "Chicken Breast", "quantity": 200 },
       { "id": "ing-21", "name": "Broccoli", "quantity": 150 },
-      { "id": "ing-20", "name": "Rice", "quantity": 100 },
+      { "id": "ing-10", "name": "Rice", "quantity": 100 },
       { "id": "ing-12", "name": "Olive Oil", "quantity": 1 },
       { "id": "ing-13", "name": "Garlic", "quantity": 2 }
     ],
@@ -251,7 +251,7 @@
       { "id": "ing-22", "name": "Coconut Milk", "quantity": 250 },
       { "id": "ing-23", "name": "Red Curry Paste", "quantity": 2 },
       { "id": "ing-21", "name": "Broccoli", "quantity": 100 },
-      { "id": "ing-20", "name": "Rice", "quantity": 100 }
+      { "id": "ing-10", "name": "Rice", "quantity": 100 }
     ],
     "instructions": [
       { "label": "Cook rice", "timeInMinutes": 10 },
@@ -307,7 +307,7 @@
       { "id": "ing-15", "name": "Parmesan Cheese", "quantity": 50 },
       { "id": "ing-12", "name": "Olive Oil", "quantity": 2 },
       { "id": "ing-13", "name": "Garlic", "quantity": 1 },
-      { "id": "ing-20", "name": "Rice", "quantity": 150 }
+      { "id": "ing-10", "name": "Rice", "quantity": 150 }
     ],
     "instructions": [
       { "label": "Sauté garlic in olive oil", "timeInMinutes": 5 },
@@ -413,7 +413,7 @@
       { "id": "ing-13", "name": "Garlic", "quantity": 3 },
       { "id": "ing-12", "name": "Olive Oil", "quantity": 2 },
       { "id": "ing-21", "name": "Broccoli", "quantity": 100 },
-      { "id": "ing-20", "name": "Rice", "quantity": 100 }
+      { "id": "ing-10", "name": "Rice", "quantity": 100 }
     ],
     "instructions": [
       { "label": "Sear salmon in garlic and oil", "timeInMinutes": 10 },
@@ -511,7 +511,7 @@
     "dietaryTags": ["Vegan", "Diary Free"],
     "cuisine": "Asian",
     "ingredients": [
-      { "id": "ing-20", "name": "Rice", "quantity": 150 },
+      { "id": "ing-10", "name": "Rice", "quantity": 150 },
       { "id": "ing-21", "name": "Broccoli", "quantity": 100 },
       { "id": "ing-18", "name": "Tofu", "quantity": 100 },
       { "id": "ing-19", "name": "Soy Sauce", "quantity": 2 },

@@ -13,9 +13,10 @@ import {
   Tooltip,
   Typography,
 } from "@mui/material";
+import AddIngredientDialog from "./AddIngredientDialog";
 
 export default function CategoryList({ category }: { category: string }) {
-  const { ingredients, shoplist, setShoplist } = useMealPlannerContext();
+  const { ingredients, shoplist, updateShopList } = useMealPlannerContext();
   const requiredIngredients = shoplist.filter(
     (ingredient) => ingredient.category === category
   );
@@ -31,7 +32,7 @@ export default function CategoryList({ category }: { category: string }) {
 
   const handleCheckboxClick = (id: string) => {
     const newList = shoplist.filter((ingredient) => ingredient.id !== id);
-    setShoplist(newList);
+    updateShopList(newList);
   };
 
   return (
@@ -55,7 +56,7 @@ export default function CategoryList({ category }: { category: string }) {
             ].join(", ");
 
             return (
-              <ListItemButton role={undefined} dense key={ingredientId}>
+              <ListItemButton dense key={ingredientId}>
                 <ListItem
                   secondaryAction={
                     <Tooltip title={recipeNames}>
@@ -82,6 +83,7 @@ export default function CategoryList({ category }: { category: string }) {
               </ListItemButton>
             );
           })}
+          <AddIngredientDialog category={category} />
           {uniqueIngredients.length === 0 ? (
             <Typography textAlign="center">
               No items needed for this category 🥳
