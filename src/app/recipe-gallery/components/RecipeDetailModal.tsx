@@ -14,10 +14,12 @@ import {
 } from "@mui/material";
 import { useState } from "react";
 import { BarChart } from "@mui/x-charts/BarChart";
+import RecipeInstructionItem from "./RecipeInstructionItem";
 
 export default function RecipeDetailModal({ recipe }: { recipe: Recipe }) {
   const [open, setOpen] = useState(false);
   const titleStyle = { display: "flex", alignItems: "center", gap: 2, mt: 4 };
+
   return (
     <>
       <Button
@@ -94,9 +96,7 @@ export default function RecipeDetailModal({ recipe }: { recipe: Recipe }) {
 
           <List>
             {recipe.instructions.map((item) => (
-              <ListItem key={item.label} disablePadding>
-                <ListItemText primary={item.label} />
-              </ListItem>
+              <RecipeInstructionItem key={item.label} instruction={item} />
             ))}
           </List>
         </DialogContent>
