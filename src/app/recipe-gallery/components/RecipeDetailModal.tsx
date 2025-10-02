@@ -1,5 +1,13 @@
 import { Recipe } from "@/types";
-import { FormatListNumbered, MenuBook, PieChart } from "@mui/icons-material";
+import {
+  FormatListNumbered,
+  MenuBook,
+  PieChart,
+  Reviews,
+  Star,
+  StarHalf,
+  StarOutline,
+} from "@mui/icons-material";
 import {
   Button,
   Typography,
@@ -18,7 +26,60 @@ import RecipeInstructionItem from "./RecipeInstructionItem";
 
 export default function RecipeDetailModal({ recipe }: { recipe: Recipe }) {
   const [open, setOpen] = useState(false);
+  const [rating, setRating] = useState(0);
   const titleStyle = { display: "flex", alignItems: "center", gap: 2, mt: 4 };
+
+  const handleRating = (rate: number) => {
+    if (!rating) {
+      // not persisting vote for simplicity
+      console.info(`persist vote: { recipeId: ${recipe.id}, rate: ${rate}}`);
+      setRating(rate);
+    }
+  };
+
+  const getRecipeRating = () => {
+    const {
+      rating: { average, votes },
+    } = recipe;
+    const fullStars = Math.floor(average);
+    const hasHalfStar =
+      average - fullStars >= 0.25 && average - fullStars < 0.9;
+    const outlineStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+
+    const iconSx = rating > 0 ? {} : { cursor: "pointer" };
+
+    // mocking rate persistence for simplicity
+    const newRating = (average * votes + rating) / (votes + 1);
+    const ratingLabel =
+      rating > 0
+        ? `${newRating.toFixed(2)} (${votes + 1} votes)`
+        : `${average} (${votes} votes)`;
+
+    return (
+      <Box sx={{ paddingTop: "8px" }}>
+        {[...Array.from({ length: fullStars })].map((_, index) => (
+          <Star
+            key={index}
+            onClick={() => handleRating(index + 1)}
+            sx={iconSx}
+          />
+        ))}
+        {hasHalfStar && (
+          <StarHalf onClick={() => handleRating(fullStars + 1)} sx={iconSx} />
+        )}
+        {[...Array.from({ length: outlineStars })].map((_, index) => (
+          <StarOutline
+            key={index}
+            sx={iconSx}
+            onClick={() =>
+              handleRating(fullStars + (hasHalfStar ? 1 : 0) + index + 1)
+            }
+          />
+        ))}
+        <Typography color="lightgray">{ratingLabel}</Typography>
+      </Box>
+    );
+  };
 
   return (
     <>
@@ -72,6 +133,13 @@ export default function RecipeDetailModal({ recipe }: { recipe: Recipe }) {
             ]}
             height={250}
           />
+
+          <Typography variant="h6" sx={titleStyle}>
+            <Reviews />
+            Rating
+          </Typography>
+          <Divider />
+          {getRecipeRating()}
 
           <Typography variant="h6" sx={titleStyle}>
             <MenuBook />

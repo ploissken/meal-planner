@@ -7,6 +7,7 @@
     "difficulty": "Easy",
     "dietaryTags": ["Vegetarian"],
     "cuisine": "American",
+    "rating": { "votes": 274, "average": 3.92 },
     "ingredients": [
       { "id": "ing-1", "name": "Flour", "quantity": 200 },
       { "id": "ing-2", "name": "Sugar", "quantity": 50 },
@@ -34,6 +35,7 @@
     "difficulty": "Easy",
     "dietaryTags": ["Gluten Free"],
     "cuisine": "French",
+    "rating": { "votes": 511, "average": 4.33 },
     "ingredients": [
       { "id": "ing-3", "name": "Egg", "quantity": 3 },
       { "id": "ing-6", "name": "Tomato", "quantity": 100 },
@@ -60,6 +62,7 @@
     "difficulty": "Medium",
     "dietaryTags": ["Vegetarian", "Dairy Free"],
     "cuisine": "Italian",
+    "rating": { "votes": 118, "average": 2.47 },
     "ingredients": [
       { "id": "ing-10", "name": "Rice", "quantity": 200 },
       { "id": "ing-7", "name": "Onion", "quantity": 60 },
@@ -86,6 +89,7 @@
     "difficulty": "Easy",
     "dietaryTags": ["Vegan", "Gluten Free", "Dairy Free"],
     "cuisine": "Thai",
+    "rating": { "votes": 904, "average": 4.98 },
     "ingredients": [
       { "id": "ing-6", "name": "Tomato", "quantity": 80 },
       { "id": "ing-7", "name": "Onion", "quantity": 50 },
@@ -111,6 +115,7 @@
     "difficulty": "Medium",
     "dietaryTags": ["Vegetarian"],
     "cuisine": "Italian",
+    "rating": { "votes": 360, "average": 1.35 },
     "ingredients": [
       { "id": "ing-1", "name": "Flour", "quantity": 100 },
       { "id": "ing-6", "name": "Tomato", "quantity": 120 },
@@ -135,6 +140,7 @@
     "difficulty": "Medium",
     "dietaryTags": ["Gluten Free"],
     "cuisine": "Italian",
+    "rating": { "votes": 832, "average": 3.28 },
     "ingredients": [
       { "id": "ing-11", "name": "Chicken Breast", "quantity": 200 },
       { "id": "ing-12", "name": "Olive Oil", "quantity": 2 },
@@ -163,6 +169,7 @@
     "difficulty": "Easy",
     "dietaryTags": ["Vegan", "Gluten Free", "Diary Free"],
     "cuisine": "Asian",
+    "rating": { "votes": 426, "average": 0.65 },
     "ingredients": [
       { "id": "ing-18", "name": "Tofu", "quantity": 150 },
       { "id": "ing-19", "name": "Soy Sauce", "quantity": 2 },
@@ -192,6 +199,7 @@
     "difficulty": "Medium",
     "dietaryTags": ["Vegan", "Gluten Free", "Diary Free"],
     "cuisine": "Indian",
+    "rating": { "votes": 716, "average": 4.74 },
     "ingredients": [
       { "id": "ing-24", "name": "Chickpeas", "quantity": 200 },
       { "id": "ing-22", "name": "Coconut Milk", "quantity": 200 },
@@ -219,6 +227,7 @@
     "difficulty": "Easy",
     "dietaryTags": ["Gluten Free"],
     "cuisine": "American",
+    "rating": { "votes": 290, "average": 2.19 },
     "ingredients": [
       { "id": "ing-11", "name": "Chicken Breast", "quantity": 200 },
       { "id": "ing-21", "name": "Broccoli", "quantity": 150 },
@@ -246,6 +255,7 @@
     "difficulty": "Medium",
     "dietaryTags": ["Vegan", "Diary Free"],
     "cuisine": "Thai",
+    "rating": { "votes": 501, "average": 3.99 },
     "ingredients": [
       { "id": "ing-18", "name": "Tofu", "quantity": 200 },
       { "id": "ing-22", "name": "Coconut Milk", "quantity": 250 },
@@ -274,6 +284,7 @@
     "difficulty": "Easy",
     "dietaryTags": [],
     "cuisine": "Mexican",
+    "rating": { "votes": 112, "average": 1.83 },
     "ingredients": [
       { "id": "ing-11", "name": "Chicken Breast", "quantity": 200 },
       { "id": "ing-13", "name": "Garlic", "quantity": 2 },
@@ -303,6 +314,7 @@
     "difficulty": "Complex",
     "dietaryTags": ["Gluten Free"],
     "cuisine": "Italian",
+    "rating": { "votes": 784, "average": 2.76 },
     "ingredients": [
       { "id": "ing-15", "name": "Parmesan Cheese", "quantity": 50 },
       { "id": "ing-12", "name": "Olive Oil", "quantity": 2 },
@@ -332,6 +344,7 @@
     "difficulty": "Easy",
     "dietaryTags": ["Vegan", "Gluten Free", "Diary Free"],
     "cuisine": "Mediterranean",
+    "rating": { "votes": 334, "average": 0.22 },
     "ingredients": [
       { "id": "ing-24", "name": "Chickpeas", "quantity": 100 },
       { "id": "ing-25", "name": "Spinach", "quantity": 100 },
@@ -356,6 +369,7 @@
     "difficulty": "Medium",
     "dietaryTags": ["Vegan", "Diary Free"],
     "cuisine": "Thai",
+    "rating": { "votes": 149, "average": 1.77 },
     "ingredients": [
       { "id": "ing-18", "name": "Tofu", "quantity": 200 },
       { "id": "ing-19", "name": "Soy Sauce", "quantity": 2 },
@@ -381,6 +395,7 @@
     "difficulty": "Medium",
     "dietaryTags": [],
     "cuisine": "Italian",
+    "rating": { "votes": 909, "average": 3.45 },
     "ingredients": [
       { "id": "ing-14", "name": "Pasta", "quantity": 120 },
       { "id": "ing-25", "name": "Spinach", "quantity": 100 },
@@ -408,6 +423,7 @@
     "difficulty": "Easy",
     "dietaryTags": ["Gluten Free"],
     "cuisine": "American",
+    "rating": { "votes": 87, "average": 4.57 },
     "ingredients": [
       { "id": "ing-11", "name": "Chicken Breast", "quantity": 200 },
       { "id": "ing-13", "name": "Garlic", "quantity": 3 },
@@ -434,6 +450,7 @@
     "difficulty": "Easy",
     "dietaryTags": ["Vegan", "Diary Free"],
     "cuisine": "Mediterranean",
+    "rating": { "votes": 265, "average": 2.01 },
     "ingredients": [
       { "id": "ing-24", "name": "Chickpeas", "quantity": 100 },
       { "id": "ing-25", "name": "Spinach", "quantity": 80 },
@@ -459,6 +476,7 @@
     "difficulty": "Medium",
     "dietaryTags": ["Vegan", "Gluten Free", "Diary Free"],
     "cuisine": "Indian",
+    "rating": { "votes": 683, "average": 3.88 },
     "ingredients": [
       { "id": "ing-18", "name": "Tofu", "quantity": 200 },
       { "id": "ing-22", "name": "Coconut Milk", "quantity": 200 },
@@ -485,6 +503,7 @@
     "difficulty": "Easy",
     "dietaryTags": ["Diary Free"],
     "cuisine": "Italian",
+    "rating": { "votes": 545, "average": 2.55 },
     "ingredients": [
       { "id": "ing-14", "name": "Pasta", "quantity": 120 },
       { "id": "ing-12", "name": "Olive Oil", "quantity": 2 },
@@ -510,6 +529,7 @@
     "difficulty": "Medium",
     "dietaryTags": ["Vegan", "Diary Free"],
     "cuisine": "Asian",
+    "rating": { "votes": 775, "average": 1.12 },
     "ingredients": [
       { "id": "ing-10", "name": "Rice", "quantity": 150 },
       { "id": "ing-21", "name": "Broccoli", "quantity": 100 },
@@ -536,6 +556,7 @@
     "difficulty": "Easy",
     "dietaryTags": ["Gluten Free"],
     "cuisine": "American",
+    "rating": { "votes": 103, "average": 3.19 },
     "ingredients": [
       { "id": "ing-26", "name": "Eggs", "quantity": 2 },
       { "id": "ing-28", "name": "Butter", "quantity": 10 },
@@ -560,6 +581,7 @@
     "difficulty": "Easy",
     "dietaryTags": ["Vegan", "Diary Free"],
     "cuisine": "American",
+    "rating": { "votes": 640, "average": 4.25 },
     "ingredients": [
       { "id": "ing-29", "name": "Oats", "quantity": 50 },
       { "id": "ing-27", "name": "Milk", "quantity": 200 },
@@ -584,6 +606,7 @@
     "difficulty": "Easy",
     "dietaryTags": ["Vegan", "Diary Free"],
     "cuisine": "Californian",
+    "rating": { "votes": 195, "average": 0.79 },
     "ingredients": [
       { "id": "ing-33", "name": "Avocado", "quantity": 1 },
       { "id": "ing-32", "name": "Whole Wheat Bread", "quantity": 2 },
@@ -608,6 +631,7 @@
     "difficulty": "Easy",
     "dietaryTags": [],
     "cuisine": "American",
+    "rating": { "votes": 402, "average": 4.67 },
     "ingredients": [
       { "id": "ing-26", "name": "Eggs", "quantity": 2 },
       { "id": "ing-27", "name": "Milk", "quantity": 30 },
@@ -639,6 +663,7 @@
     "difficulty": "Easy",
     "dietaryTags": ["Vegan", "Dairy Free"],
     "cuisine": "American",
+    "rating": { "votes": 313, "average": 3.06 },
     "ingredients": [
       { "id": "ing-29", "name": "Oats", "quantity": 50 },
       { "id": "ing-36", "name": "Almond Milk", "quantity": 150 },
@@ -667,6 +692,7 @@
     "difficulty": "Medium",
     "dietaryTags": [],
     "cuisine": "Californian",
+    "rating": { "votes": 220, "average": 2.91 },
     "ingredients": [
       { "id": "ing-33", "name": "Avocado", "quantity": 1 },
       { "id": "ing-26", "name": "Eggs", "quantity": 1 },
@@ -693,6 +719,7 @@
     "difficulty": "Easy",
     "dietaryTags": ["Vegan", "Gluten Free", "Dairy Free"],
     "cuisine": "Modern",
+    "rating": { "votes": 366, "average": 0.18 },
     "ingredients": [
       { "id": "ing-29", "name": "Oats", "quantity": 40 },
       { "id": "ing-36", "name": "Almond Milk", "quantity": 150 },
@@ -722,6 +749,7 @@
     "difficulty": "Easy",
     "dietaryTags": ["Gluten Free"],
     "cuisine": "French",
+    "rating": { "votes": 487, "average": 3.71 },
     "ingredients": [
       { "id": "ing-39", "name": "Yogurt", "quantity": 150 },
       { "id": "ing-34", "name": "Blueberries", "quantity": 20 },
@@ -751,6 +779,7 @@
     "difficulty": "Easy",
     "dietaryTags": ["Gluten Free"],
     "cuisine": "Tropical",
+    "rating": { "votes": 228, "average": 2.36 },
     "ingredients": [
       { "id": "ing-37", "name": "Strawberry", "quantity": 50 },
       { "id": "ing-38", "name": "Mango", "quantity": 50 },
@@ -777,6 +806,7 @@
     "difficulty": "Easy",
     "dietaryTags": [],
     "cuisine": "American",
+    "rating": { "votes": 707, "average": 4.89 },
     "ingredients": [
       { "id": "ing-32", "name": "Whole Wheat Bread", "quantity": 2 },
       { "id": "ing-30", "name": "Banana", "quantity": 1 },
@@ -803,6 +833,7 @@
     "difficulty": "Medium",
     "dietaryTags": [],
     "cuisine": "French",
+    "rating": { "votes": 313, "average": 3.06 },
     "ingredients": [
       { "id": "ing-32", "name": "Whole Wheat Bread", "quantity": 2 },
       { "id": "ing-26", "name": "Eggs", "quantity": 1 },
@@ -839,6 +870,7 @@
     "difficulty": "Easy",
     "dietaryTags": ["Vegan", "Gluten Free", "Dairy Free"],
     "cuisine": "Fusion",
+    "rating": { "votes": 487, "average": 3.71 },
     "ingredients": [
       { "id": "ing-36", "name": "Almond Milk", "quantity": 150 },
       { "id": "ing-35", "name": "Chia Seeds", "quantity": 2 },

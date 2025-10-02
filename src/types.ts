@@ -43,6 +43,10 @@ export interface Recipe {
   difficulty: Difficulty;
   dietaryTags: string[];
   cuisine: string;
+  rating: {
+    votes: number;
+    average: number;
+  };
   ingredients: RecipeIngredient[];
   instructions: InstructionStep[];
   nutritionalInfo: NutritionalInfo;
