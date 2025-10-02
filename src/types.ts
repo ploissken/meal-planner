@@ -59,3 +59,8 @@ export type DailyPlan = {
 };
 
 export type MealType = "breakfast" | "lunch" | "dinner";
+
+export interface RecipeNote {
+  recipeId: string;
+  note: string;
+}

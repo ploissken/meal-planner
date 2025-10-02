@@ -1,13 +1,5 @@
 import { Recipe } from "@/types";
-import {
-  FormatListNumbered,
-  MenuBook,
-  PieChart,
-  Reviews,
-  Star,
-  StarHalf,
-  StarOutline,
-} from "@mui/icons-material";
+import { PieChart } from "@mui/icons-material";
 import {
   Button,
   Typography,
@@ -23,61 +15,27 @@ import {
 import { useState } from "react";
 import { BarChart } from "@mui/x-charts/BarChart";
 import RecipeInstructionItem from "./RecipeInstructionItem";
+import RecipeRating from "./RecipeRating";
+import RecipeNotes from "./RecipeNotes";
 
 export default function RecipeDetailModal({ recipe }: { recipe: Recipe }) {
   const [open, setOpen] = useState(false);
-  const [rating, setRating] = useState(0);
-  const titleStyle = { display: "flex", alignItems: "center", gap: 2, mt: 4 };
+  const {
+    nutritionalInfo: { carbs, protein, fat },
+  } = recipe;
 
-  const handleRating = (rate: number) => {
-    if (!rating) {
-      // not persisting vote for simplicity
-      console.info(`persist vote: { recipeId: ${recipe.id}, rate: ${rate}}`);
-      setRating(rate);
-    }
-  };
-
-  const getRecipeRating = () => {
-    const {
-      rating: { average, votes },
-    } = recipe;
-    const fullStars = Math.floor(average);
-    const hasHalfStar =
-      average - fullStars >= 0.25 && average - fullStars < 0.9;
-    const outlineStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
-
-    const iconSx = rating > 0 ? {} : { cursor: "pointer" };
-
-    // mocking rate persistence for simplicity
-    const newRating = (average * votes + rating) / (votes + 1);
-    const ratingLabel =
-      rating > 0
-        ? `${newRating.toFixed(2)} (${votes + 1} votes)`
-        : `${average} (${votes} votes)`;
-
+  const buildSectionTitle = (title: string) => {
     return (
-      <Box sx={{ paddingTop: "8px" }}>
-        {[...Array.from({ length: fullStars })].map((_, index) => (
-          <Star
-            key={index}
-            onClick={() => handleRating(index + 1)}
-            sx={iconSx}
-          />
-        ))}
-        {hasHalfStar && (
-          <StarHalf onClick={() => handleRating(fullStars + 1)} sx={iconSx} />
-        )}
-        {[...Array.from({ length: outlineStars })].map((_, index) => (
-          <StarOutline
-            key={index}
-            sx={iconSx}
-            onClick={() =>
-              handleRating(fullStars + (hasHalfStar ? 1 : 0) + index + 1)
-            }
-          />
-        ))}
-        <Typography color="lightgray">{ratingLabel}</Typography>
-      </Box>
+      <>
+        <Typography
+          variant="h6"
+          sx={{ display: "flex", alignItems: "center", gap: 2, mt: 4 }}
+        >
+          <PieChart />
+          {title}
+        </Typography>
+        <Divider />
+      </>
     );
   };
 
@@ -91,12 +49,7 @@ export default function RecipeDetailModal({ recipe }: { recipe: Recipe }) {
       >
         Details
       </Button>
-      <Dialog
-        open={open}
-        onClose={() => setOpen(false)}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
+      <Dialog open={open} onClose={() => setOpen(false)}>
         <DialogTitle>{recipe.title}</DialogTitle>
 
         <DialogContent dividers>
@@ -110,12 +63,7 @@ export default function RecipeDetailModal({ recipe }: { recipe: Recipe }) {
             />
           </Box>
 
-          <Typography variant="h6" sx={titleStyle}>
-            <PieChart />
-            Nutritional Info
-          </Typography>
-          <Divider />
-
+          {buildSectionTitle("Nutritional Info")}
           <BarChart
             xAxis={[
               {
@@ -124,28 +72,16 @@ export default function RecipeDetailModal({ recipe }: { recipe: Recipe }) {
             ]}
             series={[
               {
-                data: [
-                  recipe.nutritionalInfo.protein,
-                  recipe.nutritionalInfo.carbs,
-                  recipe.nutritionalInfo.fat,
-                ],
+                data: [protein, carbs, fat],
               },
             ]}
             height={250}
           />
 
-          <Typography variant="h6" sx={titleStyle}>
-            <Reviews />
-            Rating
-          </Typography>
-          <Divider />
-          {getRecipeRating()}
+          {buildSectionTitle("Rating")}
+          <RecipeRating recipe={recipe} />
 
-          <Typography variant="h6" sx={titleStyle}>
-            <MenuBook />
-            Ingredients
-          </Typography>
-          <Divider />
+          {buildSectionTitle("Ingredients")}
 
           <List>
             {recipe.ingredients.map((item) => (
@@ -156,17 +92,16 @@ export default function RecipeDetailModal({ recipe }: { recipe: Recipe }) {
               </ListItem>
             ))}
           </List>
-          <Typography variant="h6" sx={titleStyle}>
-            <FormatListNumbered />
-            Instructions
-          </Typography>
-          <Divider />
 
+          {buildSectionTitle("Instructions")}
           <List>
             {recipe.instructions.map((item) => (
               <RecipeInstructionItem key={item.label} instruction={item} />
             ))}
           </List>
+
+          {buildSectionTitle("Personal Notes")}
+          <RecipeNotes recipe={recipe} />
         </DialogContent>
       </Dialog>
     </>

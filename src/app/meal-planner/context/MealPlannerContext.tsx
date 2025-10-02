@@ -10,6 +10,7 @@ import {
   Ingredient,
   MealType,
   Recipe,
+  RecipeNote,
 } from "@/types";
 import React, {
   createContext,
@@ -30,6 +31,8 @@ type MealPlannerContextType = {
   shoplist: FullRecipeIngredient[];
   updateShopList: (data: FullRecipeIngredient[]) => void;
   ingredients: Ingredient[];
+  notes: RecipeNote[];
+  updateNotes: (note: RecipeNote) => void;
 };
 
 type UpdateMealData = {
@@ -50,18 +53,21 @@ const MealPlannerContext = createContext<MealPlannerContextType | undefined>(
 
 const MEAL_PLANNER_KEY = "meal_planner";
 const SHOPPING_LIST_KEY = "shopping_list";
+const RECIPE_NOTES_KEY = "recipe_notes";
 
 export const MealPlannerProvider = ({ children }: { children: ReactNode }) => {
   const [mealPlan, setMealPlan] = useState<DailyPlan[]>(defaultValue);
   const [shoplist, setShoplist] = useState<FullRecipeIngredient[]>([]);
+  const [notes, setNotes] = useState<RecipeNote[]>([]);
+
   const { recipes } = useRecipeGalleryContext();
+
   const weekdays = [...Array(7).keys()].map((day) =>
     new Intl.DateTimeFormat("en-US", { weekday: "long" }).format(
       new Date(Date.UTC(2021, 0, day + 4)) // ensures Sunday = 0
     )
   );
 
-  // todo: fix type
   const getRequiredIngredientsForPlan = (
     newDailyPlan?: DailyPlan[]
   ): FullRecipeIngredient[] => {
@@ -125,9 +131,18 @@ export const MealPlannerProvider = ({ children }: { children: ReactNode }) => {
     localStorage.setItem(SHOPPING_LIST_KEY, JSON.stringify(newList));
   };
 
+  const updateNotes = (newNote: RecipeNote) => {
+    const newNotes = notes.filter((note) => note.recipeId !== newNote.recipeId);
+    newNotes.push(newNote);
+    setNotes(newNotes);
+    localStorage.setItem(RECIPE_NOTES_KEY, JSON.stringify(newNotes));
+  };
+
   useEffect(() => {
     const savedWeekPlan = localStorage.getItem(MEAL_PLANNER_KEY);
     const savedShoppingList = localStorage.getItem(SHOPPING_LIST_KEY);
+    const savedNotes = localStorage.getItem(RECIPE_NOTES_KEY);
+
     if (savedWeekPlan) {
       // if value exists, load from localStorage to context
       try {
@@ -151,6 +166,18 @@ export const MealPlannerProvider = ({ children }: { children: ReactNode }) => {
       // if not, set default value
       localStorage.setItem(SHOPPING_LIST_KEY, JSON.stringify({}));
     }
+
+    if (savedNotes) {
+      // if value exists, load from localStorage to context
+      try {
+        setNotes(JSON.parse(savedNotes));
+      } catch (e) {
+        console.warn("Failed to parse RECIPE_NOTES_KEY localStorage", e);
+      }
+    } else {
+      // if not, set default value
+      localStorage.setItem(RECIPE_NOTES_KEY, JSON.stringify([]));
+    }
   }, []);
 
   return (
@@ -163,6 +190,8 @@ export const MealPlannerProvider = ({ children }: { children: ReactNode }) => {
         shoplist,
         updateShopList,
         ingredients: mockIngredients as Ingredient[],
+        updateNotes,
+        notes,
       }}
     >
       {children}
