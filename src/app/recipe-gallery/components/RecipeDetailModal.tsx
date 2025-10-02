@@ -1,7 +1,6 @@
 import { Recipe } from "@/types";
 import { PieChart } from "@mui/icons-material";
 import {
-  Button,
   Typography,
   Dialog,
   DialogTitle,
@@ -12,13 +11,19 @@ import {
   ListItemText,
   Divider,
 } from "@mui/material";
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 import { BarChart } from "@mui/x-charts/BarChart";
 import RecipeInstructionItem from "./RecipeInstructionItem";
 import RecipeRating from "./RecipeRating";
 import RecipeNotes from "./RecipeNotes";
 
-export default function RecipeDetailModal({ recipe }: { recipe: Recipe }) {
+export default function RecipeDetailModal({
+  recipe,
+  trigger,
+}: {
+  recipe: Recipe;
+  trigger: (openDialog: () => void) => ReactNode;
+}) {
   const [open, setOpen] = useState(false);
   const {
     nutritionalInfo: { carbs, protein, fat },
@@ -41,14 +46,7 @@ export default function RecipeDetailModal({ recipe }: { recipe: Recipe }) {
 
   return (
     <>
-      <Button
-        variant="contained"
-        color="primary"
-        onClick={() => setOpen(true)}
-        sx={{ width: "100%" }}
-      >
-        Details
-      </Button>
+      {trigger(() => setOpen(true))}
       <Dialog open={open} onClose={() => setOpen(false)}>
         <DialogTitle>{recipe.title}</DialogTitle>
 

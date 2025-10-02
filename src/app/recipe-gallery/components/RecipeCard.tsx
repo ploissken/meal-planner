@@ -18,6 +18,7 @@ import {
   Stack,
   CardActions,
   Divider,
+  Button,
 } from "@mui/material";
 import { Recipe } from "@/types";
 import AddRecipeToPlannerModal from "./AddRecipeToPlannerModal";
@@ -73,7 +74,19 @@ export const RecipeCard = ({ recipe }: RecipeCardProps) => {
 
       <CardActions>
         <AddRecipeToPlannerModal recipe={recipe} />
-        <RecipeDetailModal recipe={recipe} />
+        <RecipeDetailModal
+          recipe={recipe}
+          trigger={(openDialog) => (
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={openDialog}
+              sx={{ width: "100%" }}
+            >
+              Details
+            </Button>
+          )}
+        />
       </CardActions>
     </Card>
   );

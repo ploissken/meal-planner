@@ -3,6 +3,7 @@ import { useRecipeGalleryContext } from "@/app/recipe-gallery/context/RecipeGall
 import { MealType } from "@/types";
 import { Card, CardContent, Chip, Grid, Typography } from "@mui/material";
 import DayNutritionalBalance from "./DayNutritionalBalance";
+import RecipeDetailModal from "@/app/recipe-gallery/components/RecipeDetailModal";
 
 export default function DayPlannerCard({
   weekday,
@@ -19,18 +20,23 @@ export default function DayPlannerCard({
     if (!recipe) return null;
 
     return (
-      <Chip
-        label={recipe.title}
-        color="primary"
-        variant="outlined"
-        onClick={() => {}}
-        sx={{
-          height: "auto",
-          "& .MuiChip-label": {
-            display: "block",
-            whiteSpace: "normal",
-          },
-        }}
+      <RecipeDetailModal
+        recipe={recipe}
+        trigger={(openDialog) => (
+          <Chip
+            label={recipe.title}
+            color="primary"
+            variant="outlined"
+            onClick={openDialog}
+            sx={{
+              height: "auto",
+              "& .MuiChip-label": {
+                display: "block",
+                whiteSpace: "normal",
+              },
+            }}
+          />
+        )}
       />
     );
   };
@@ -43,7 +49,7 @@ export default function DayPlannerCard({
             <Typography sx={{ color: "text.secondary", fontSize: 14 }}>
               {weekday}
             </Typography>
-            <DayNutritionalBalance weekday={weekday} plan={plan} />
+            <DayNutritionalBalance plan={plan} />
           </Grid>
           <Grid size={{ xs: 6, md: 12 }}>
             {mealLabels.map((mealLabel) => (
