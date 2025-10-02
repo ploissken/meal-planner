@@ -13,6 +13,7 @@ import {
 } from "@/types";
 import React, {
   createContext,
+  Dispatch,
   ReactNode,
   useContext,
   useEffect,
@@ -27,6 +28,7 @@ type MealPlannerContextType = {
   weekdays: string[];
   getIngredientCategories: () => string[];
   shoplist: FullRecipeIngredient[];
+  setShoplist: Dispatch<React.SetStateAction<FullRecipeIngredient[]>>;
   ingredients: Ingredient[];
 };
 
@@ -154,6 +156,7 @@ export const MealPlannerProvider = ({ children }: { children: ReactNode }) => {
         weekdays,
         getIngredientCategories,
         shoplist,
+        setShoplist,
         ingredients: mockIngredients as Ingredient[],
       }}
     >

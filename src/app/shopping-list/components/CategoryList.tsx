@@ -15,7 +15,7 @@ import {
 } from "@mui/material";
 
 export default function CategoryList({ category }: { category: string }) {
-  const { ingredients, shoplist } = useMealPlannerContext();
+  const { ingredients, shoplist, setShoplist } = useMealPlannerContext();
   const requiredIngredients = shoplist.filter(
     (ingredient) => ingredient.category === category
   );
@@ -30,7 +30,8 @@ export default function CategoryList({ category }: { category: string }) {
   );
 
   const handleCheckboxClick = (id: string) => {
-    console.log(`mark ingredient ${id} as not needed`);
+    const newList = shoplist.filter((ingredient) => ingredient.id !== id);
+    setShoplist(newList);
   };
 
   return (
@@ -81,9 +82,15 @@ export default function CategoryList({ category }: { category: string }) {
               </ListItemButton>
             );
           })}
-          <Typography variant="h6" textAlign="right" color="secondary">
-            {`Estimated cost: $ ${categoryTotal.toFixed(2)}`}
-          </Typography>
+          {uniqueIngredients.length === 0 ? (
+            <Typography textAlign="center">
+              No items needed for this category 🥳
+            </Typography>
+          ) : (
+            <Typography variant="h6" textAlign="right" color="secondary">
+              {`Estimated cost: $ ${categoryTotal.toFixed(2)}`}
+            </Typography>
+          )}
         </CardContent>
       </Card>
     </Grid>
