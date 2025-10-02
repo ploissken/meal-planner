@@ -8,14 +8,14 @@ const roboto = Roboto({
   display: "swap",
 });
 
-const theme = createTheme({
+export const theme = createTheme({
   palette: {
     mode: "dark",
     primary: {
       main: "#e1abff",
     },
     secondary: {
-      main: "#8ff378",
+      main: "rgba(255, 255, 255, 0.5)",
     },
     error: {
       main: "#ef8f3a",
@@ -53,5 +53,3 @@ const theme = createTheme({
     },
   },
 });
-
-export default theme;

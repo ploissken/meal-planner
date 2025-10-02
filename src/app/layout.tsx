@@ -1,10 +1,6 @@
-import theme from "@/theme";
-import { ThemeProvider } from "@mui/material/styles";
 import type { Metadata } from "next";
-import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
-import { RecipeGalleryProvider } from "./recipe-gallery/context/RecipeGalleryContext";
 import TopBar from "./components/TopBar";
-import { MealPlannerProvider } from "./meal-planner/context/MealPlannerContext";
+import Providers from "./providers";
 
 export const metadata: Metadata = {
   title: "Recipe & Meal Planning Dashboard",
@@ -20,16 +16,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <AppRouterCacheProvider>
-          <ThemeProvider theme={theme}>
-            <RecipeGalleryProvider>
-              <MealPlannerProvider>
-                <TopBar />
-                {children}
-              </MealPlannerProvider>
-            </RecipeGalleryProvider>
-          </ThemeProvider>
-        </AppRouterCacheProvider>
+        <Providers>
+          <TopBar />
+          {children}
+        </Providers>
       </body>
     </html>
   );
