@@ -12,10 +12,13 @@ export default function MealPlannerContainer() {
         Weekly Meal Planner
       </Typography>
 
-      <Grid container spacing={2} columns={{ xs: 1, sm: 1, md: 7 }}>
+      <Grid container spacing={2} columns={{ xs: 1, lg: 7 }}>
         {weekdays.map((weekday, index) => (
           <Grid key={weekday} sx={{ borderRadius: 2 }} size={1}>
-            <DayPlannerCard weekday={weekday} plan={mealPlan[index]} />
+            <DayPlannerCard
+              weekday={{ name: weekday, index }}
+              plan={mealPlan[index]}
+            />
           </Grid>
         ))}
       </Grid>

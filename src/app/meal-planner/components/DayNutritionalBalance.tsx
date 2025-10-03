@@ -1,6 +1,14 @@
 import { useRecipeGalleryContext } from "@/app/recipe-gallery/context/RecipeGalleryContext";
+import {
+  GRAPH_COLORS,
+  RECOMMENDED_CARB_DAILY_INTAKE,
+  RECOMMENDED_FAT_DAILY_INTAKE,
+  RECOMMENDED_PROTEIN_DAILY_INTAKE,
+} from "@/consts";
 import { MealType, NutritionalInfo } from "@/types";
 import { PieChart } from "@mui/x-charts";
+
+const PIE_CHART_HEIGHT = 170;
 
 export default function DayNutritionalBalance({
   plan,
@@ -32,13 +40,17 @@ export default function DayNutritionalBalance({
   ];
 
   const dailyRecomendation = [
-    { label: "Daily recommended Protein", value: 50 },
-    { label: "Daily recommended Fat", value: 44 },
-    { label: "Daily recommended Carbs", value: 225 },
+    {
+      label: "Daily recommended Protein",
+      value: RECOMMENDED_PROTEIN_DAILY_INTAKE,
+    },
+    { label: "Daily recommended Fat", value: RECOMMENDED_FAT_DAILY_INTAKE },
+    { label: "Daily recommended Carbs", value: RECOMMENDED_CARB_DAILY_INTAKE },
   ];
 
   return (
     <PieChart
+      colors={GRAPH_COLORS}
       series={[
         {
           startAngle: -90,
@@ -56,7 +68,7 @@ export default function DayNutritionalBalance({
         },
       ]}
       hideLegend
-      height={170}
+      height={PIE_CHART_HEIGHT}
     />
   );
 }

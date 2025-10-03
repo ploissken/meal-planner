@@ -1,17 +1,11 @@
 import { useMealPlannerContext } from "@/app/meal-planner/context/MealPlannerContext";
-import { FullRecipeIngredient, MealType } from "@/types";
+import { FullRecipeIngredient } from "@/types";
 import {
   Button,
   Dialog,
   DialogTitle,
   DialogContent,
-  FormControl,
-  FormLabel,
   Typography,
-  ButtonGroup,
-  RadioGroup,
-  FormControlLabel,
-  Radio,
   DialogActions,
   ListItem,
   ListItemButton,
@@ -31,7 +25,7 @@ export default function AddIngredientDialog({
   const [selectedIngredient, setSelectedIngredient] = useState<{
     label: string;
     id: string;
-  } | null>();
+  } | null>(null);
   const { ingredients, shoplist, updateShopList } = useMealPlannerContext();
   const filteredIngredients = ingredients.filter(
     (ingredient) => ingredient.category === category
@@ -56,13 +50,21 @@ export default function AddIngredientDialog({
     };
 
     updateShopList([...shoplist, newItem]);
+    setOpen(false);
   };
 
   return (
     <>
-      <ListItemButton onClick={() => setOpen(true)}>
+      <ListItemButton
+        onClick={() => setOpen(true)}
+        sx={(theme) => ({
+          border: `1px solid ${theme.palette.primary.main}`,
+          borderRadius: 2,
+          marginTop: "16px",
+        })}
+      >
         <ListItem sx={{ display: "flex", justifyContent: "center" }}>
-          <Typography>Add ingredient</Typography>
+          <Typography color="primary">Add ingredient</Typography>
         </ListItem>
       </ListItemButton>
 

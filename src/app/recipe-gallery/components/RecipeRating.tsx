@@ -3,13 +3,18 @@ import { Star, StarHalf, StarOutline } from "@mui/icons-material";
 import { Box, Typography } from "@mui/material";
 import { useState } from "react";
 
+const MIN_FOR_HALF_START = 0.25;
+const MAX_FOR_HALF_START = 0.9;
+
 export default function RecipeRating({ recipe }: { recipe: Recipe }) {
   const [rating, setRating] = useState(0);
   const {
     rating: { average, votes },
   } = recipe;
   const fullStars = Math.floor(average);
-  const hasHalfStar = average - fullStars >= 0.25 && average - fullStars < 0.9;
+  const hasHalfStar =
+    average - fullStars >= MIN_FOR_HALF_START &&
+    average - fullStars < MAX_FOR_HALF_START;
   const outlineStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
 
   const iconSx = rating > 0 ? {} : { cursor: "pointer" };

@@ -35,7 +35,7 @@ export default function RecipeInstructionItem({
         clearInterval(intervalRef.current!);
         intervalRef.current = null;
       }
-    }, 1000);
+    }, 1000); // run every second
   };
 
   useEffect(() => {
@@ -79,7 +79,7 @@ export default function RecipeInstructionItem({
                 size={52}
                 value={progress}
                 sx={{
-                  color: green[500],
+                  color: "primary",
                   position: "absolute",
                   top: -6,
                   left: -6,

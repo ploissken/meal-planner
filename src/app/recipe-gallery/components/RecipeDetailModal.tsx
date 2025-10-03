@@ -16,6 +16,7 @@ import { BarChart } from "@mui/x-charts/BarChart";
 import RecipeInstructionItem from "./RecipeInstructionItem";
 import RecipeRating from "./RecipeRating";
 import RecipeNotes from "./RecipeNotes";
+import { GRAPH_COLORS } from "@/consts";
 
 export default function RecipeDetailModal({
   recipe,
@@ -63,6 +64,7 @@ export default function RecipeDetailModal({
 
           {buildSectionTitle("Nutritional Info")}
           <BarChart
+            colors={GRAPH_COLORS}
             xAxis={[
               {
                 data: ["protein", "carbs", "fat"],
@@ -80,7 +82,6 @@ export default function RecipeDetailModal({
           <RecipeRating recipe={recipe} />
 
           {buildSectionTitle("Ingredients")}
-
           <List>
             {recipe.ingredients.map((item) => (
               <ListItem key={item.name} disablePadding>

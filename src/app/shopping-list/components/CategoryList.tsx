@@ -14,6 +14,7 @@ import {
   Typography,
 } from "@mui/material";
 import AddIngredientDialog from "./AddIngredientDialog";
+import { mockFetch } from "@/mockFetch";
 
 export default function CategoryList({ category }: { category: string }) {
   const { ingredients, shoplist, updateShopList } = useMealPlannerContext();
@@ -32,16 +33,27 @@ export default function CategoryList({ category }: { category: string }) {
 
   const handleCheckboxClick = (id: string) => {
     const newList = shoplist.filter((ingredient) => ingredient.id !== id);
-    updateShopList(newList);
+    mockFetch(null, 250).then(() => {
+      updateShopList(newList);
+    });
   };
 
   return (
-    <Grid size={{ xs: 12, md: 6 }}>
+    <Grid size={{ xs: 12, md: 4 }}>
       <Card>
         <CardContent>
-          <Typography gutterBottom variant="h5">
-            {category}
+          <Typography gutterBottom variant="h5" color="info">
+            {category} category
           </Typography>
+          {uniqueIngredients.length === 0 ? (
+            <Typography textAlign="center" sx={{ margin: "24px 0" }}>
+              No items needed for this category 🥳
+            </Typography>
+          ) : (
+            <Typography color="secondary">
+              {`Estimated cost: $ ${categoryTotal.toFixed(2)}`}
+            </Typography>
+          )}
           {uniqueIngredients.map((ingredientId) => {
             const ingredient = ingredients.find((i) => i.id === ingredientId);
             const totalRequired = requiredIngredients
@@ -56,12 +68,12 @@ export default function CategoryList({ category }: { category: string }) {
             ].join(", ");
 
             return (
-              <ListItemButton dense key={ingredientId}>
+              <ListItemButton dense key={ingredientId} disableRipple>
                 <ListItem
                   secondaryAction={
                     <Tooltip title={recipeNames}>
                       <IconButton>
-                        <QuestionMark />
+                        <QuestionMark color="secondary" />
                       </IconButton>
                     </Tooltip>
                   }
@@ -69,10 +81,8 @@ export default function CategoryList({ category }: { category: string }) {
                   <ListItemIcon>
                     <Checkbox
                       edge="start"
-                      checked={false}
                       onClick={() => handleCheckboxClick(ingredientId)}
                       tabIndex={-1}
-                      disableRipple
                     />
                   </ListItemIcon>
                   <ListItemText
@@ -84,15 +94,6 @@ export default function CategoryList({ category }: { category: string }) {
             );
           })}
           <AddIngredientDialog category={category} />
-          {uniqueIngredients.length === 0 ? (
-            <Typography textAlign="center">
-              No items needed for this category 🥳
-            </Typography>
-          ) : (
-            <Typography variant="h6" textAlign="right" color="secondary">
-              {`Estimated cost: $ ${categoryTotal.toFixed(2)}`}
-            </Typography>
-          )}
         </CardContent>
       </Card>
     </Grid>

@@ -1,6 +1,6 @@
 "use client";
 import { FilterListAlt } from "@mui/icons-material";
-import { Drawer, Fab, IconButton } from "@mui/material";
+import { Drawer, Fab } from "@mui/material";
 import { useState } from "react";
 import FilterForm from "./FilterForm";
 

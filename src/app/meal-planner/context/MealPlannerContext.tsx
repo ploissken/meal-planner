@@ -14,7 +14,6 @@ import {
 } from "@/types";
 import React, {
   createContext,
-  Dispatch,
   ReactNode,
   useContext,
   useEffect,
@@ -38,7 +37,7 @@ type MealPlannerContextType = {
 type UpdateMealData = {
   selectedDayIndex: number;
   selectedMealIndex: MealType;
-  recipeId: string;
+  recipeId: string | null;
 };
 
 const defaultValue: DailyPlan[] = [...Array(7)].map(() => ({

@@ -73,6 +73,9 @@ export default function AddRecipeToPlannerModal({
                   key={day}
                   onClick={() => setSelectedDayIndex(index)}
                   color={selectedDayIndex === index ? "primary" : "secondary"}
+                  variant={
+                    selectedDayIndex === index ? "contained" : "outlined"
+                  }
                 >
                   {day[0]}
                 </Button>

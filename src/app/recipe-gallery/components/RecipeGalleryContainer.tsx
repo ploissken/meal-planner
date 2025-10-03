@@ -5,6 +5,8 @@ import RecipeCardSkeleton from "./RecipeCardSkeleton";
 import { useRecipeGalleryContext } from "../context/RecipeGalleryContext";
 import FilterDrawer from "@/app/components/FilterDrawer";
 
+const SKELETONS_QUANTITY = 20;
+
 export default function RecipeGalleryContainer() {
   const { loading, recipes } = useRecipeGalleryContext();
 
@@ -20,7 +22,7 @@ export default function RecipeGalleryContainer() {
         columns={{ xs: 4, sm: 8, md: 12 }}
       >
         {loading &&
-          [...Array(20)].map((_, i) => (
+          [...Array(SKELETONS_QUANTITY)].map((_, i) => (
             <Grid key={i} size={{ xs: 4, sm: 4, md: 4, lg: 3 }}>
               <RecipeCardSkeleton />
             </Grid>
