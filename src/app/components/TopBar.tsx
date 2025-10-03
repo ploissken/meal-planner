@@ -1,6 +1,7 @@
 "use client";
 import { Box, AppBar, Toolbar, Typography } from "@mui/material";
 import ResponsiveMenu from "./ResponsiveMenu";
+import { APP_TITLE } from "@/consts";
 
 export default function TopBar() {
   return (
@@ -13,7 +14,7 @@ export default function TopBar() {
       >
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            🍔 Recipe & Meal Planning Dashboard
+            {APP_TITLE}
           </Typography>
           <ResponsiveMenu />
         </Toolbar>

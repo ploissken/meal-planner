@@ -8,7 +8,6 @@ import {
   ListItemText,
   Tooltip,
 } from "@mui/material";
-import { green } from "@mui/material/colors";
 import { useEffect, useRef, useState } from "react";
 
 export default function RecipeInstructionItem({

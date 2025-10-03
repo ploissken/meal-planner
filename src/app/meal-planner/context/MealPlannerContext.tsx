@@ -21,6 +21,11 @@ import React, {
 } from "react";
 import mockIngredients from "../../../mock-data/ingredients.json";
 import { useRecipeGalleryContext } from "@/app/recipe-gallery/context/RecipeGalleryContext";
+import {
+  MEAL_PLANNER_KEY,
+  SHOPPING_LIST_KEY,
+  RECIPE_NOTES_KEY,
+} from "@/consts";
 
 type MealPlannerContextType = {
   mealPlan: DailyPlan[];
@@ -49,10 +54,6 @@ const defaultValue: DailyPlan[] = [...Array(7)].map(() => ({
 const MealPlannerContext = createContext<MealPlannerContextType | undefined>(
   undefined
 );
-
-const MEAL_PLANNER_KEY = "meal_planner";
-const SHOPPING_LIST_KEY = "shopping_list";
-const RECIPE_NOTES_KEY = "recipe_notes";
 
 export const MealPlannerProvider = ({ children }: { children: ReactNode }) => {
   const [mealPlan, setMealPlan] = useState<DailyPlan[]>(defaultValue);
@@ -116,7 +117,6 @@ export const MealPlannerProvider = ({ children }: { children: ReactNode }) => {
         ? { ...dayPlan, [selectedMealIndex]: recipeId }
         : dayPlan
     );
-
     setMealPlan(newPlan);
     localStorage.setItem(MEAL_PLANNER_KEY, JSON.stringify(newPlan));
 
@@ -142,39 +142,22 @@ export const MealPlannerProvider = ({ children }: { children: ReactNode }) => {
     const savedShoppingList = localStorage.getItem(SHOPPING_LIST_KEY);
     const savedNotes = localStorage.getItem(RECIPE_NOTES_KEY);
 
+    // load existing data from local storage if existing, or set default otherwise
     if (savedWeekPlan) {
-      // if value exists, load from localStorage to context
-      try {
-        setMealPlan(JSON.parse(savedWeekPlan));
-      } catch (e) {
-        console.warn("Failed to parse MEAL_PLANNER_KEY localStorage", e);
-      }
+      setMealPlan(JSON.parse(savedWeekPlan));
     } else {
-      // if not, set default value
       localStorage.setItem(MEAL_PLANNER_KEY, JSON.stringify(mealPlan));
     }
 
     if (savedShoppingList) {
-      // if value exists, load from localStorage to context
-      try {
-        setShoplist(JSON.parse(savedShoppingList));
-      } catch (e) {
-        console.warn("Failed to parse SHOPPING_LIST_KEY localStorage", e);
-      }
+      setShoplist(JSON.parse(savedShoppingList));
     } else {
-      // if not, set default value
       localStorage.setItem(SHOPPING_LIST_KEY, JSON.stringify({}));
     }
 
     if (savedNotes) {
-      // if value exists, load from localStorage to context
-      try {
-        setNotes(JSON.parse(savedNotes));
-      } catch (e) {
-        console.warn("Failed to parse RECIPE_NOTES_KEY localStorage", e);
-      }
+      setNotes(JSON.parse(savedNotes));
     } else {
-      // if not, set default value
       localStorage.setItem(RECIPE_NOTES_KEY, JSON.stringify([]));
     }
   }, []);
