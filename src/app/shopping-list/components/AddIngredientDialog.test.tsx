@@ -2,7 +2,7 @@
 import React from "react";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import AddIngredientDialog from "./AddIngredientDialog";
-import { MealPlannerContext } from "@/app/meal-planner/context/MealPlannerContext";
+import { LocalStorageContext } from "@/app/context/LocalStorageContext";
 import { RecipeGalleryContext } from "@/app/recipe-gallery/context/RecipeGalleryContext";
 
 const mockIngredients = [
@@ -33,7 +33,7 @@ function renderWithContext(ui: React.ReactElement) {
         getRecipeById: () => undefined,
       }}
     >
-      <MealPlannerContext.Provider
+      <LocalStorageContext.Provider
         value={{
           ingredients: mockIngredients,
           shoplist: [],
@@ -47,7 +47,7 @@ function renderWithContext(ui: React.ReactElement) {
         }}
       >
         {ui}
-      </MealPlannerContext.Provider>
+      </LocalStorageContext.Provider>
     </RecipeGalleryContext.Provider>
   );
 }

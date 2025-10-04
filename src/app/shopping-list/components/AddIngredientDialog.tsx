@@ -1,4 +1,4 @@
-import { useMealPlannerContext } from "@/app/meal-planner/context/MealPlannerContext";
+import { useLocalStorageContext } from "@/app/context/LocalStorageContext";
 import { FullRecipeIngredient } from "@/types";
 import {
   Button,
@@ -26,7 +26,7 @@ export default function AddIngredientDialog({
     label: string;
     id: string;
   } | null>(null);
-  const { ingredients, shoplist, updateShopList } = useMealPlannerContext();
+  const { ingredients, shoplist, updateShopList } = useLocalStorageContext();
   const filteredIngredients = ingredients.filter(
     (ingredient) => ingredient.category === category
   );

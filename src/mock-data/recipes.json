@@ -167,7 +167,7 @@
     "title": "Tofu Stir Fry",
     "cookingTimeInMin": 20,
     "difficulty": "Easy",
-    "dietaryTags": ["Vegan", "Gluten Free", "Diary Free"],
+    "dietaryTags": ["Vegan", "Gluten Free", "Dairy Free"],
     "cuisine": "Asian",
     "rating": { "votes": 426, "average": 0.65 },
     "ingredients": [
@@ -197,7 +197,7 @@
     "title": "Vegan Chickpea Curry",
     "cookingTimeInMin": 35,
     "difficulty": "Medium",
-    "dietaryTags": ["Vegan", "Gluten Free", "Diary Free"],
+    "dietaryTags": ["Vegan", "Gluten Free", "Dairy Free"],
     "cuisine": "Indian",
     "rating": { "votes": 716, "average": 4.74 },
     "ingredients": [
@@ -253,7 +253,7 @@
     "title": "Thai Red Curry with Tofu",
     "cookingTimeInMin": 30,
     "difficulty": "Medium",
-    "dietaryTags": ["Vegan", "Diary Free"],
+    "dietaryTags": ["Vegan", "Dairy Free"],
     "cuisine": "Thai",
     "rating": { "votes": 501, "average": 3.99 },
     "ingredients": [
@@ -342,7 +342,7 @@
     "title": "Spinach Chickpea Salad",
     "cookingTimeInMin": 10,
     "difficulty": "Easy",
-    "dietaryTags": ["Vegan", "Gluten Free", "Diary Free"],
+    "dietaryTags": ["Vegan", "Gluten Free", "Dairy Free"],
     "cuisine": "Mediterranean",
     "rating": { "votes": 334, "average": 0.22 },
     "ingredients": [
@@ -367,7 +367,7 @@
     "title": "Thai Basil Tofu",
     "cookingTimeInMin": 20,
     "difficulty": "Medium",
-    "dietaryTags": ["Vegan", "Diary Free"],
+    "dietaryTags": ["Vegan", "Dairy Free"],
     "cuisine": "Thai",
     "rating": { "votes": 149, "average": 1.77 },
     "ingredients": [
@@ -448,7 +448,7 @@
     "title": "Chickpea Spinach Wrap",
     "cookingTimeInMin": 15,
     "difficulty": "Easy",
-    "dietaryTags": ["Vegan", "Diary Free"],
+    "dietaryTags": ["Vegan", "Dairy Free"],
     "cuisine": "Mediterranean",
     "rating": { "votes": 265, "average": 2.01 },
     "ingredients": [
@@ -474,7 +474,7 @@
     "title": "Creamy Tofu Coconut Curry",
     "cookingTimeInMin": 30,
     "difficulty": "Medium",
-    "dietaryTags": ["Vegan", "Gluten Free", "Diary Free"],
+    "dietaryTags": ["Vegan", "Gluten Free", "Dairy Free"],
     "cuisine": "Indian",
     "rating": { "votes": 683, "average": 3.88 },
     "ingredients": [
@@ -501,7 +501,7 @@
     "title": "Lemon Herb Pasta",
     "cookingTimeInMin": 20,
     "difficulty": "Easy",
-    "dietaryTags": ["Diary Free"],
+    "dietaryTags": ["Dairy Free"],
     "cuisine": "Italian",
     "rating": { "votes": 545, "average": 2.55 },
     "ingredients": [
@@ -527,7 +527,7 @@
     "title": "Vegan Fried Rice",
     "cookingTimeInMin": 25,
     "difficulty": "Medium",
-    "dietaryTags": ["Vegan", "Diary Free"],
+    "dietaryTags": ["Vegan", "Dairy Free"],
     "cuisine": "Asian",
     "rating": { "votes": 775, "average": 1.12 },
     "ingredients": [
@@ -579,7 +579,7 @@
     "title": "Banana Oatmeal Bowl",
     "cookingTimeInMin": 10,
     "difficulty": "Easy",
-    "dietaryTags": ["Vegan", "Diary Free"],
+    "dietaryTags": ["Vegan", "Dairy Free"],
     "cuisine": "American",
     "rating": { "votes": 640, "average": 4.25 },
     "ingredients": [
@@ -604,7 +604,7 @@
     "title": "Avocado Toast",
     "cookingTimeInMin": 5,
     "difficulty": "Easy",
-    "dietaryTags": ["Vegan", "Diary Free"],
+    "dietaryTags": ["Vegan", "Dairy Free"],
     "cuisine": "Californian",
     "rating": { "votes": 195, "average": 0.79 },
     "ingredients": [

@@ -12,14 +12,14 @@ import {
   Recipe,
   RecipeNote,
 } from "@/types";
-import React, {
+import {
   createContext,
   ReactNode,
   useContext,
   useEffect,
   useState,
 } from "react";
-import mockIngredients from "../../../mock-data/ingredients.json";
+import mockIngredients from "../../mock-data/ingredients.json";
 import { useRecipeGalleryContext } from "@/app/recipe-gallery/context/RecipeGalleryContext";
 import {
   MEAL_PLANNER_KEY,
@@ -27,15 +27,15 @@ import {
   RECIPE_NOTES_KEY,
 } from "@/consts";
 
-type MealPlannerContextType = {
+type LocalStorageContextType = {
   mealPlan: DailyPlan[];
-  updateMealPlan: (data: UpdateMealData) => void;
   weekdays: string[];
-  getIngredientCategories: () => string[];
   shoplist: FullRecipeIngredient[];
-  updateShopList: (data: FullRecipeIngredient[]) => void;
   ingredients: Ingredient[];
   notes: RecipeNote[];
+  updateMealPlan: (data: UpdateMealData) => void;
+  getIngredientCategories: () => string[];
+  updateShopList: (data: FullRecipeIngredient[]) => void;
   updateNotes: (note: RecipeNote) => void;
 };
 
@@ -51,11 +51,11 @@ const defaultValue: DailyPlan[] = [...Array(7)].map(() => ({
   dinner: null,
 }));
 
-export const MealPlannerContext = createContext<
-  MealPlannerContextType | undefined
+export const LocalStorageContext = createContext<
+  LocalStorageContextType | undefined
 >(undefined);
 
-export const MealPlannerProvider = ({ children }: { children: ReactNode }) => {
+export const LocalStorageProvider = ({ children }: { children: ReactNode }) => {
   const [mealPlan, setMealPlan] = useState<DailyPlan[]>(defaultValue);
   const [shoplist, setShoplist] = useState<FullRecipeIngredient[]>([]);
   const [notes, setNotes] = useState<RecipeNote[]>([]);
@@ -163,7 +163,7 @@ export const MealPlannerProvider = ({ children }: { children: ReactNode }) => {
   }, []);
 
   return (
-    <MealPlannerContext.Provider
+    <LocalStorageContext.Provider
       value={{
         mealPlan,
         updateMealPlan,
@@ -177,15 +177,15 @@ export const MealPlannerProvider = ({ children }: { children: ReactNode }) => {
       }}
     >
       {children}
-    </MealPlannerContext.Provider>
+    </LocalStorageContext.Provider>
   );
 };
 
-export const useMealPlannerContext = (): MealPlannerContextType => {
-  const ctx = useContext(MealPlannerContext);
+export const useLocalStorageContext = (): LocalStorageContextType => {
+  const ctx = useContext(LocalStorageContext);
   if (!ctx) {
     throw new Error(
-      "useMealPlannerContext must be used within a MealPlannerProvider"
+      "useLocalStorageContext must be used within a LocalStorageProvider"
     );
   }
   return ctx;

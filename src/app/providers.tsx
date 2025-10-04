@@ -3,7 +3,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import type { Metadata } from "next";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 import { RecipeGalleryProvider } from "./recipe-gallery/context/RecipeGalleryContext";
-import { MealPlannerProvider } from "./meal-planner/context/MealPlannerContext";
+import { LocalStorageProvider } from "./context/LocalStorageContext";
 import { theme } from "@/theme";
 
 export const metadata: Metadata = {
@@ -21,7 +21,7 @@ export default function Providers({
     <AppRouterCacheProvider>
       <ThemeProvider theme={theme}>
         <RecipeGalleryProvider>
-          <MealPlannerProvider>{children}</MealPlannerProvider>
+          <LocalStorageProvider>{children}</LocalStorageProvider>
         </RecipeGalleryProvider>
       </ThemeProvider>
     </AppRouterCacheProvider>

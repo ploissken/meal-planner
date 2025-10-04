@@ -1,10 +1,10 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import AddRecipeToPlannerModal from "./AddRecipeToPlannerModal";
 import { Recipe } from "@/types";
-import { useMealPlannerContext } from "@/app/meal-planner/context/MealPlannerContext";
+import { useLocalStorageContext } from "@/app/context/LocalStorageContext";
 
 // Mock the context
-jest.mock("@/app/meal-planner/context/MealPlannerContext");
+jest.mock("@/app/meal-planner/context/LocalStorageContext");
 
 const mockUpdateMealPlan = jest.fn();
 
@@ -21,7 +21,7 @@ const mockContext = {
   updateMealPlan: mockUpdateMealPlan,
 };
 
-(useMealPlannerContext as jest.Mock).mockReturnValue(mockContext);
+(useLocalStorageContext as jest.Mock).mockReturnValue(mockContext);
 
 const mockRecipe: Recipe = {
   id: "recipe-123",

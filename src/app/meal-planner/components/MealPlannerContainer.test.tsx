@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
-import { useMealPlannerContext } from "../context/MealPlannerContext";
-import MealPlannerContainer from "./MealPlannerContainer";
+import { useLocalStorageContext } from "../../context/LocalStorageContext";
+import LocalStorageContainer from "./LocalStorageContainer";
 
 // Mock DayPlannerCard so we can spy on its props
 jest.mock("./DayPlannerCard", () => {
@@ -11,28 +11,28 @@ jest.mock("./DayPlannerCard", () => {
   ));
 });
 
-jest.mock("../context/MealPlannerContext", () => ({
-  useMealPlannerContext: jest.fn(),
+jest.mock("../context/LocalStorageContext", () => ({
+  useLocalStorageContext: jest.fn(),
 }));
 
-describe("MealPlannerContainer", () => {
+describe("LocalStorageContainer", () => {
   const mockWeekdays = ["Monday", "Tuesday", "Wednesday"];
   const mockMealPlan = ["Meal A", "Meal B", "Meal C"];
 
   beforeEach(() => {
-    (useMealPlannerContext as jest.Mock).mockReturnValue({
+    (useLocalStorageContext as jest.Mock).mockReturnValue({
       weekdays: mockWeekdays,
       mealPlan: mockMealPlan,
     });
   });
 
   it("renders the meal planner title", () => {
-    render(<MealPlannerContainer />);
+    render(<LocalStorageContainer />);
     expect(screen.getByText("Weekly Meal Planner")).toBeInTheDocument();
   });
 
   it("renders a DayPlannerCard for each weekday", () => {
-    render(<MealPlannerContainer />);
+    render(<LocalStorageContainer />);
     const cards = screen.getAllByTestId("day-card");
     expect(cards).toHaveLength(mockWeekdays.length);
 

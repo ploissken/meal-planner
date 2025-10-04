@@ -1,10 +1,10 @@
 "use client";
 import { Container, Grid, Typography } from "@mui/material";
 import DayPlannerCard from "./DayPlannerCard";
-import { useMealPlannerContext } from "../context/MealPlannerContext";
+import { useLocalStorageContext } from "../../context/LocalStorageContext";
 
-export default function MealPlannerContainer() {
-  const { mealPlan, weekdays } = useMealPlannerContext();
+export default function LocalStorageContainer() {
+  const { mealPlan, weekdays } = useLocalStorageContext();
 
   return (
     <Container style={{ marginTop: "100px" }}>

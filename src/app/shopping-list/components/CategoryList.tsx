@@ -1,4 +1,4 @@
-import { useMealPlannerContext } from "@/app/meal-planner/context/MealPlannerContext";
+import { useLocalStorageContext } from "@/app/context/LocalStorageContext";
 import { QuestionMark } from "@mui/icons-material";
 import {
   Card,
@@ -17,7 +17,7 @@ import AddIngredientDialog from "./AddIngredientDialog";
 import { mockFetch } from "@/mockFetch";
 
 export default function CategoryList({ category }: { category: string }) {
-  const { ingredients, shoplist, updateShopList } = useMealPlannerContext();
+  const { ingredients, shoplist, updateShopList } = useLocalStorageContext();
   const requiredIngredients = shoplist.filter(
     (ingredient) => ingredient.category === category
   );

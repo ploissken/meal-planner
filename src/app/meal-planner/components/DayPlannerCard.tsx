@@ -1,10 +1,10 @@
 "use client";
 import { useRecipeGalleryContext } from "@/app/recipe-gallery/context/RecipeGalleryContext";
 import { MealType } from "@/types";
-import { Card, CardContent, Chip, Grid, Typography } from "@mui/material";
+import { Box, Card, CardContent, Chip, Grid, Typography } from "@mui/material";
 import DayNutritionalBalance from "./DayNutritionalBalance";
 import RecipeDetailModal from "@/app/recipe-gallery/components/RecipeDetailModal";
-import { useMealPlannerContext } from "../context/MealPlannerContext";
+import { useLocalStorageContext } from "../../context/LocalStorageContext";
 
 export default function DayPlannerCard({
   weekday,
@@ -15,7 +15,7 @@ export default function DayPlannerCard({
 }) {
   const mealLabels: MealType[] = ["breakfast", "lunch", "dinner"];
   const { getRecipeById } = useRecipeGalleryContext();
-  const { updateMealPlan } = useMealPlannerContext();
+  const { updateMealPlan } = useLocalStorageContext();
 
   const handleDeleteRecipe = (meal: MealType) => {
     updateMealPlan({
@@ -27,7 +27,9 @@ export default function DayPlannerCard({
 
   const getRecipeChip = (meal: MealType) => {
     const recipe = getRecipeById(plan[meal]);
-    if (!recipe) return null;
+    if (!recipe) {
+      return <Box sx={{ height: "60px" }} />;
+    }
 
     return (
       <RecipeDetailModal
@@ -35,7 +37,6 @@ export default function DayPlannerCard({
         trigger={(openDialog) => (
           <Chip
             label={recipe.title}
-            color="primary"
             variant="outlined"
             onClick={openDialog}
             onDelete={() => handleDeleteRecipe(meal)}
@@ -57,7 +58,10 @@ export default function DayPlannerCard({
       <CardContent>
         <Grid container>
           <Grid sx={{ minHeight: "80px" }} size={{ xs: 6, lg: 12 }}>
-            <Typography sx={{ color: "text.secondary", fontSize: 14 }}>
+            <Typography
+              sx={{ color: "text.secondary", fontSize: 14 }}
+              align="center"
+            >
               {weekday.name}
             </Typography>
             <DayNutritionalBalance plan={plan} />
@@ -65,10 +69,12 @@ export default function DayPlannerCard({
           <Grid size={{ xs: 6, lg: 12 }}>
             {mealLabels.map((mealLabel) => (
               <Grid key={`${weekday.name}-${mealLabel}`}>
-                <Typography gutterBottom sx={{ fontSize: 14 }}>
-                  {mealLabel}
+                <Typography gutterBottom sx={{ fontSize: 14 }} color="primary">
+                  {mealLabel.toUpperCase()}
                 </Typography>
-                {getRecipeChip(mealLabel)}
+                <Box sx={{ height: { xs: "40px", lg: "60px" } }}>
+                  {getRecipeChip(mealLabel)}
+                </Box>
               </Grid>
             ))}
           </Grid>

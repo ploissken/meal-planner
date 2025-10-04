@@ -1,7 +1,7 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import DayPlannerCard from "./DayPlannerCard";
 import { useRecipeGalleryContext } from "@/app/recipe-gallery/context/RecipeGalleryContext";
-import { useMealPlannerContext } from "../context/MealPlannerContext";
+import { useLocalStorageContext } from "../../context/LocalStorageContext";
 
 // Mock the RecipeDetailModal to just render the trigger function
 jest.mock("@/app/recipe-gallery/components/RecipeDetailModal", () => ({
@@ -14,8 +14,8 @@ jest.mock("@/app/recipe-gallery/context/RecipeGalleryContext", () => ({
   useRecipeGalleryContext: jest.fn(),
 }));
 
-jest.mock("../context/MealPlannerContext", () => ({
-  useMealPlannerContext: jest.fn(),
+jest.mock("../context/LocalStorageContext", () => ({
+  useLocalStorageContext: jest.fn(),
 }));
 
 describe("DayPlannerCard", () => {
@@ -48,7 +48,7 @@ describe("DayPlannerCard", () => {
       getRecipeById: (id: string | null) => (id ? mockRecipes[id] : undefined),
     });
 
-    (useMealPlannerContext as jest.Mock).mockReturnValue({
+    (useLocalStorageContext as jest.Mock).mockReturnValue({
       updateMealPlan,
     });
 

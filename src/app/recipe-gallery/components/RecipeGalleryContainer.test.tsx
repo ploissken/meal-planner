@@ -5,7 +5,7 @@ import {
   RecipeGalleryContextType,
 } from "../context/RecipeGalleryContext";
 import { Recipe } from "@/types";
-import { MealPlannerProvider } from "@/app/meal-planner/context/MealPlannerContext";
+import { LocalStorageProvider } from "@/app/context/LocalStorageContext";
 
 // --- Mock test data ---
 const mockRecipes: Recipe[] = [
@@ -85,9 +85,9 @@ function renderWithContexts(
 
   return render(
     <RecipeGalleryContext.Provider value={contextValue}>
-      <MealPlannerProvider>
+      <LocalStorageProvider>
         <RecipeGalleryContainer />
-      </MealPlannerProvider>
+      </LocalStorageProvider>
     </RecipeGalleryContext.Provider>
   );
 }

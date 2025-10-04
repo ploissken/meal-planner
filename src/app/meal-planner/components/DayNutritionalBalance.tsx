@@ -49,26 +49,28 @@ export default function DayNutritionalBalance({
   ];
 
   return (
-    <PieChart
-      colors={GRAPH_COLORS}
-      series={[
-        {
-          startAngle: -90,
-          endAngle: 90,
-          innerRadius: 0,
-          outerRadius: 40,
-          data: dailyTotal,
-        },
-        {
-          startAngle: -90,
-          endAngle: 90,
-          innerRadius: 50,
-          outerRadius: 60,
-          data: dailyRecomendation,
-        },
-      ]}
-      hideLegend
-      height={PIE_CHART_HEIGHT}
-    />
+    <>
+      <PieChart
+        colors={GRAPH_COLORS}
+        series={[
+          {
+            startAngle: -90,
+            endAngle: 90,
+            innerRadius: 0,
+            outerRadius: 40,
+            data: dailyTotal,
+          },
+          {
+            startAngle: -90,
+            endAngle: 90,
+            innerRadius: 50,
+            outerRadius: 60,
+            data: dailyRecomendation,
+          },
+        ]}
+        hideLegend
+        height={PIE_CHART_HEIGHT}
+      />
+    </>
   );
 }

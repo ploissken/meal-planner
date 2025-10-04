@@ -1,6 +1,6 @@
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import CategoryList from "./CategoryList";
-import { MealPlannerContext } from "@/app/meal-planner/context/MealPlannerContext";
+import { LocalStorageContext } from "@/app/context/LocalStorageContext";
 import { Ingredient } from "@/types";
 
 jest.mock("@/mockFetch", () => ({
@@ -60,9 +60,9 @@ const mockContextValue = {
 
 function renderWithContext(category = "Vegetables") {
   return render(
-    <MealPlannerContext.Provider value={mockContextValue}>
+    <LocalStorageContext.Provider value={mockContextValue}>
       <CategoryList category={category} />
-    </MealPlannerContext.Provider>
+    </LocalStorageContext.Provider>
   );
 }
 
@@ -105,9 +105,9 @@ describe("CategoryList", () => {
   it("shows fallback message when no ingredients", () => {
     const emptyContext = { ...mockContextValue, shoplist: [] };
     render(
-      <MealPlannerContext.Provider value={emptyContext}>
+      <LocalStorageContext.Provider value={emptyContext}>
         <CategoryList category="Fruits" />
-      </MealPlannerContext.Provider>
+      </LocalStorageContext.Provider>
     );
 
     expect(

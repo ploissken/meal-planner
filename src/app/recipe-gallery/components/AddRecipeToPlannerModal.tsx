@@ -1,4 +1,4 @@
-import { useMealPlannerContext } from "@/app/meal-planner/context/MealPlannerContext";
+import { useLocalStorageContext } from "@/app/context/LocalStorageContext";
 import { MealType, Recipe } from "@/types";
 import {
   Button,
@@ -26,7 +26,7 @@ export default function AddRecipeToPlannerModal({
   const [selectedMealIndex, setSelectedMealIndex] =
     useState<MealType>("breakfast");
 
-  const { weekdays, updateMealPlan } = useMealPlannerContext();
+  const { weekdays, updateMealPlan } = useLocalStorageContext();
 
   const handleSaveToPlan = () => {
     // todo: form validation
@@ -43,7 +43,7 @@ export default function AddRecipeToPlannerModal({
   return (
     <>
       <Button
-        variant="contained"
+        variant="outlined"
         color="primary"
         onClick={() => setOpen(true)}
         sx={{ width: "100%" }}
@@ -107,6 +107,9 @@ export default function AddRecipeToPlannerModal({
               ))}
             </RadioGroup>
           </FormControl>
+          <Typography color="info" sx={{ marginTop: 10 }} align="center">
+            Adding a meal to your planner resets your shopping list
+          </Typography>
         </DialogContent>
         <DialogActions>
           <Button variant="contained" onClick={handleSaveToPlan}>

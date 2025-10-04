@@ -1,10 +1,10 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import RecipeNotes from "./RecipeNotes";
-import { useMealPlannerContext } from "@/app/meal-planner/context/MealPlannerContext";
+import { useLocalStorageContext } from "@/app/context/LocalStorageContext";
 import { Recipe } from "@/types";
 
-// Mock the MealPlannerContext hook
-jest.mock("@/app/meal-planner/context/MealPlannerContext");
+// Mock the LocalStorageContext hook
+jest.mock("@/app/meal-planner/context/LocalStorageContext");
 
 describe("RecipeNotes", () => {
   const mockUpdateNotes = jest.fn();
@@ -23,7 +23,7 @@ describe("RecipeNotes", () => {
 
   beforeEach(() => {
     jest.clearAllMocks();
-    (useMealPlannerContext as jest.Mock).mockReturnValue({
+    (useLocalStorageContext as jest.Mock).mockReturnValue({
       notes: [{ recipeId: "r1", note: "Initial note" }],
       updateNotes: mockUpdateNotes,
     });

@@ -73,13 +73,12 @@ export const RecipeCard = ({ recipe }: RecipeCardProps) => {
       </CardContent>
 
       <CardActions>
-        <AddRecipeToPlannerModal recipe={recipe} />
         <RecipeDetailModal
           recipe={recipe}
           trigger={(openDialog) => (
             <Button
-              variant="contained"
-              color="primary"
+              variant="outlined"
+              color="secondary"
               onClick={openDialog}
               sx={{ width: "100%" }}
             >
@@ -87,6 +86,7 @@ export const RecipeCard = ({ recipe }: RecipeCardProps) => {
             </Button>
           )}
         />
+        <AddRecipeToPlannerModal recipe={recipe} />
       </CardActions>
     </Card>
   );
