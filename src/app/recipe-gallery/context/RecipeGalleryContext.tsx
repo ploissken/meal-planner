@@ -12,7 +12,7 @@ import mockRecipes from "../../../mock-data/recipes.json";
 import { mockFetch } from "@/mockFetch";
 import { Recipe } from "@/types";
 
-type RecipeGalleryContextType = {
+export type RecipeGalleryContextType = {
   recipes: Recipe[];
   loading: boolean;
   cuisines: string[];
@@ -30,7 +30,7 @@ type RecipeGalleryContextType = {
   getRecipeById: (id: string | null) => Recipe | undefined;
 };
 
-const RecipeGalleryContext = createContext<
+export const RecipeGalleryContext = createContext<
   RecipeGalleryContextType | undefined
 >(undefined);
 

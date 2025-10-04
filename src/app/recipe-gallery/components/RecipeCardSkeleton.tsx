@@ -10,7 +10,7 @@ import { Card, CardActions, CardContent, Skeleton } from "@mui/material";
 
 export default function RecipeCardSkeleton() {
   return (
-    <Card>
+    <Card data-testid="recipe-card-skeleton">
       <Skeleton variant="rectangular" width="100%" height={180} />
       <CardContent>
         <Skeleton variant="text" sx={{ fontSize: "1.5rem" }} />

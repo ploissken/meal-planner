@@ -31,7 +31,7 @@ export interface RecipeCardProps {
 export const RecipeCard = ({ recipe }: RecipeCardProps) => {
   const { image, title, cookingTimeInMin, difficulty, dietaryTags } = recipe;
   return (
-    <Card sx={{ width: "100%", height: "100%" }}>
+    <Card sx={{ width: "100%", height: "100%" }} data-testid="recipe-card">
       <CardMedia
         component="img"
         height="180"

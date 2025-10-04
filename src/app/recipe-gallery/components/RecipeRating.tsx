@@ -28,8 +28,7 @@ export default function RecipeRating({ recipe }: { recipe: Recipe }) {
 
   const handleRating = (rate: number) => {
     if (!rating) {
-      // not persisting vote for simplicity
-      console.info(`persist vote: { recipeId: ${recipe.id}, rate: ${rate}}`);
+      // not persisting vote for simplicity { recipeId: recipe.id, rate }
       setRating(rate);
     }
   };

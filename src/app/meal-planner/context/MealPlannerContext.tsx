@@ -51,9 +51,9 @@ const defaultValue: DailyPlan[] = [...Array(7)].map(() => ({
   dinner: null,
 }));
 
-const MealPlannerContext = createContext<MealPlannerContextType | undefined>(
-  undefined
-);
+export const MealPlannerContext = createContext<
+  MealPlannerContextType | undefined
+>(undefined);
 
 export const MealPlannerProvider = ({ children }: { children: ReactNode }) => {
   const [mealPlan, setMealPlan] = useState<DailyPlan[]>(defaultValue);

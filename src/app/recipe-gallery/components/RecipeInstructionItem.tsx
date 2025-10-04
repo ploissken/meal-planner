@@ -1,14 +1,14 @@
 import { InstructionStep } from "@/types";
-import { PlayArrow, AccessAlarm } from "@mui/icons-material";
+import { AccessAlarm, PlayArrow } from "@mui/icons-material";
 import {
   ListItem,
   Box,
+  Tooltip,
   Fab,
   CircularProgress,
   ListItemText,
-  Tooltip,
 } from "@mui/material";
-import { useEffect, useRef, useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 export default function RecipeInstructionItem({
   instruction,
@@ -16,7 +16,9 @@ export default function RecipeInstructionItem({
   instruction: InstructionStep;
 }) {
   const [progress, setProgress] = useState(0);
+  const [isRunning, setIsRunning] = useState(false);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
   const displayTimer = (instruction?.timeInMinutes || 0) > 1;
   const timerTooltip = `Setup a ${instruction?.timeInMinutes} minutes timer`;
 
@@ -25,21 +27,22 @@ export default function RecipeInstructionItem({
     const percentagePerSecond = 100 / timeInSeconds;
     let elapsedSeconds = 0;
 
+    setIsRunning(true);
+
     intervalRef.current = setInterval(() => {
       elapsedSeconds += 1;
-
       setProgress((prev) => prev + percentagePerSecond);
 
       if (elapsedSeconds >= timeInSeconds) {
         clearInterval(intervalRef.current!);
         intervalRef.current = null;
+        setIsRunning(false);
       }
-    }, 1000); // run every second
+    }, 1000);
   };
 
   useEffect(() => {
     return () => {
-      // clear on unmount
       if (intervalRef.current) {
         clearInterval(intervalRef.current);
       }
@@ -67,12 +70,12 @@ export default function RecipeInstructionItem({
                 aria-label="start timer"
                 color="primary"
                 onClick={() => handleTimerStart(instruction)}
-                disabled={!!intervalRef.current}
+                disabled={isRunning}
               >
-                {!!intervalRef.current ? <AccessAlarm /> : <PlayArrow />}
+                {isRunning ? <AccessAlarm /> : <PlayArrow />}
               </Fab>
             </Tooltip>
-            {!!intervalRef.current && (
+            {isRunning && (
               <CircularProgress
                 variant="determinate"
                 size={52}
