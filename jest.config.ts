@@ -10,13 +10,12 @@ const config: Config = {
     "^next/font/google$": "<rootDir>/__mocks__/next/font/google.ts",
   },
   transform: {
-    "^.+\\.(ts|tsx)$": "ts-jest",
-  },
-  globals: {
-    "ts-jest": {
-      tsconfig: "tsconfig.json",
-      isolatedModules: true,
-    },
+    "^.+\\.(ts|tsx)$": [
+      "ts-jest",
+      {
+        tsconfig: "tsconfig.json",
+      },
+    ],
   },
 };
 
