@@ -11,7 +11,7 @@ import {
 import mockRecipes from "../../../mock-data/recipes.json";
 import { mockFetch } from "@/mockFetch";
 import { Recipe } from "@/types";
-
+import { useRecipeFilters } from "@/app/hooks/useRecipeFilters";
 export type RecipeGalleryContextType = {
   recipes: Recipe[];
   loading: boolean;
@@ -36,89 +36,38 @@ export const RecipeGalleryContext = createContext<
 
 export function RecipeGalleryProvider({ children }: { children: ReactNode }) {
   const [recipes, setRecipes] = useState<Array<Recipe>>([]);
-  const [filteredRecipes, setFilteredRecipes] = useState<Array<Recipe>>([]);
-  const [searchInput, setSearchInput] = useState("");
   const [loading, setLoading] = useState(false);
-  const [maxCookingTime, setMaxCookingTime] = useState(0);
-  const [selectedCuisines, setSelectedCuisines] = useState<string[]>([]);
-  const [selectedRestrictions, setSelectedRestrictions] = useState<string[]>(
-    []
-  );
-  const maxCookingTimeFromRecipe = Math.max(
-    ...recipes.map(({ cookingTimeInMin }) => cookingTimeInMin)
-  );
 
-  const cuisines = [...new Set(recipes.map(({ cuisine }) => cuisine))];
-  const restrictions = [
-    ...new Set(recipes.flatMap(({ dietaryTags }) => dietaryTags)),
-  ];
+  const {
+    filteredRecipes,
+    selectedCuisines,
+    setSelectedCuisines,
+    selectedRestrictions,
+    setSelectedRestrictions,
+    maxCookingTime,
+    maxCookingTimeFromRecipe,
+    setMaxCookingTime,
+    searchInput,
+    setSearchInput,
+    resetFilters,
+    cuisines,
+    restrictions,
+  } = useRecipeFilters(recipes);
 
-  const updateFilteredRecipes = () => {
-    let newRecipesSet = [...recipes];
-
-    if (selectedCuisines.length > 0) {
-      newRecipesSet = newRecipesSet.filter(({ cuisine }) =>
-        selectedCuisines.includes(cuisine)
-      );
-    }
-
-    if (selectedRestrictions.length > 0) {
-      newRecipesSet = newRecipesSet.filter(({ dietaryTags }) =>
-        dietaryTags.some((restriction) =>
-          selectedRestrictions.includes(restriction)
-        )
-      );
-    }
-
-    if (maxCookingTime > 0) {
-      newRecipesSet = newRecipesSet.filter(
-        ({ cookingTimeInMin }) => cookingTimeInMin <= maxCookingTime
-      );
-    }
-
-    if (searchInput) {
-      newRecipesSet = newRecipesSet.filter((recipe) => {
-        const normalizedInput = searchInput.toLowerCase();
-        const titleMatch = recipe.title.toLowerCase().includes(normalizedInput);
-        const ingredientsMatch = recipe.ingredients.some((ingredient) =>
-          ingredient.name.toLowerCase().includes(normalizedInput)
-        );
-        return titleMatch || ingredientsMatch;
-      });
-    }
-
-    setFilteredRecipes(newRecipesSet);
-  };
   const getRecipeById = (id: string | null) => {
     if (!id) return;
     return recipes.find((r) => r.id === id);
   };
 
-  const resetFilters = () => {
-    setMaxCookingTime(0);
-    setSelectedCuisines([]);
-    setSelectedRestrictions([]);
-    setSearchInput("");
-  };
-
-  // todo: avoid this use effect
-  useEffect(() => {
-    updateFilteredRecipes();
-  }, [searchInput, maxCookingTime, selectedRestrictions, selectedCuisines]);
-
   useEffect(() => {
     setLoading(true);
-    mockFetch<Array<Recipe>>(mockRecipes as Array<Recipe>, 1500).then(
-      (data) => {
-        setRecipes(
-          data.sort((a, b) =>
-            a.title.localeCompare(b.title, undefined, { sensitivity: "base" })
-          )
-        );
-        setFilteredRecipes(data);
-        setLoading(false);
-      }
-    );
+    mockFetch<Recipe[]>(mockRecipes as Recipe[], 1500).then((data) => {
+      const sorted = data.sort((a, b) =>
+        a.title.localeCompare(b.title, undefined, { sensitivity: "base" })
+      );
+      setRecipes(sorted);
+      setLoading(false);
+    });
   }, []);
 
   return (
