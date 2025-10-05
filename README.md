@@ -27,11 +27,9 @@ The app will run locally at http://localhost:3000
 npm run test
 ```
 
-# 🧠 AI Usage Documentation
+# 🧠 AI Usage
 
-#### Tools Used
-
-ChatGPT was user for scaffolding components, generating boilerplate logic, writing utility functions, creating mock data, and writing unit tests. With the exception of utility functions, all other AI-generated code is annotated in comments on documented in README files at the root folder.
+ChatGPT was used for scaffolding components, generating boilerplate logic, writing utility functions (or parts of it), creating mock data, and writing unit tests. With the exception of utility functions, all other AI-generated code is annotated in comments or documented in README files at the root folder.
 
 # 🧱 Architecture Decisions
 

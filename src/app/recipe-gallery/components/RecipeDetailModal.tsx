@@ -18,6 +18,8 @@ import RecipeRating from "./RecipeRating";
 import RecipeNotes from "./RecipeNotes";
 import { GRAPH_COLORS } from "@/consts";
 
+const NUTRITIONAL_GRAPH_HEIGHT = 250;
+
 export default function RecipeDetailModal({
   recipe,
   trigger,
@@ -75,7 +77,7 @@ export default function RecipeDetailModal({
                 data: [protein, carbs, fat],
               },
             ]}
-            height={250}
+            height={NUTRITIONAL_GRAPH_HEIGHT}
           />
 
           {buildSectionTitle("Rating")}

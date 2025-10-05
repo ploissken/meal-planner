@@ -43,6 +43,7 @@ export default function RecipeInstructionItem({
 
   useEffect(() => {
     return () => {
+      // clear on unmount
       if (intervalRef.current) {
         clearInterval(intervalRef.current);
       }

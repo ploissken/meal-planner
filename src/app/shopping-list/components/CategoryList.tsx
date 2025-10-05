@@ -54,6 +54,7 @@ export default function CategoryList({ category }: { category: string }) {
               {`Estimated cost: $ ${categoryTotal.toFixed(2)}`}
             </Typography>
           )}
+          {/* todo: move this to its own component */}
           {uniqueIngredients.map((ingredientId) => {
             const ingredient = ingredients.find((i) => i.id === ingredientId);
             const totalRequired = requiredIngredients

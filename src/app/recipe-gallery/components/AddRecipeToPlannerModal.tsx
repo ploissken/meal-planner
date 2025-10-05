@@ -27,6 +27,7 @@ export default function AddRecipeToPlannerModal({
     useState<MealType>("breakfast");
 
   const { weekdays, updateMealPlan } = useLocalStorageContext();
+  const meals: MealType[] = ["breakfast", "lunch", "dinner"];
 
   const handleSaveToPlan = () => {
     // todo: form validation
@@ -96,8 +97,7 @@ export default function AddRecipeToPlannerModal({
                 setSelectedMealIndex(value as MealType);
               }}
             >
-              {/* todo: leverage type */}
-              {["breakfast", "lunch", "dinner"].map((meal) => (
+              {meals.map((meal) => (
                 <FormControlLabel
                   key={meal}
                   control={<Radio />}

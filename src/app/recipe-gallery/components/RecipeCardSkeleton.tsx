@@ -6,27 +6,25 @@
  *
  * did some tweaks on width to better match
  */
-import { Card, CardActions, CardContent, Skeleton } from "@mui/material";
+import { Box, Card, CardActions, CardContent, Skeleton } from "@mui/material";
 
 export default function RecipeCardSkeleton() {
   return (
-    <Card data-testid="recipe-card-skeleton">
+    <Card data-testid="recipe-card-skeleton" sx={{ height: "450px" }}>
       <Skeleton variant="rectangular" width="100%" height={180} />
       <CardContent>
         <Skeleton variant="text" sx={{ fontSize: "1.5rem" }} />
         <Skeleton variant="text" sx={{ fontSize: "1rem" }} />
         <Skeleton variant="text" width="60%" />
+        <Box sx={{ display: "flex", gap: 2, marginTop: "40px" }}>
+          <Skeleton variant="rectangular" width={60} height={36} />
+          <Skeleton variant="rectangular" width={60} height={36} />
+        </Box>
       </CardContent>
-      <CardActions>
-        <Skeleton variant="rectangular" width={60} height={36} />
-        <Skeleton variant="rectangular" width={60} height={36} />
+      <CardActions sx={{ marginTop: "40px" }}>
+        <Skeleton variant="rectangular" width="48%" height={36} />
+        <Skeleton variant="rectangular" width="48%" height={36} />
       </CardActions>
-      <Skeleton
-        variant="rectangular"
-        width="90%"
-        height={36}
-        style={{ margin: 10 }}
-      />
     </Card>
   );
 }

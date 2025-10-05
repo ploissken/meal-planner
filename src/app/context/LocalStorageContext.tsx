@@ -66,7 +66,6 @@ export const LocalStorageProvider = ({ children }: { children: ReactNode }) => {
         notes,
       }}
     >
-      <div>ahan</div>
       {children}
     </LocalStorageContext.Provider>
   );
