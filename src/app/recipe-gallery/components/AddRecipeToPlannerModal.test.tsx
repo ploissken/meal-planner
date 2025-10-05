@@ -1,14 +1,19 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import AddRecipeToPlannerModal from "./AddRecipeToPlannerModal";
+import {
+  LocalStorageContext,
+  LocalStorageContextType,
+} from "@/app/context/LocalStorageContext";
 import { Recipe } from "@/types";
-import { useLocalStorageContext } from "@/app/context/LocalStorageContext";
 
-// Mock the context
-jest.mock("@/app/meal-planner/context/LocalStorageContext");
-
+const mockUpdateShopList = jest.fn();
 const mockUpdateMealPlan = jest.fn();
 
-const mockContext = {
+const mockContextValue: LocalStorageContextType = {
+  ingredients: [],
+  shoplist: [],
+  updateShopList: mockUpdateShopList,
+  mealPlan: [],
   weekdays: [
     "Monday",
     "Tuesday",
@@ -18,10 +23,11 @@ const mockContext = {
     "Saturday",
     "Sunday",
   ],
+  notes: [],
   updateMealPlan: mockUpdateMealPlan,
+  getIngredientCategories: jest.fn(),
+  updateNotes: jest.fn(),
 };
-
-(useLocalStorageContext as jest.Mock).mockReturnValue(mockContext);
 
 const mockRecipe: Recipe = {
   id: "recipe-123",
@@ -43,7 +49,11 @@ describe("AddRecipeToPlannerModal", () => {
   });
 
   it("opens modal and allows selecting day and meal, then saves", () => {
-    render(<AddRecipeToPlannerModal recipe={mockRecipe} />);
+    render(
+      <LocalStorageContext.Provider value={mockContextValue}>
+        <AddRecipeToPlannerModal recipe={mockRecipe} />
+      </LocalStorageContext.Provider>
+    );
 
     // Open modal
     fireEvent.click(screen.getByRole("button", { name: /add to plan/i }));
@@ -72,7 +82,11 @@ describe("AddRecipeToPlannerModal", () => {
   });
 
   it("does not call updateMealPlan if no day is selected", () => {
-    render(<AddRecipeToPlannerModal recipe={mockRecipe} />);
+    render(
+      <LocalStorageContext.Provider value={mockContextValue}>
+        <AddRecipeToPlannerModal recipe={mockRecipe} />
+      </LocalStorageContext.Provider>
+    );
 
     // Open modal
     fireEvent.click(screen.getByRole("button", { name: /add to plan/i }));

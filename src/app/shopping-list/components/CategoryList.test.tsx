@@ -1,7 +1,6 @@
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import CategoryList from "./CategoryList";
 import { LocalStorageContext } from "@/app/context/LocalStorageContext";
-import { Ingredient } from "@/types";
 
 jest.mock("@/mockFetch", () => ({
   mockFetch: () => Promise.resolve(),

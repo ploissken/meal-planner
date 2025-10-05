@@ -1,7 +1,10 @@
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import DayPlannerCard from "./DayPlannerCard";
 import { useRecipeGalleryContext } from "@/app/recipe-gallery/context/RecipeGalleryContext";
-import { useLocalStorageContext } from "../../context/LocalStorageContext";
+import {
+  LocalStorageContext,
+  LocalStorageContextType,
+} from "../../context/LocalStorageContext";
 
 // Mock the RecipeDetailModal to just render the trigger function
 jest.mock("@/app/recipe-gallery/components/RecipeDetailModal", () => ({
@@ -14,9 +17,25 @@ jest.mock("@/app/recipe-gallery/context/RecipeGalleryContext", () => ({
   useRecipeGalleryContext: jest.fn(),
 }));
 
-jest.mock("../context/LocalStorageContext", () => ({
-  useLocalStorageContext: jest.fn(),
-}));
+const mockContextValue: LocalStorageContextType = {
+  ingredients: [],
+  shoplist: [],
+  updateShopList: jest.fn(),
+  mealPlan: [],
+  weekdays: [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+  ],
+  notes: [],
+  updateMealPlan: jest.fn(),
+  getIngredientCategories: jest.fn(),
+  updateNotes: jest.fn(),
+};
 
 describe("DayPlannerCard", () => {
   const weekday = { name: "Monday", index: 0 };
@@ -42,14 +61,17 @@ describe("DayPlannerCard", () => {
   };
 
   const updateMealPlan = jest.fn();
+  const renderWithContext = () => {
+    render(
+      <LocalStorageContext.Provider value={mockContextValue}>
+        <DayPlannerCard weekday={weekday} plan={plan} />
+      </LocalStorageContext.Provider>
+    );
+  };
 
   beforeEach(() => {
     (useRecipeGalleryContext as jest.Mock).mockReturnValue({
       getRecipeById: (id: string | null) => (id ? mockRecipes[id] : undefined),
-    });
-
-    (useLocalStorageContext as jest.Mock).mockReturnValue({
-      updateMealPlan,
     });
 
     // Patch structuredClone in case something triggers it
@@ -64,22 +86,22 @@ describe("DayPlannerCard", () => {
   });
 
   it("renders the weekday name", () => {
-    render(<DayPlannerCard weekday={weekday} plan={plan} />);
+    renderWithContext();
     expect(screen.getByText("Monday")).toBeInTheDocument();
   });
 
   it("renders meal labels and recipe chips", () => {
-    render(<DayPlannerCard weekday={weekday} plan={plan} />);
-    expect(screen.getByText("breakfast")).toBeInTheDocument();
-    expect(screen.getByText("lunch")).toBeInTheDocument();
-    expect(screen.getByText("dinner")).toBeInTheDocument();
+    renderWithContext();
+    expect(screen.getByText("BREAKFAST")).toBeInTheDocument();
+    expect(screen.getByText("LUNCH")).toBeInTheDocument();
+    expect(screen.getByText("DINNER")).toBeInTheDocument();
 
     expect(screen.getByText("Pancakes")).toBeInTheDocument();
     expect(screen.getByText("Salad")).toBeInTheDocument();
   });
 
   it("calls updateMealPlan when a recipe chip is deleted", () => {
-    render(<DayPlannerCard weekday={weekday} plan={plan} />);
+    renderWithContext();
 
     // Get all buttons (Chip is a button)
     const chipButtons = screen.getAllByRole("button");
@@ -97,10 +119,12 @@ describe("DayPlannerCard", () => {
       fireEvent.click(deleteButton);
     }
 
-    expect(updateMealPlan).toHaveBeenCalledWith({
-      selectedDayIndex: 0,
-      selectedMealIndex: "breakfast",
-      recipeId: null,
+    waitFor(() => {
+      expect(updateMealPlan).toHaveBeenCalledWith({
+        selectedDayIndex: 0,
+        selectedMealIndex: "breakfast",
+        recipeId: null,
+      });
     });
   });
 });

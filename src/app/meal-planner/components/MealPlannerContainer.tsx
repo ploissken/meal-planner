@@ -3,7 +3,7 @@ import { Container, Grid, Typography } from "@mui/material";
 import DayPlannerCard from "./DayPlannerCard";
 import { useLocalStorageContext } from "../../context/LocalStorageContext";
 
-export default function LocalStorageContainer() {
+export default function MealPlannerContainer() {
   const { mealPlan, weekdays } = useLocalStorageContext();
 
   return (

@@ -15,9 +15,9 @@ import {
   RecipeNote,
 } from "@/types";
 import { createContext, ReactNode, useContext } from "react";
-import { useLocalStorage } from "../hooks/useLocalStorage";
+import { useLocalStorage } from "@/app/hooks/useLocalStorage";
 
-type LocalStorageContextType = {
+export type LocalStorageContextType = {
   mealPlan: DailyPlan[];
   weekdays: string[];
   shoplist: FullRecipeIngredient[];
@@ -66,6 +66,7 @@ export const LocalStorageProvider = ({ children }: { children: ReactNode }) => {
         notes,
       }}
     >
+      <div>ahan</div>
       {children}
     </LocalStorageContext.Provider>
   );

@@ -31,17 +31,17 @@ npm run test
 
 #### Tools Used
 
-ChatGPT was user for scaffolding components, generating boilerplate logic, writing utility functions, creating mock data and unitary tests. With the exception of utility functions, all the other uses are detailed thru commentaries on the code or README files on the root folder.
+ChatGPT was user for scaffolding components, generating boilerplate logic, writing utility functions, creating mock data, and writing unit tests. With the exception of utility functions, all other AI-generated code is annotated in comments on documented in README files at the root folder.
 
 # 🧱 Architecture Decisions
 
 #### Reasoning
 
-I've spent a couple hours on system design prior to implementation, identifying main user and system features, sketching wireframes, interactions an designing data.
+Before implementation, I spent a few hours planning the system design: identifying key features, sketching wireframes, mapping user interactions, and defining data models.
 
-I chose **Next.js** due to its powerful routing, image handling and file infrastructure, and **MUI** for its extent library of components and icons (and I also appreciate material design).
+I chose **Next.js** due to its powerful routing, image handling and file infrastructure, and **MUI** for its extensive component library and alignment with Material Design (which I personally enjoy working with).
 
-Code was created with a component-first design approach, respecting patterns like separation of concerns, encapsulation, and high abstraction, to enforce reusability, scalability, and testability.
+The code follows a component-first approach and applies software design principles like separation of concerns, encapsulation, and abstraction to support reusability, scalability, and testability.
 
 #### Frameworks & Tools
 
@@ -49,7 +49,7 @@ Code was created with a component-first design approach, respecting patterns lik
 - **TypeScript**: Ensures type safety and better IDE support.
 - **MUI**: For rapid, consistent UI styling with material design.
 - **React Context**: Lightweight state management.
-- **Jest & Testing-Library**: For easy testing components.
+- **Jest & Testing-Library**: For unit testing UI and logic.
 
 #### Folder Structure
 
@@ -71,26 +71,25 @@ src/
 
 #### 1. AI Code Integration
 
-Knowing AI-generated code often lack cohesion, I used it to generate very simple components and boilerplates, where I could build on top with minimun friction.
-I also ask often for code reviews of components, specially when I feel something is off. This usually gives very good insight into readability improvements.
+AI-generated code often lacks cohesion. To minimize friction, I used AI primarily for generating simple components and boilerplates, which I then refined manually. I also regularly requested code reviews from the model when something felt "off," which proved helpful for improving readability and structure.
 
 #### 2. Responsive Design
 
-Ensuring mobile responsiveness with data-full UI is always an interesting challenge. Starting with wireframes and using **MUI** spared me _a lot_ of trouble.
+Ensuring a mobile-friendly UI with dense data can be challenging. Starting with wireframes and using **MUI** spared me _a lot_ of trouble thanks to its responsive grids and styling sugar.
 
 #### 3. Data Management
 
-Handling mocked data updates was likely the trickiest part, and I could have done a better job. For simplicity and due to time constraints, I opted to implement a full reset on the shopping list if any change occurs in meal planner, which I see as a bad user experience.
+Keeping the shopping list in sync with the meal plan was one of the trickier aspects. Due to time constraints, I implemented a full reset of the shopping list whenever the meal plan changes. While functional, this is not ideal from a UX perspective.
 
 # 🛠️ What I’d Do with More Time
 
 #### Better mock data and next/image leverage
 
-Mocking images could have been better polished. Next/Image is incredibly powerful, but requires some configuration I wouldn't have time to, so I've used html `<img>` instead, and repeated images which are a bummer.
+Images were repeated and not well-optimized. I initially intended to use `next/image`, but configuring it properly would have taken more time than I had. As a result, I fell back on native `<img>` tags.
 
 #### Better data design and state management
 
-I could have had designed the shopping list better. I've given a proportionally smaller time to this feature design. Ideally, ingredients once marked as owned should not show up there again, but the time constraints would not allow me to a full refactor, so I opted to reset the whole ingredients list whenever the week meal plan changes.
+The shopping list design was rushed compared to the other features. Ideally, ingredients once marked as "owned" would not reappear on meal plan changes, but the time constraints made me opt for a simples implementation, resetting the whole ingredients list on every update.
 
 #### Testing
 
@@ -98,11 +97,11 @@ Test typing was highly overlooked.
 
 #### User experience
 
-- Loading state is working fine on recipe gallery, but not so on meal planner and shopping list, which misses loading indicators.
+- Loading indicators are working in the recipe gallery, but missing in the meal planner and shopping list views.
 - Aria was highly overlooked. There is even a warning pop on console when some modals close. It feels like some odd behavior on MUI's side, but I didn't explore it further.
-- Nutritional data on day plan could have some better labeling, like "missing carbs". Currently feeling too raw.
-- Instruction timers are missed if the user closes the dialog. At first I intended to create a more reliable system, with toast notifications when timer is complete but, yeah.
-- List items on shopping list, as well as chips on daily planner, could use some in/out animation.
+- Nutritional informations in the day plan are too raw (e.g., labels like “missing carbs” could be clearer).
+- Instruction timers are lost if the dialog is closed. I originally planned to notify users via toast when a timer finished but...
+- Shopping list items and planner chips could benefit from in/out animations for a more dynamic experience.
 
 # 📬 Contact
 

@@ -1,11 +1,11 @@
 import { render, screen } from "@testing-library/react";
 import DayNutritionalBalance from "./DayNutritionalBalance";
-import { useRecipeGalleryContext } from "@/app/recipe-gallery/context/RecipeGalleryContext";
 import {
   RECOMMENDED_CARB_DAILY_INTAKE,
   RECOMMENDED_FAT_DAILY_INTAKE,
   RECOMMENDED_PROTEIN_DAILY_INTAKE,
 } from "@/consts";
+import { useRecipeGalleryContext } from "@/app/recipe-gallery/context/RecipeGalleryContext";
 
 // Mock MUI PieChart to observe props
 jest.mock("@mui/x-charts", () => ({
